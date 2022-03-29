@@ -8,6 +8,6 @@ class DashboardController extends Controller
 {
     public function customer_index(){
         //dd("test");
-        return view('customer-view.customerIndex');
+        return view('customer-view.index');
     }
 }

@@ -4,13 +4,13 @@
 <!-- Added by HTTrack -->
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
-    @include('layout.head.customerHead')
+    @include('layout.head.serviceHead')
 	@include('layout.topBar.customerTopBar')
 	<body>
 		<!-- BEGIN: Body-->
 		@yield('body')
 		<!-- END: Body-->
 		@include('layout.footer')
-		@include('layout.scripts.customerScripts')
+        @include('layout.scripts.serviceScripts')
 	</body>
 </html>
