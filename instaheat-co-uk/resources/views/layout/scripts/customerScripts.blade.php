@@ -1,5 +1,5 @@
 
-<script id="webpack-manifest">
+  <script id="webpack-manifest">
     /*<![CDATA[*/window.webpackManifest={"231608221292675":"{{asset('custom/app-4710518484a2dcbce1b6.js')}}",
     "913892943986":"{{asset('custom/component---src-templates-boiler-page-js-3ae62e96d30acfe223a1.js')}}",
     "162898551421021":"{{asset('custom/component---src-pages-404-js-91b0f6dcba6a6c7226b0.js')}}",

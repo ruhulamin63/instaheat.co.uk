@@ -7,7 +7,6 @@
 <div id="___gatsby">
     <div data-reactroot="">
       
-    <div>
         <div class="sc-dnqmqq jRgpQr">
             <h1>Contact Us</h1>
             <div class="sc-htoDjs iDWFHY">
