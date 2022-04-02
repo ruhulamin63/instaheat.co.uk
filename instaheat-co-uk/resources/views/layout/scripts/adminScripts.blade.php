@@ -1,4 +1,3 @@
-  <!--begin::Javascript-->
   <!--begin::Global Javascript Bundle(used by all pages)-->
   <script src="{{asset('/plugins/global/plugins.bundle.js')}}"></script>
   <script src="{{asset('/js/scripts.bundle.js')}}"></script>
@@ -31,6 +30,22 @@
     <script src="{{asset('/Theme/js/demo/datatables-demo.js')}}"></script>
     <!--end::Page Custom Javascript-->
 
+     <!-- Bootstrap core JavaScript-->
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+    <!-- Page level plugin JavaScript-->
+    <!-- <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script> -->
+
+    <!-- <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> -->
+		<!--end::Javascript-->
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> -->
+
+
     <!-- new table testing -->
     <script src="{{ asset('jquery/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
@@ -40,249 +55,3 @@
     <script src="{{ asset('sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('toastr/toastr.min.js') }}"></script>
     <!-- new table testing -->
-
-
-    <script>
-        $(function(){
-          var $ppc = $('.progress-pie-chart'),
-            percent = parseInt($ppc.data('percent')),
-            deg = 360*percent/100;
-          if (percent > 50) {
-            $ppc.addClass('gt-50');
-          }
-          $('.ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
-          $('.ppc-percents span').html(percent+'%');
-        });
-
-    </script>
-
-    <!-- Service details data -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-
-      $(document).ready(function(){
-
-        $.ajaxSetup({
-          beforeSend: function(xhr, type) {
-            if (!type.crossDomain) {
-                xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
-            }
-          },
-        });
-
-
-        //==================for service data====================
-        $('.servicedeletebtn').click(function(e){
-          e.preventDefault();
-
-          var delete_id = $(this).closest("tr").find('.servicedelete_value_id').val();
-          //alert(delete_id);
-
-          swal({
-            title: "Are you sure?",
-            text: "Delete from database!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-
-            if(willDelete) {
-              var data = {
-                "_token": $('input[name=_token]').val(),
-                "id": delete_id,
-              }
-
-              $.ajax({
-                type: "DELETE",
-                url: '/service/delete/'+ delete_id,
-                data: data,
-                success: function(response){
-                  //console.log(response);
-                  swal(response.message, {
-                    icon: "success",
-                  })
-                  .then( (result) => {
-                    location.reload();
-                  });
-                }
-              });
-            }
-          });
-        });
-
-
-        //==================for member list data====================
-        $('.memberlisdeletebtn').click(function(e){
-          e.preventDefault();
-
-          var delete_id = $(this).closest("tr").find('.memberlistdelete_value_id').val();
-          //alert(delete_id);
-
-          swal({
-            title: "Are you sure?",
-            text: "Delete from database!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-
-            if(willDelete) {
-              var data = {
-                "_token": $('input[name=_token]').val(),
-                "id": delete_id,
-              }
-
-              $.ajax({
-                type: "DELETE",
-                url: '/admin/delete/'+ delete_id,
-                data: data,
-                success: function(response){
-                  //console.log(response);
-                  swal(response.message, {
-                    icon: "success",
-                  })
-                  .then( (result) => {
-                    location.reload();
-                  });
-                }
-              });
-            }
-          });
-        });
-
-
-          //==================for today appointment list data====================
-          // $('.appointmentdeletebtn').click(function(e){
-          //   e.preventDefault();
-
-          //   var delete_id = $(this).closest("tr").find('.appointmentdelete_id').val();
-          //   //alert(delete_id);
-
-          //   swal({
-          //     title: "Are you sure?",
-          //     text: "Delete from database!",
-          //     icon: "warning",
-          //     buttons: true,
-          //     dangerMode: true,
-          //   })
-          //   .then((willDelete) => {
-
-          //     if(willDelete) {
-          //       var data = {
-          //         "_token": $('input[name=_token]').val(),
-          //         "id": delete_id,
-          //       }
-
-          //       $.ajax({
-          //         type: "DELETE",
-          //         url: '/appointment/delete/'+ delete_id,
-          //         data: data,
-          //         success: function(response){
-          //           //console.log(response);
-          //           swal(response.message, {
-          //             icon: "success",
-          //           })
-          //           .then( (result) => {
-          //             location.reload();
-          //           });
-          //         }
-          //       });
-          //     }
-          //   });
-          // });
-
-
-           //==================for user appointment create data====================
-          //  $('.user_app_create').click(function(e){
-          //   e.preventDefault();
-
-          //   var create_id = $(this).closest("tr").find('.memberlistdelete_value_id').val();
-          //   //alert(create_id);
-          // });
-
-
-           //==================for user appointment create submit====================
-          //  $('.submit_user_app_create').click(function(e){
-          //     e.preventDefault();
-
-          //     var create_id = $(this).closest("center").find('.memberlist_submit_value').val();
-
-          //     swal({
-          //     title: "Are you sure?",
-          //     text: "Data insert into database!",
-          //     icon: "warning",
-          //     buttons: true,
-          //     dangerMode: true,
-          //   })
-          //   .then((willDelete) => {
-
-          //     if(willDelete) {
-          //       var data = {
-          //         "_token": $('input[name=_token]').val(),
-          //         "id": create_id,
-          //       }
-
-          //       $.ajax({
-          //         type: "DELETE",
-          //         url: '/user-app/create/'+ create_id,
-          //         data: data,
-          //         success: function(response){
-          //           //console.log(response);
-          //           swal(response.message, {
-          //             icon: "success",
-          //           })
-          //           .then( (result) => {
-          //             location.reload();
-          //           });
-          //         }
-          //       });
-          //     }
-          //   });
-          //  });
-
-
-          //==================for bike list data====================
-          $('.bikedeletebtn').click(function(e){
-          e.preventDefault();
-
-          var delete_id = $(this).closest("tr").find('.bikedelete_id').val();
-          //alert(delete_id);
-
-          swal({
-            title: "Are you sure?",
-            text: "Delete from database!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-
-            if(willDelete) {
-              var data = {
-                "_token": $('input[name=_token]').val(),
-                "id": delete_id,
-              }
-
-              $.ajax({
-                type: "DELETE",
-                url: '/bike/delete/'+ delete_id,
-                data: data,
-                success: function(response){
-                  //console.log(response);
-                  swal(response.message, {
-                    icon: "success",
-                  })
-                  .then( (result) => {
-                    location.reload();
-                  });
-                }
-              });
-            }
-          });
-        });
-
-
-      });
-    </script>

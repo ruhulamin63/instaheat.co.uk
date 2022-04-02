@@ -166,7 +166,7 @@
                 </div>
 
                 <div class="menu-item" style="margin-top:0px">
-                    <a class="menu-link ">
+                    <a class="menu-link @if(route('get.order.index') == Request::url()) active @endif" href="{{ route('get.order.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -176,7 +176,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Appintment List</span>
+                        <span class="menu-title">Order List</span>
                     </a>
                 </div>
 

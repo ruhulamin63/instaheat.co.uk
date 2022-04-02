@@ -15,14 +15,14 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'username' => 'user',
+            'username' => 'admin',
             'first_name' => 'Ruhul',
             'last_name' => 'Amin',
             'email' => 'abc@gmail.com',
             'address' => 'test',
             'division' => 'test',
             'image' => null,
-            'password' => md5('user'),
+            'password' => md5('admin'),
             'phone' => '00000000000',
             'status' => 1,
             'country'=>'test',

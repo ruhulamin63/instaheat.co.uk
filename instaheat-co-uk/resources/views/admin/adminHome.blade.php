@@ -33,21 +33,20 @@
 					</div>
 					<!--end::Toolbar-->
 
-                    
                     <!--begin::Post-->
                     <div class="post d-flex flex-column-fluid" id="kt_post">
                         <!--begin::Container-->
                         <div id="kt_content_container" class="container">
                             <!--begin::Row-->
-                            <div class="row gy-9 gx-xl-12">
+                            <div class="row gy-5 gx-xl-8">
                                 <!--begin::Col-->
                                 <div class="col-xl-12">
-                                    <!--begin::Today Appointment body-->
+                                    <!--begin::Today Order body-->
                                     <div class="col bg-light-primary px-6 py-8 rounded-2 mb-7">
                                         <!--begin::Card header-->
                                         <div class="card-header">
                                             <h3 class="card-title align-items-start flex-column">
-                                                <span class="text-dark fw-bolder text-hover-primary fs-6"><h4>Today's Order</h4></span>
+                                                <span class="text-dark fw-bolder text-hover-primary fs-6"><h4>Today Orders</h4></span>
                                                 <span class="text-muted mt-1 fw-bold fs-7">All Order List Information</span>
                                             </h3>
                                         </div>
@@ -58,27 +57,28 @@
                                             <!--begin::Table container-->
                                             <div class="card-body">
                                                 <div class="table-responsive">
-                                                    <table class="table table-hover table-condensed" id="today-appointments-table">
+                                                    <table class="table table-hover table-condensed" id="today-order-table">
                                                         <thead>
-                                                            <tr style="background-color: SlateBlue; color:white !important">
-                                                                <!-- <th><input type="checkbox" name="main_checkbox"><label></label></th> -->
-                                                                <!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
-                                                                <th style="text-align: center;" class="min-w-100px">Name</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
-                                                                <th style="text-align: center;" class="min-w-100px">#</th>
+                                                            <tr style="background-color: #E74C3C; color:white !important">
+                                                                <th style="text-align: center;" class="min-w-100px">customer_name</th>
+                                                                <th style="text-align: center;" class="min-w-100px">customer_contact_number</th>
+                                                                <th style="text-align: center;" class="min-w-100px">fuel_type</th>
+                                                                <th style="text-align: center;" class="min-w-100px">boiler_type</th>
+                                                                <th style="text-align: center;" class="min-w-100px">convert_combi_boiler</th>
+                                                                <th style="text-align: center;" class="min-w-100px">under_a_carport</th>
+                                                                <th style="text-align: center;" class="min-w-100px">thirty_cm_away_window</th>
+                                                                <th style="text-align: center;" class="min-w-100px">moving_5_meter</th>
+                                                                <th style="text-align: center;" class="min-w-100px">fule_come_out</th>
+                                                                <th style="text-align: center;" class="min-w-100px">pitched_or_flat</th>
+                                                                <th style="text-align: center;" class="min-w-100px">house_live_in</th>
+                                                                <th style="text-align: center;" class="min-w-100px">number_of_bedroom</th>
+                                                                <th style="text-align: center;" class="min-w-100px">number_of_bathroom</th>
+                                                                <th style="text-align: center;" class="min-w-100px">status</th>
                                                             </tr>
                                                         </thead>
 
                                                         <tbody></tbody>
-
+                                                       
                                                     </table>
                                                 </div>
                                             </div>
@@ -90,6 +90,7 @@
                             </div>
                         </div>
                     </div>
+
 				</div>
 				<!--end::Content-->
 			</div>
@@ -98,4 +99,6 @@
 	</div>
 	<!--end::Root-->
 
+    @include('admin.pages.order.order-list-scripts')
+    
 @endsection

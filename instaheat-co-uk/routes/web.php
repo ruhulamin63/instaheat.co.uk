@@ -28,19 +28,31 @@ Route::get('/', function () {
     Route::get('/logout','UserAuthController@logout')->name('admin.logout');
 
 
+
+    //================================= Customer Panel====================================
+    Route::get('/', 'DashboardController@customer_index')->name('customer.home');
+   
+    Route::get('/services', 'ServiceController@customer_services')->name('customer.services');
+    Route::get('/contact', 'ContactController@customer_contact')->name('customer.contact');
+
+    Route::get('/get-a-quote', 'GetQuoteController@customer_getQuote')->name('customer.get.quote');
+    Route::get('/get-ques-2', 'GetQuoteController@question_2')->name('customer.ques.2');
+
+    Route::get('/boiler-logic-30', 'GetQuoteController@boiler_logic_30')->name('boilers.logic.30');
+
+
 Route::group(['middleware'=>['checkSession']] , function(){
 
     //======================admin panel======================
     Route::get('/admin-home', 'DashboardController@admin_dashboard')->name('admin.home');
 
-    //=======================================customer controller=======================================
-    Route::get('/', 'DashboardController@customer_index')->name('customer.home');
-    Route::get('/home', 'DashboardController@customer_index')->name('customer.home');
-    Route::get('/services', 'ServiceController@customer_services')->name('customer.services');
-    Route::get('/contact', 'ContactController@customer_contact')->name('customer.contact');
+    Route::get('/get-today-order','DashboardController@get_today_order')->name('get.today.order');
 
-    Route::get('/get-quote', 'GetQuoteController@customer_getQuote')->name('customer.get.quote');
-    Route::get('/get-ques-2', 'GetQuoteController@question_2')->name('customer.ques.2');
+    Route::get('/order-index', 'OrderController@order_index')->name('get.order.index');
 
-    Route::get('/boiler-logic-30', 'GetQuoteController@boiler_logic_30')->name('boilers.logic.30');
+    Route::get('/get-all-order', 'OrderController@get_all_order')->name('get.all.order.list');
+    Route::post('/edit-order','OrderController@edit_order_details')->name('edit.order.details');
+    Route::post('/update-order','OrderController@update_order_details')->name('update.order.details');
+    Route::post('/delete-order','OrderController@delete_order')->name('delete.order');
+
 });
