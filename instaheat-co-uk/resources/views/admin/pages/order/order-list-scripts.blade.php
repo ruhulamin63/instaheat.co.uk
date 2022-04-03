@@ -12,13 +12,13 @@
 
   <!-- appointment table data search -->
 
-  <script type="text/javascript">
-      toastr.options.preventDuplicates = true;
+  <script>
+       toastr.options.preventDuplicates = true;
 
       $.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
+          headers:{
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
       });
 
       $(function(){
@@ -87,15 +87,16 @@
           // $('.editAppointment').find('form')[0].reset();
           // $('.editAppointment').find('span.error-text').text('');
 
-          $.post("<?= route('edit.order.details') ?>",{order_id:order_id}, function(data){
-                //alert(data.details.full_name);
+          $.post('<?= route("edit.order.details") ?>',{order_id:order_id, _token:'{{csrf_token()}}'}, function(data){
+                //alert(data.details.customer_name);
                 //console.log(data.details.customer_name);
 
               $('.editOrder').find('input[name="cid"]').val(data.details.id);
               $('.editOrder').find('input[name="customer_name"]').val(data.details.customer_name);
               $('.editOrder').find('input[name="customer_contact_number"]').val(data.details.customer_contact_number);
-              $('.editOrder').find('input[name="fuel_type"]').val(data.details.fuel_type);
-              $('.editOrder').find('input[name="boiler_type"]').val(data.details.boiler_type);
+              
+              $('.editOrder').find('select[name="fuel_type"]').val(data.details.fuel_type);
+              $('.editOrder').find('select[name="boiler_type"]').val(data.details.boiler_type);
 
               $('.editOrder').find('select[name="convert_combi_boiler"]').val(data.details.convert_combi_boiler);
               $('.editOrder').find('select[name="under_a_carport"]').val(data.details.under_a_carport);

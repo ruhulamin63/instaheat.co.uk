@@ -51,7 +51,7 @@ Route::group(['middleware'=>['checkSession']] , function(){
     Route::get('/order-index', 'OrderController@order_index')->name('get.order.index');
 
     Route::get('/get-all-order', 'OrderController@get_all_order')->name('get.all.order.list');
-    Route::post('/edit-order','OrderController@edit_order_details')->name('edit.order.details');
+    Route::post('/get-all-order','OrderController@edit_order_details')->name('edit.order.details');
     Route::post('/update-order','OrderController@update_order_details')->name('update.order.details');
     Route::post('/delete-order','OrderController@delete_order')->name('delete.order');
 

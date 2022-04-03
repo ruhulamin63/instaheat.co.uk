@@ -19,7 +19,7 @@
                 <div class="row col-md-12">
 
                     <div class="col-md-6">
-                        <label class="fs-6 fw-bold mb-2">Full Name</label>
+                        <label class="fs-6 fw-bold mb-2">Customer Name</label>
 
                         <input type="text" class="form-control form-control-solid" name="customer_name" value=""/>
                         <span class="text-danger error-text full_name_error"></span>
@@ -83,7 +83,7 @@
 
                 <br><hr><br>
 
-                <h6># Appointment Information</h6><br>
+                <h6># Order Information</h6><br>
                 <div class="row col-md-12">
 
                     <div class="col-md-6">

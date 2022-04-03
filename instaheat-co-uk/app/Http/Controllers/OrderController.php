@@ -180,9 +180,9 @@ class OrderController extends Controller
                     }
                 })
 
-                ->addColumn('actions', function($row){
+                ->addColumn('actions', function($orders){
                     return '<div class="btn-group">
-                                <button data-id="'.$row['id'].'" id="oldUserAppointmentBtn">
+                                <button data-id="'.$orders['id'].'" id="oldUserAppointmentBtn">
                                     <span class="svg-icon svg-icon-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -192,7 +192,7 @@ class OrderController extends Controller
 
                                 &nbsp;&nbsp;
 
-                                <button data-id="'.$row['id'].'" id="editOrderBtn">
+                                <button data-id="'.$orders['id'].'" id="editOrderBtn">
                                     <!--begin::Svg Icon | path: icons/stockholm/Communication/Write.svg-->
                                     <span class="svg-icon svg-icon-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -205,7 +205,7 @@ class OrderController extends Controller
 
                                 &nbsp;&nbsp;
 
-                                <button data-id="'.$row['id'].'" id="deleteAppointmentBtn">
+                                <button data-id="'.$orders['id'].'" id="deleteAppointmentBtn">
                                     <span class="svg-icon svg-icon-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -226,7 +226,7 @@ class OrderController extends Controller
             dd($e);
         }
 
-        return view('admin.pages.order-list');
+        //return view('admin.pages.order-list');
     }
 
     //Get Order Details
@@ -235,50 +235,45 @@ class OrderController extends Controller
 
         $orderDetails = QuestionnaireAnswer::find($order_id);
 
-        return response()->json(['details'=>$orderDetails]);
+        return response()->json(['details'=>$orderDetails],200);
         //dd($orderDetails);
     }
 
     //UPDATE Order DETAILS
     public function update_order_details(Request $request){
-        $appointment_id = $request->cid;
+        $order_id = $request->cid;
 
         $validator = \Validator::make($request->all(),[
-            'full_name' => 'required',
-            'amount' => 'required',
-            'number' => 'required',
-            'amount' => 'required',
-            'service_type' => 'required',
-            'bike_model' => 'required',
-            // 'bike_color' => 'required',
-            'date' => 'required',
-            'time' => 'required',
-            // 'user_type' => 'required',
-            // 'membership' => 'required',
+            'customer_name' => 'required',
+            'customer_contact_number' => 'required',
         ]);
 
         if(!$validator->passes()){
             return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
         }else{
 
-            $appointment = Appointment::find($appointment_id);
+            $questionAns = QuestionnaireAnswer::find($order_id);
 
-            $appointment->full_name = $request->full_name;
-            $appointment->amount = $request->amount;
-            $appointment->number = $request->number;
-            $appointment->amount = $request->amount;
-            $appointment->service_type = $request->service_type;
-            $appointment->bike_model = $request->bike_model;
-            // $appointment->bike_color = $request->bike_color;
-            $appointment->date = $request->date;
-            $appointment->time = $request->time;
-            //$appointment->user_type = $request->user_type;
-            // $appointment->membership = $request->membership;
+            $questionAns->customer_name = $request->customer_name;
+            $questionAns->customer_contact_number = $request->customer_contact_number;
+            $questionAns->fuel_type = $request->fuel_type;
+            $questionAns->boiler_type = $request->boiler_type;
+            $questionAns->convert_combi_boiler = $request->convert_combi_boiler;
+            $questionAns->under_a_carport = $request->under_a_carport;
+            $questionAns->thirty_cm_away_window = $request->thirty_cm_away_window;
+            $questionAns->moving_5_meter = $request->moving_5_meter;
+            $questionAns->fuel_come_out = $request->fuel_come_out;
+            $questionAns->pitched_or_flat = $request->pitched_or_flat;
+            $questionAns->house_live_in = $request->house_live_in;
+            $questionAns->number_of_bedroom = $request->number_of_bedroom;
+            $questionAns->number_of_bathroom = $request->number_of_bathroom;
+            $questionAns->status = 0;
+            $questionAns->activeStatus = 1;
 
-            $query = $appointment->save();
+            $query = $questionAns->insert();
 
             if($query){
-                return response()->json(['code'=>1, 'msg'=>'Appointment details have been updated']);
+                return response()->json(['code'=>1, 'msg'=>'Order details have been inserted']);
             }else{
                 return response()->json(['code'=>0, 'msg'=>'Something went wrong']);
             }
@@ -287,11 +282,11 @@ class OrderController extends Controller
 
     // DELETE Order RECORD
     public function delete_order(Request $request){
-        $appointment_id = $request->appointment_id;
-        $query = Appointment::find($appointment_id)->delete();
+        $order_id = $request->order_id;
+        $query = QuestionnaireAnswer::find($order_id)->delete();
 
         if($query){
-            return response()->json(['code'=>1, 'msg'=>'Appointment has been deleted from database']);
+            return response()->json(['code'=>1, 'msg'=>'Order has been deleted from database']);
         }else{
             return response()->json(['code'=>0, 'msg'=>'Something went wrong']);
         }
