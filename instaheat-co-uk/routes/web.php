@@ -47,6 +47,8 @@ Route::group(['middleware'=>['checkSession']] , function(){
     Route::get('/admin-home', 'DashboardController@admin_dashboard')->name('admin.home');
 
     Route::get('/get-today-order','DashboardController@get_today_order')->name('get.today.order');
+    Route::post('/today-edit-status','DashboardController@edit_order_status_details')->name('today.edit.order.status.details');
+    Route::post('/today-update-status','DashboardController@update_order_status_change')->name('today.update.order.status.change');
 
     Route::get('/order-index', 'OrderController@order_index')->name('get.order.index');
 
@@ -54,5 +56,16 @@ Route::group(['middleware'=>['checkSession']] , function(){
     Route::post('/get-all-order','OrderController@edit_order_details')->name('edit.order.details');
     Route::post('/update-order','OrderController@update_order_details')->name('update.order.details');
     Route::post('/delete-order','OrderController@delete_order')->name('delete.order');
+
+    Route::post('/order-add', 'OrderController@new_customer_order_add')->name('admin.new.customer.add.order');
+
+    Route::post('/edit-status','OrderController@edit_order_status_details')->name('edit.order.status.details');
+    Route::post('/update-status','OrderController@update_order_status_change')->name('update.order.status.change');
+
+    //========================BoilerController================
+    Route::get('/boiler-index', 'BoilerController@boiler_index')->name('get.boiler.index');
+
+    Route::get('/get-all-boiler', 'BoilerController@get_all_boiler')->name('get.all.boiler.list');
+    Route::post('/boiler-add', 'BoilerController@new_boiler_add')->name('admin.new.boiler.add');
 
 });

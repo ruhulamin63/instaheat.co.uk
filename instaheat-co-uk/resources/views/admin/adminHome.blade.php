@@ -78,6 +78,8 @@
                                                         </thead>
 
                                                         <tbody></tbody>
+
+                                                        @include('admin.pages.order.crud.today-status-change')
                                                        
                                                     </table>
                                                 </div>

@@ -14,7 +14,8 @@
             <div class="modal-body">
 
                 <input type="hidden" name="cid">
-                <div class="modal-body py-10 px-lg-17">
+                <div class="modal-body py-10 px-lg-27">
+
                 <h6># Customer Information</h6><br>
                 <div class="row col-md-12">
 
@@ -22,17 +23,19 @@
                         <label class="fs-6 fw-bold mb-2">Customer Name</label>
 
                         <input type="text" class="form-control form-control-solid" name="customer_name" value=""/>
-                        <span class="text-danger error-text full_name_error"></span>
+                        <span class="text-danger error-text customer_name_error"></span>
                     </div>
-
 
                     <div class="col-md-6">
                         <label class="fs-6 fw-bold mb-2">Contact Number</label>
                         <input type="text" class="form-control form-control-solid" name="customer_contact_number" value=""/>
-                        <span class="text-danger error-text number_error"></span>
+                        <span class="text-danger error-text customer_contact_number_error"></span>
                     </div>
+                </div>
 
-                    <div class="col-md-6">
+                <div class="row col-md-12">
+
+                    <div class="col-md-4">
                         <br>
                         <label class="fs-6 fw-bold mb-2">Fuel Type</label>
                         <select name="fuel_type" aria-label="Select a Fuel" data-control="select2" data-placeholder="Select a Fuel..." class="form-select form-select-solid fw-bolder">
@@ -46,7 +49,7 @@
                         <span class="text-danger error-text fuel_type_error"></span>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <br>
                         <label class="fs-6 fw-bold mb-2">Boiler Type</label>
                         <select name="boiler_type" aria-label="Select a Model" data-control="select2" data-placeholder="Select a Boiler..." class="form-select form-select-solid fw-bolder">
@@ -57,20 +60,23 @@
                             <option value="Back Boiler">Back Boiler</option>
                             <option value="Others">Others</option>
                         </select>
-                        <span class="text-danger error-text back_boiler_error"></span>
+                        <span class="text-danger error-text boiler_type_error"></span>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <br>
-                        <label class="fs-6 fw-bold mb-2">Convert Combi Boiler</label>
+                        <label class="fs-6 fw-bold mb-2">Convert Boiler</label>
                         <select name="convert_combi_boiler" id="convert" aria-label="Select a Facilities" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
                             <option value="">--Select--</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
                     </div>
+                </div>
 
-                    <div class="col-md-6">
+                <div class="row col-md-12">
+
+                    <div class="col-md-4">
                         <br>
                         <label class="fs-6 fw-bold mb-2">Under A Carport</label>
                         <select name="under_a_carport" aria-label="Select a carport" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -79,14 +85,8 @@
                             <option value="No">No</option>
                         </select>
                     </div>
-                </div>
 
-                <br><hr><br>
-
-                <h6># Order Information</h6><br>
-                <div class="row col-md-12">
-
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <br>
                         <label class="fs-6 fw-bold mb-2">Away Window</label>
                         <select name="thirty_cm_away_window" aria-label="Select a Window" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -96,7 +96,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <br>
                         <label class="fs-6 fw-bold mb-2">Moving 5 Meter</label>
                         <select name="moving_5_meter" aria-label="Select a moving" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -106,7 +106,14 @@
                         </select>
                     </div>
 
-                    <div class="col-md-6">
+                </div>
+
+                <br><hr><br>
+
+                <h6># Order Information</h6><br>
+                <div class="row col-md-12">
+
+                    <div class="col-md-4">
                         <br>
                         <label class="fs-6 fw-bold mb-2">fuel Come Out</label>
                         <select name="fuel_come_out" aria-label="Select a moving" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -116,7 +123,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <br>
                         <label class="fs-6 fw-bold mb-2">pitch Of Flat</label>
                         <select name="pitched_or_flat" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -126,7 +133,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <br>
                         <label class="fs-6 fw-bold mb-2">House Live In</label>
                         <select name="house_live_in" aria-label="Select a House" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -138,6 +145,9 @@
                             <option value="Detatched">Detatched</option>
                         </select>
                     </div>
+                </div>
+
+                <div class="row col-md-12">
 
                     <div class="col-md-6">
                         <br>

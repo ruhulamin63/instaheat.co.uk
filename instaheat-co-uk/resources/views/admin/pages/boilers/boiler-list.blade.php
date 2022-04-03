@@ -1,6 +1,6 @@
 @extends('layout.navbar.adminNavbar')
 <?php 
-	$title= "Order Details";
+	$title= "Boilers List";
 ?>
 @section('body')
 	<!--begin::Main-->
@@ -43,16 +43,16 @@
 								<!--begin::Card header-->
 								<div class="card-header">
 									<h3 class="card-title align-items-start flex-column">
-										<span class="card-label fw-bolder fs-3 mb-1">Order List Information</span>
-										<span class="text-muted mt-1 fw-bold fs-7">All order list</span>
+										<span class="card-label fw-bolder fs-3 mb-1">Boilers List Information</span>
+										<span class="text-muted mt-1 fw-bold fs-7">All boilers list</span>
 									</h3>
 									<div class="card-toolbar">
-										<button class="btn btn-sm btn-light-primary" id="customerOrderBtn"><i class="fas fa-plus"></i>Customer Order</button>
+										<button class="btn btn-sm btn-light-primary" id="boilerBtn"><i class="fas fa-plus"></i>Added Boiler</button>
 									</div>
 								</div>
 								<!--end::Card header-->
 
-								@include('admin.pages.order.crud.add-order')
+								@include('admin.pages.boilers.crud-boiler.add-boiler')
 								
 								<div class="row" style="margin-top: 45px">
 									<div class="col-md-12">
@@ -62,34 +62,28 @@
 											<!--begin::Table container-->
 											<div class="card-body">
 												<div class="table-responsive">
-													<table class="table table-hover table-condensed" id="all-order-table">
+													<table class="table table-hover table-condensed" id="all-boiler-table">
 														<thead>
 															<tr style="background-color: #E74C3C; color:white !important">
 																<!-- <th><input type="checkbox" name="main_checkbox"><label></label></th> -->
 																<!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
-																<th style="text-align: center;" class="min-w-100px">customer_name</th>
-																<th style="text-align: center;" class="min-w-100px">customer_contact_number</th>
-																<th style="text-align: center;" class="min-w-100px">fuel_type</th>
-																<th style="text-align: center;" class="min-w-100px">boiler_type</th>
-																<th style="text-align: center;" class="min-w-100px">convert_combi_boiler</th>
-																<th style="text-align: center;" class="min-w-100px">under_a_carport</th>
-																<th style="text-align: center;" class="min-w-100px">thirty_cm_away_window</th>
-																<th style="text-align: center;" class="min-w-100px">moving_5_meter</th>
-																<th style="text-align: center;" class="min-w-100px">fule_come_out</th>
-																<th style="text-align: center;" class="min-w-100px">pitched_or_flat</th>
-																<th style="text-align: center;" class="min-w-100px">house_live_in</th>
-																<th style="text-align: center;" class="min-w-100px">number_of_bedroom</th>
-																<th style="text-align: center;" class="min-w-100px">number_of_bathroom</th>
-																<th style="text-align: center;" class="min-w-100px">status</th>
+                                                                <!-- <th style="text-align: center;" class="min-w-100px">Image</th> -->
+																<th style="text-align: center;" class="min-w-100px">Brand Name</th>
+																<th style="text-align: center;" class="min-w-100px">Model Name</th>
+																<th style="text-align: center;" class="min-w-100px">Type </th>
+																<th style="text-align: center;" class="min-w-100px">Central Heat</th>
+																<th style="text-align: center;" class="min-w-100px">Hot Water</th>
+																<th style="text-align: center;" class="min-w-100px">Short Desc</th>
+																<th style="text-align: center;" class="min-w-100px">Price for 5 Year</th>
+																<th style="text-align: center;" class="min-w-100px">Price for 10 Year</th>
 																<th style="text-align: center;" class="min-w-100px">Actions</th>
-																<!-- <th style="text-align: center;" class="min-w-100px">Test</th> -->
 																<!-- <button class="btn btn-sm btn-danger d-none" id="deleteAllBtn">Delete All</button> -->
 															</tr>
 														</thead>
 
 														<tbody></tbody>
 
-														@include('admin.pages.order.crud.order-status-change')
+														
 
 													</table>
 												</div>
@@ -98,8 +92,7 @@
 									</div>
 								</div>
 
-								@include('admin.pages.order.crud.edit-order')
-
+								
 							</div>
 						</div>
 					</div>
@@ -115,6 +108,6 @@
 	</div>
 	<!--end::Root-->
 
-    @include('admin.pages.order.order-list-scripts')
+    @include('admin.pages.boilers.boiler-list-scripts')
     
 @endsection

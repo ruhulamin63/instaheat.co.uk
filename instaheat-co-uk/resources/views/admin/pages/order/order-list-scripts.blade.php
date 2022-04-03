@@ -50,6 +50,52 @@
             ]
         });
 
+        //=======================================================Order Status Change=======================================================
+        $(document).on('click','#todayOrderStatusBtn', function(){
+          var order_id = $(this).data('id');
+            //alert(order_id);
+
+            $.post('<?= route("today.edit.order.status.details") ?>',{order_id:order_id, _token:'{{csrf_token()}}'}, function(data){
+                  //alert(data.details.customer_name);
+          
+                $('.todayChangeStatus').find('input[name="cid"]').val(data.details.id);
+                $('.todayChangeStatus').find('select[name="status"]').val(data.details.status);
+
+                $('.todayChangeStatus').modal('show');
+            },'json');
+
+        });
+
+        // =============================================Change state for order==============================================
+        $('#today-order-status-change-form').on('submit', function(e){
+          e.preventDefault();
+          var form = this;
+          $.ajax({
+              url:$(form).attr('action'),
+              method:$(form).attr('method'),
+              data:new FormData(form),
+              processData:false,
+              dataType:'json',
+              contentType:false,
+              beforeSend: function(){
+                    $(form).find('span.error-text').text('');
+              },
+              success: function(data){
+                if(data.code == 0){
+                    $.each(data.error, function(prefix, val){
+                        $(form).find('span.'+prefix+'_error').text(val[0]);
+                    });
+                }else{
+                    $('#today-order-table').DataTable().ajax.reload(null, false);
+                    $('.todayChangeStatus').modal('hide');
+                    $('.todayChangeStatus').find('form')[0].reset();
+                    toastr.success(data.msg);
+                }
+              }
+          });
+        });
+
+
         //=====================================================Get all Order=============================================
         $('#all-order-table').DataTable({
           processing:false,
@@ -61,22 +107,69 @@
             // {data:'id', name:'id'},
             // {data:'DT_RowIndex', name:'DT_RowIndex'},
             {data:'customer_name', name:'customer_name'},
-              {data:'customer_contact_number', name:'customer_contact_number'},
-              {data:'fuel_type', name:'fuel_type'},
-              {data:'boiler_type', name:'boiler_type'},
-              {data:'convert_combi_boiler', name:'convert_combi_boiler', orderable:false, searchable:false},
-              {data:'under_a_carport', name:'under_a_carport', orderable:false, searchable:false},
-              {data:'thirty_cm_away_window', name:'thirty_cm_away_window', orderable:false, searchable:false},
-              {data:'moving_5_meter', name:'moving_5_meter',  orderable:false, searchable:false},
-              {data:'fuel_come_out', name:'fuel_come_out',  orderable:false, searchable:false},
-              {data:'pitched_or_flat', name:'pitched_or_flat'},
-              {data:'house_live_in', name:'house_live_in'},
-              {data:'number_of_bedroom', name:'number_of_bedroom'},
-              {data:'number_of_bathroom', name:'number_of_bathroom'},
-              {data:'status', name:'status', orderable:false, searchable:false},
+            {data:'customer_contact_number', name:'customer_contact_number'},
+            {data:'fuel_type', name:'fuel_type'},
+            {data:'boiler_type', name:'boiler_type'},
+            {data:'convert_combi_boiler', name:'convert_combi_boiler', orderable:false, searchable:false},
+            {data:'under_a_carport', name:'under_a_carport', orderable:false, searchable:false},
+            {data:'thirty_cm_away_window', name:'thirty_cm_away_window', orderable:false, searchable:false},
+            {data:'moving_5_meter', name:'moving_5_meter',  orderable:false, searchable:false},
+            {data:'fuel_come_out', name:'fuel_come_out',  orderable:false, searchable:false},
+            {data:'pitched_or_flat', name:'pitched_or_flat'},
+            {data:'house_live_in', name:'house_live_in'},
+            {data:'number_of_bedroom', name:'number_of_bedroom'},
+            {data:'number_of_bathroom', name:'number_of_bathroom'},
+            {data:'status', name:'status', orderable:false, searchable:false},
             {data:'actions', name:'actions', orderable:false, searchable:false},
           ]
         });
+
+
+        //=========================================Add current users order====================================================
+        $(document).on('click','#customerOrderBtn', function(){
+          var order_id = $(this).data('id');
+          //alert(appointment_id);
+
+          $.post('<?= route("admin.new.customer.add.order") ?>',{order_id:order_id, _token:'{{csrf_token()}}'}, function(data){
+                //alert(data.details.full_name);
+                //console.log(data.details.full_name);
+
+                $('.addNewCustomerOrder').find('form')[0].reset();
+                $('.addNewCustomerOrder').find('span.error-text').text('');
+
+               $('.addNewCustomerOrder').modal('show');
+          },'json');
+        });
+
+        // =============================================add current users order==============================================
+        $('#add-new-order-form').on('submit', function(e){
+          e.preventDefault();
+          var form = this;
+          $.ajax({
+            url:$(form).attr('action'),
+            method:$(form).attr('method'),
+            data:new FormData(form),
+            processData:false,
+            dataType:'json',
+            contentType:false,
+            beforeSend: function(){
+                  $(form).find('span.error-text').text('');
+            },
+            success: function(data){
+              if(data.code == 0){
+                  $.each(data.error, function(prefix, val){
+                      $(form).find('span.'+prefix+'_error').text(val[0]);
+                  });
+              }else{
+                  $('#all-order-table').DataTable().ajax.reload(null, false);
+                  $('.addNewCustomerOrder').modal('hide');
+                  $('.addNewCustomerOrder').find('form')[0].reset();
+                  toastr.success(data.msg);
+              }
+            }
+          });
+        });
+
 
 
         //===========================================================edit get details==================================================
@@ -141,6 +234,86 @@
               }
           });
         });
+
+        //=======================================================DELETE COUNTRY RECORD=======================================================
+        $(document).on('click','#deleteOrderBtn', function(){
+          var order_id = $(this).data('id');
+
+         // alert(order_id)
+
+          var url = '<?= route("delete.order") ?>';
+
+          Swal.fire({
+            title:'Are you sure?',
+            html:'You want to <b>delete</b> this order',
+            showCancelButton:true,
+            showCloseButton:true,
+            cancelButtonText:'Cancel',
+            confirmButtonText:'Yes, Delete',
+            cancelButtonColor:'#d33',
+            confirmButtonColor:'#556ee6',
+            width:300,
+            allowOutsideClick:false
+          }).then(function(result){
+            if(result.value){
+                $.post(url,{order_id:order_id, _token:'{{csrf_token()}}'}, function(data){
+                      if(data.code == 1){
+                          $('#all-order-table').DataTable().ajax.reload(null, false);
+                          toastr.success(data.msg);
+                      }else{
+                          toastr.error(data.msg);
+                      }
+                },'json');
+              }
+          });
+        });
+
+        //=======================================================Order Status Change=======================================================
+        $(document).on('click','#orderStatusBtn', function(){
+          var order_id = $(this).data('id');
+            //alert(appointment_id);
+
+            $.post('<?= route("edit.order.status.details") ?>',{order_id:order_id, _token:'{{csrf_token()}}'}, function(data){
+                  //alert(data.details.customer_name);
+
+                $('.orderStatusChange').find('input[name="cid"]').val(data.details.id);
+                $('.orderStatusChange').find('select[name="status"]').val(data.details.status);
+
+                $('.orderStatusChange').modal('show');
+            },'json');
+
+        });
+
+        // =============================================Change state for order==============================================
+        $('#order-status-change-form').on('submit', function(e){
+          e.preventDefault();
+          var form = this;
+          $.ajax({
+              url:$(form).attr('action'),
+              method:$(form).attr('method'),
+              data:new FormData(form),
+              processData:false,
+              dataType:'json',
+              contentType:false,
+              beforeSend: function(){
+                    $(form).find('span.error-text').text('');
+              },
+              success: function(data){
+                if(data.code == 0){
+                    $.each(data.error, function(prefix, val){
+                        $(form).find('span.'+prefix+'_error').text(val[0]);
+                    });
+                }else{
+                    $('#all-order-table').DataTable().ajax.reload(null, false);
+                    $('.orderStatusChange').modal('hide');
+                    $('.orderStatusChange').find('form')[0].reset();
+                    toastr.success(data.msg);
+                }
+              }
+          });
+        });
+
+
 
       });
 

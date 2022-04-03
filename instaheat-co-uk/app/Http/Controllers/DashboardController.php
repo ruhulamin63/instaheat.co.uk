@@ -156,7 +156,7 @@ class DashboardController extends Controller
                     if($orders->status == 0){
                         $incomplete = "Incomplete";
                         return  '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="orderStatusBtn" class="p-1 mb-2 bg-primary text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-primary text-white" style="text-align: center;">
                                         <span>'.$incomplete.'</span>
                                     </button>
                                 </div>'; 
@@ -164,7 +164,7 @@ class DashboardController extends Controller
                     else if($orders->status == 1){
                         $complete = "Complete";
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="orderStatusBtn" class="p-1 mb-2 bg-success text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-success text-white" style="text-align: center;">
                                         <span>'.$complete.'</span>
                                     </button>
                                 </div>'; 
@@ -172,7 +172,7 @@ class DashboardController extends Controller
                     else{
                         $cancel = "Cancel";
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="orderStatusBtn" class="p-1 mb-2 bg-danger text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-danger text-white" style="text-align: center;">
                                         <span >'.$cancel.'</span>
                                     </button>
                                 </div>';
@@ -185,6 +185,43 @@ class DashboardController extends Controller
 
         }catch (\Exception $e) {
             dd($e);
+        }
+    }
+
+    //Get Order status details
+    public function edit_order_status_details(Request $request){
+        $order_id = $request->order_id;
+
+        $orderDetails = QuestionnaireAnswer::find($order_id);
+
+        return response()->json(['details'=>$orderDetails],200);
+        //dd($orderDetails);
+    }
+
+    //Change Status
+    public function update_order_status_change(Request $request){
+
+        $order_id = $request->cid;
+
+        $validator = \Validator::make($request->all(),[
+            'status'=>'required',
+        ]);
+
+        if(!$validator->passes()){
+            return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
+        }else{
+
+            $data=array();
+            $data['status']= $request->status;
+
+            $query = DB::table('questionnaire_answers')->update($data);
+
+
+            if($query){
+                return response()->json(['code'=>1, 'msg'=>'Order status have been changed'],200);
+            }else{
+                return response()->json(['code'=>0, 'msg'=>'Something went wrong'],412);
+            }
         }
     }
 
