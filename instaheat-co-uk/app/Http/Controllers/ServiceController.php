@@ -19,8 +19,12 @@ use DataTables;
 class ServiceController extends Controller
 {
     public function customer_services(){
-        //dd("test");
-        return view('customer-view.service');
+        
+        $services = DB::table('services')
+            ->orderBy('id','DESC')
+            ->get();
+
+        return view('customer-view.service', compact('services'));
     }
 
     public function admin_service_index(){

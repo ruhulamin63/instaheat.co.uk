@@ -93,11 +93,7 @@
                                         <div class="symbol symbol-100px symbol-lg-100px symbol-fixed position-relative">
                                             
                                             @if(Session()->get('boiler_image'))
-                                                <?php if (file_exists("../public".Session()->get('boiler_image'))){ ?>
-                                                    <img src="{{asset(Session()->get('boiler_image'))}}" >
-                                                <?php } else{ ?>
-                                                    <img src="{{asset('/media/avatars/blank.png')}}">
-                                                <?php } ?>
+                                                <img src="{{asset(Session()->get('boiler_image'))}}" >
                                             @else
                                                 <img src="{{asset('/media/avatars/blank.png')}}" >
                                             @endif

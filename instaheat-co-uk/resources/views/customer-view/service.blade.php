@@ -15,20 +15,23 @@
                 </div>
             </div>
             
-            <section class="sc-hMqMXs kjkdQh">
-                <div class="image-container sc-kEYyzF jUEZEk" style="background-image:url({{asset('custom/img/central-heating.jpg')}})"></div>
-                
-                <div class="content-container sc-kkGfuU xMCCl">
-                    <div class="wrapper">
-                        <h2>Central Heating Installations</h2>
-                        <p>Central heating is the way many people heat their homes, using a variety of different types of energy (gas, electric, oil, LPG or renewable energy). Heat is produced in a central location, then dispersed throughout the house using a complex pipe system. The endpoint of this heat is usually radiators, but can be more complex. If this is something you&#x27;re interested in, please head on over to the contact page and get in touch.</p>
-                        
-                        <div class="sc-gZMcBi gJQWhe">
-                            <a class="primary-cta" href="{{route('customer.contact')}}">Get In Touch Now</a>
+            <!-- @foreach ($services as $service )
+
+                <section class="sc-hMqMXs kjkdQh">
+                    <div class="image-container sc-kEYyzF jUEZEk" style="background-image:url({{$service->image}})"></div>
+                    
+                    <div class="content-container sc-kkGfuU xMCCl">
+                        <div class="wrapper">
+                            <h2>{{$service->service_name}}</h2>
+                            <p>{{$service->description}}</p>
+                            
+                            <div class="sc-gZMcBi gJQWhe">
+                                <a class="primary-cta" href="{{route('customer.contact')}}">Get In Touch Now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            @endforeach -->
             
             <section class="image-right sc-hMqMXs kjkdQh">
                 <div class="image-container sc-kEYyzF jUEZEk" style="background-image:url({{asset('custom/img/boiler-replacements.jpg')}})"></div>

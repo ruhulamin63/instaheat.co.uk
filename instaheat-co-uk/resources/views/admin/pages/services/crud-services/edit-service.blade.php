@@ -31,7 +31,6 @@
 
                     <br><hr><br>
 
-                    <h6>#Price Information</h6>
                     <div class="row col-md-12">
                         <div class="col-md-4">
                             <!--begin::Label-->
@@ -47,11 +46,7 @@
                                         <div class="symbol symbol-100px symbol-lg-100px symbol-fixed position-relative">
                                             
                                             @if(Session()->get('service_image'))
-                                                <?php if (file_exists("../public".Session()->get('service_image'))){ ?>
-                                                    <img src="{{asset(Session()->get('service_image'))}}" >
-                                                <?php } else{ ?>
-                                                    <img src="{{asset('/media/avatars/blank.png')}}">
-                                                <?php } ?>
+                                                <img src="{{asset(Session()->get('service_image'))}}" >
                                             @else
                                                 <img src="{{asset('/media/avatars/blank.png')}}" >
                                             @endif
