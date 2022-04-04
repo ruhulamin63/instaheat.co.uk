@@ -6,8 +6,8 @@
     <!-- /Added by HTTrack -->
 
     @include('layout.head.quoteHead')
-	@include('layout.topBar.customerTopBar')
 	<body>
+	@include('layout.topBar.customerTopBar')
 		<!-- BEGIN: Body-->
 		@yield('body')
 		<!-- END: Body-->
