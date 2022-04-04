@@ -19,11 +19,11 @@ class BoilerController extends Controller
 {
     public function boiler_index(){
 
-        $users_all = DB::table('boilers')
+        $boilers = DB::table('boilers')
             ->orderBy('id','DESC')
             ->get();
 
-        return view('admin.pages.boilers.boiler-list');
+        return view('admin.pages.boilers.boiler-list', compact('boilers'));
     }
 
     //Get Boiler List
@@ -87,7 +87,7 @@ class BoilerController extends Controller
                 })
 
                 ->addColumn('actions', function($boilers){
-                    return '<button data-id="'.$boilers['id'].'" id="editOrderBtn">
+                    return '<button data-id="'.$boilers['id'].'" id="editBoilerBtn">
                                 <!--begin::Svg Icon | path: icons/stockholm/Communication/Write.svg-->
                                 <span class="svg-icon svg-icon-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -100,7 +100,7 @@ class BoilerController extends Controller
 
                             &nbsp;&nbsp;
 
-                            <button data-id="'.$boilers['id'].'" id="deleteOrderBtn">
+                            <button data-id="'.$boilers['id'].'" id="deleteBoilerBtn">
                                 <span class="svg-icon svg-icon-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -151,10 +151,10 @@ class BoilerController extends Controller
                 $image_ext=$image->getClientOriginalExtension();
                 $image_new_name =$request->username.date("YmdHis");
                 $image_full_name=$image_new_name.'.'.$image_ext;
-                $upload_path='media/admin/';
+                $upload_path='media/boiler/';
                 $image_url=$upload_path.$image_full_name;
                 $success=$image->move($upload_path,$image_full_name);
-                $imageData='/media/admin/'.$image_full_name;
+                $imageData='/media/boiler/'.$image_full_name;
 
                 $data['image']=$imageData;
             }
@@ -174,6 +174,82 @@ class BoilerController extends Controller
                     'msg' => 'Something went wrong.'
                 ],412);
             }
+        }
+    }
+
+    //Get Order Details
+    public function edit_boiler_details(Request $request){
+        $boiler_id = $request->boiler_id;
+
+        $orderDetails = Boiler::find($boiler_id);
+
+        $request->session()->put('boiler_image', $orderDetails->image);
+
+        return response()->json(['details'=>$orderDetails],200);
+        //dd($orderDetails);
+    }
+
+    //UPDATE Order DETAILS
+    public function update_boiler_details(Request $request){
+        $order_id = $request->cid;
+
+        $validator = \Validator::make($request->all(),[
+            'brand_name' => 'required',
+            'model_name' => 'required',
+        ]);
+
+        if(!$validator->passes()){
+            return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
+        }else{
+
+            $data=array();
+            $data['brand_name']=$request->brand_name;
+            $data['model_name']=$request->model_name;
+            $data['type']= $request->type;
+            $data['central_heating_output']= $request->central_heating_output;
+            $data['hot_water_flow_rate']= $request->hot_water_flow_rate;
+            $data['short_desc']= $request->short_desc;
+            $data['price_for_5_year']= $request->price_for_5_year;
+            $data['price_for_10_year']= $request->price_for_10_year;
+
+            if($request->avatar !=""){
+                $image = $request->file('avatar');
+                $image_name=$image->getClientOriginalName();
+                $image_ext=$image->getClientOriginalExtension();
+                $image_new_name =$request->username.date("YmdHis");
+                $image_full_name=$image_new_name.'.'.$image_ext;
+                $upload_path='media/boiler/';
+                $image_url=$upload_path.$image_full_name;
+                $success=$image->move($upload_path,$image_full_name);
+                $imageData='/media/boiler/'.$image_full_name;
+
+                $data['image']=$imageData;
+            }
+
+    
+
+            $query = DB::table('boilers')->update($data);
+
+            //dd("test");
+
+            
+            if($query){
+                return response()->json(['code'=>1, 'msg'=>'Boiler details have been updated'],200);
+            }else{
+                return response()->json(['code'=>0, 'msg'=>'Something went wrong'],412);
+            }
+        }
+    }
+
+    // DELETE Order RECORD
+    public function delete_boiler(Request $request){
+        $boiler_id = $request->boiler_id;
+        $query = Boiler::find($boiler_id)->delete();
+
+        if($query){
+            return response()->json(['code'=>1, 'msg'=>'Boiler has been deleted from database'],200);
+        }else{
+            return response()->json(['code'=>0, 'msg'=>'Something went wrong'],412);
         }
     }
 }

@@ -322,9 +322,9 @@ class OrderController extends Controller
         $query = QuestionnaireAnswer::find($order_id)->delete();
 
         if($query){
-            return response()->json(['code'=>1, 'msg'=>'Order has been deleted from database']);
+            return response()->json(['code'=>1, 'msg'=>'Order has been deleted from database'],200);
         }else{
-            return response()->json(['code'=>0, 'msg'=>'Something went wrong']);
+            return response()->json(['code'=>0, 'msg'=>'Something went wrong'],412);
         }
     }
 

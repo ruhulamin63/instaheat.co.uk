@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB; //Import query builser
+use App\Models\Boiler;
+use App\Models\User;
 use Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;

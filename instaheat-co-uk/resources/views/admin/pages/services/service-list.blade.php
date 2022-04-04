@@ -1,6 +1,6 @@
 @extends('layout.navbar.adminNavbar')
 <?php 
-	$title= "Boilers List";
+	$title= "Service List";
 ?>
 @section('body')
 	<!--begin::Main-->
@@ -43,16 +43,16 @@
 								<!--begin::Card header-->
 								<div class="card-header">
 									<h3 class="card-title align-items-start flex-column">
-										<span class="card-label fw-bolder fs-3 mb-1">Boilers List Information</span>
-										<span class="text-muted mt-1 fw-bold fs-7">All boilers list</span>
+										<span class="card-label fw-bolder fs-3 mb-1">Service List Information</span>
+										<span class="text-muted mt-1 fw-bold fs-7">All service list</span>
 									</h3>
 									<div class="card-toolbar">
-										<button class="btn btn-sm btn-light-primary" id="boilerBtn"><i class="fas fa-plus"></i>Added Boiler</button>
+										<button class="btn btn-sm btn-light-primary" id="addServiceBtn"><i class="fas fa-plus"></i>Added Service</button>
 									</div>
 								</div>
 								<!--end::Card header-->
 
-								@include('admin.pages.boilers.crud-boiler.add-boiler')
+								@include('admin.pages.services.crud-services.add-service')
 								
 								<div class="row" style="margin-top: 45px">
 									<div class="col-md-12">
@@ -62,20 +62,15 @@
 											<!--begin::Table container-->
 											<div class="card-body">
 												<div class="table-responsive">
-													<table class="table table-hover table-condensed" id="all-boiler-table">
+													<table class="table table-hover table-condensed" id="all-service-table">
 														<thead>
 															<tr style="background-color: #E74C3C; color:white !important">
 																<!-- <th><input type="checkbox" name="main_checkbox"><label></label></th> -->
 																<!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
                                                                 <!-- <th style="text-align: center;" class="min-w-100px">Image</th> -->
-																<th style="text-align: center;" class="min-w-100px">Brand Name</th>
-																<th style="text-align: center;" class="min-w-100px">Model Name</th>
-																<th style="text-align: center;" class="min-w-100px">Type </th>
-																<th style="text-align: center;" class="min-w-100px">Central Heat</th>
-																<th style="text-align: center;" class="min-w-100px">Hot Water</th>
-																<th style="text-align: center;" class="min-w-100px">Short Desc</th>
-																<th style="text-align: center;" class="min-w-100px">Price for 5 Year</th>
-																<th style="text-align: center;" class="min-w-100px">Price for 10 Year</th>
+																<th style="text-align: center;" class="min-w-100px">Service Name</th>
+																<th style="text-align: center;" class="min-w-100px">Description</th>
+																<th style="text-align: center;" class="min-w-100px">Status </th>
 																<th style="text-align: center;" class="min-w-100px">Actions</th>
 																<!-- <button class="btn btn-sm btn-danger d-none" id="deleteAllBtn">Delete All</button> -->
 															</tr>
@@ -89,7 +84,7 @@
 										</div>
 									</div>
 								</div>
-								@include('admin.pages.boilers.crud-boiler.edit-boiler')
+								@include('admin.pages.services.crud-services.edit-service')
 							</div>
 						</div>
 					</div>
@@ -105,6 +100,6 @@
 	</div>
 	<!--end::Root-->
 
-    @include('admin.pages.boilers.boiler-list-scripts')
+    @include('admin.pages.services.service-list-scripts')
     
 @endsection

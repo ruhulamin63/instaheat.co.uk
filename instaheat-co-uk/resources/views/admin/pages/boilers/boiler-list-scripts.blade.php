@@ -90,6 +90,97 @@
           });
         });
 
+         //===========================================================edit get details==================================================
+         $(document).on('click','#editBoilerBtn', function(){
+          var boiler_id = $(this).data('id');
+          //alert(order_id);
+
+          // $('.editAppointment').find('form')[0].reset();
+          // $('.editAppointment').find('span.error-text').text('');
+
+          $.post('<?= route("edit.boiler.details") ?>',{boiler_id:boiler_id, _token:'{{csrf_token()}}'}, function(data){
+                //alert(data.details.customer_name);
+                //console.log(data.details.customer_name);
+
+              $('.editBoiler').find('input[name="cid"]').val(data.details.id);
+              $('.editBoiler').find('input[name="brand_name"]').val(data.details.brand_name);
+              $('.editBoiler').find('input[name="model_name"]').val(data.details.model_name);
+              $('.editBoiler').find('input[name="type"]').val(data.details.type);
+              $('.editBoiler').find('input[name="central_heating_output"]').val(data.details.central_heating_output);
+              $('.editBoiler').find('input[name="hot_water_flow_rate"]').val(data.details.hot_water_flow_rate);
+              $('.editBoiler').find('textarea[name="short_desc"]').val(data.details.short_desc);
+              $('.editBoiler').find('input[name="price_for_5_year"]').val(data.details.price_for_5_year);
+              $('.editBoiler').find('input[name="price_for_10_year"]').val(data.details.price_for_10_year);
+
+              $('.editBoiler').find('input[name="image"]').val(data.details.image);
+              
+              $('.editBoiler').modal('show');
+          },'json');
+        });
+
+        // =============================================UPDATE COUNTRY DETAILS==============================================
+        $('#update-boiler-form').on('submit', function(e){
+          e.preventDefault();
+          var form = this;
+          $.ajax({
+              url:$(form).attr('action'),
+              method:$(form).attr('method'),
+              data:new FormData(form),
+              processData:false,
+              dataType:'json',
+              contentType:false,
+              beforeSend: function(){
+                    $(form).find('span.error-text').text('');
+              },
+              success: function(data){
+                if(data.code == 0){
+                    $.each(data.error, function(prefix, val){
+                        $(form).find('span.'+prefix+'_error').text(val[0]);
+                    });
+                }else{
+                    $('#all-boiler-table').DataTable().ajax.reload(null, false);
+                    $('.editBoiler').modal('hide');
+                    $('.editBoiler').find('form')[0].reset();
+                    toastr.success(data.msg);
+                }
+              }
+          });
+        });
+
+        //=======================================================DELETE COUNTRY RECORD=======================================================
+        $(document).on('click','#deleteBoilerBtn', function(){
+          var boiler_id = $(this).data('id');
+
+         // alert(order_id)
+
+          var url = '<?= route("delete.boiler") ?>';
+
+          Swal.fire({
+            title:'Are you sure?',
+            html:'You want to <b>delete</b> this boiler',
+            showCancelButton:true,
+            showCloseButton:true,
+            cancelButtonText:'Cancel',
+            confirmButtonText:'Yes, Delete',
+            cancelButtonColor:'#d33',
+            confirmButtonColor:'#556ee6',
+            width:300,
+            allowOutsideClick:false
+          }).then(function(result){
+            if(result.value){
+                $.post(url,{boiler_id:boiler_id, _token:'{{csrf_token()}}'}, function(data){
+                      if(data.code == 1){
+                          $('#all-boiler-table').DataTable().ajax.reload(null, false);
+                          toastr.success(data.msg);
+                      }else{
+                          toastr.error(data.msg);
+                      }
+                },'json');
+              }
+          });
+        });
+
+
 
       });
 

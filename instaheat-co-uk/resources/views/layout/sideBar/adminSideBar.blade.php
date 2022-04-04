@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="menu-item" style="margin-top:0px">
-                    <a class="menu-link ">
+                    <a class="menu-link @if(route('get.service.index') == Request::url()) active @endif" href="{{ route('get.service.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -84,7 +84,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Members</span>
+                        <span class="menu-title">Service</span>
                     </a>
                 </div>
 
