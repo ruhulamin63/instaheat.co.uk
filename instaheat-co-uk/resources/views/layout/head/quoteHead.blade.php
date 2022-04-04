@@ -1,4 +1,4 @@
-<head>
+    <head>
         <meta charSet="utf-8"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -135,5 +135,23 @@
         <meta name="twitter:card" content="summary"/>
         <meta name="twitter:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
         <meta name="twitter:title" content="Instaheat - Plumbing and Heating Engineers"/>
+      
+      
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-pages-services-js-47ad6ad5d5f2997fbb5b.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---services-a0e39f21c11f6a62c5ab.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-layouts-index-js-b2e2f0bb68b8bb1344bd.js')}}"></script>
+      
+      <style data-styled-components=""></style>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-pages-get-a-quote-js-2c8c06996d88fdd7ce0b.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---get-a-quote-a0e39f21c11f6a62c5ab.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---index-bf6ac978a4f8df8d915b.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-pages-index-js-0830a1be8d29586d9890.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-templates-boiler-page-js-3ae62e96d30acfe223a1.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-logic-35-4f5c5d84ffffcf0f73dd.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-logic-30-bb5a039c3cb8611120e1.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-30-i-4505ceef520637076a18.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-32-cdi-2741706fa0c048cf2d5b.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-34-cdi-dc7c1c851cc9f567b023.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-36-cdi-4b20968fd88db12ab2ed.js')}}"></script>
 
     </head>

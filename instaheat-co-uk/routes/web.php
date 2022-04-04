@@ -39,6 +39,7 @@ Route::get('/', function () {
     Route::get('/get-ques-2', 'GetQuoteController@question_2')->name('customer.ques.2');
 
     Route::get('/boiler-logic-30', 'GetQuoteController@boiler_logic_30')->name('boilers.logic.30');
+    Route::get('/boiler-logic-list', 'GetQuoteController@boiler_logic_list')->name('boilers.logic.list');
 
 
 Route::group(['middleware'=>['checkSession']] , function(){

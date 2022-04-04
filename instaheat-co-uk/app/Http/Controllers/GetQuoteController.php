@@ -16,6 +16,11 @@ class GetQuoteController extends Controller
         return view('customer-view.boilers-logic-30');
     }
 
+    public function boiler_logic_list(){
+        //dd("test");
+        return view('customer-view.boiler-logic-list');
+    }
+
     public function question_2(){
         //dd("test");
         return view('customer-view.question-2');

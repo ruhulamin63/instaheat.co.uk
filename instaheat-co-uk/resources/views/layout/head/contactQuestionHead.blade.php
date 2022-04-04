@@ -130,5 +130,4 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today">
     <meta name="twitter:title" content="Instaheat - Plumbing and Heating Engineers">
-
  </head>
