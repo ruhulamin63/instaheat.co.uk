@@ -124,7 +124,7 @@
 																	</g>
 																</svg>
 															</span>
-															<!--end::Svg Icon-->Intenc Heting</a>
+															<!--end::Svg Icon-->Instaheat</a>
 															<a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
 															<!--begin::Svg Icon | path: icons/stockholm/Map/Marker1.svg-->
 															<span class="svg-icon svg-icon-4 me-1">
