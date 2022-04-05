@@ -14,8 +14,8 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-		<link rel="shortcut icon" href="{{asset('media/fabric icon/car-service.png')}}" />
-		<link rel="shortcut icon" href="{{asset('media/fabric icon/car-service.png')}}" />
+		<link rel="shortcut icon" href="{{asset('media/fabric icon/favicon-heat.png')}}" />
+
 		<!--begin::Fonts-->
         <link rel="stylesheet" href="{{asset('css/fonts_googleapis_300_400_500_600_700.css')}}"/>
 		<!--end::Fonts-->

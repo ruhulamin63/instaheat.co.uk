@@ -16,7 +16,7 @@ class SessionVerify
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('status')){
+        if($request->session()->has('admin_status')){
             return $next($request);
         }
         else{

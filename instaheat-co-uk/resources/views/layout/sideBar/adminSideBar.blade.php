@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="menu-item" style="margin-top:0px">
-                    <a class="menu-link ">
+                    <a class="menu-link  @if(route('admin.overview') == Request::url()) active @endif" href="{{ route('admin.overview') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -137,7 +137,7 @@
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
 
                         <div class="menu-item">
-                            <a class="menu-link" href="#">
+                            <a class="menu-link" href="{{route('admin.overview')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

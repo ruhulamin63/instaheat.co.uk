@@ -24,7 +24,10 @@ class ServiceController extends Controller
             ->orderBy('id','DESC')
             ->get();
 
-        return view('customer-view.service', compact('services'));
+        $id = Session()->get('admin_id');
+        $users = User::where('id',$id)->first();
+
+        return view('customer-view.service', compact('services', 'users'));
     }
 
     public function admin_service_index(){

@@ -23,6 +23,9 @@ class BoilerController extends Controller
             ->orderBy('id','DESC')
             ->get();
 
+        $id = Session()->get('admin_id');
+        $users = User::where('id',$id)->first();
+
         return view('admin.pages.boilers.boiler-list', compact('boilers'));
     }
 

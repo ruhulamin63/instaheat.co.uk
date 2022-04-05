@@ -19,12 +19,15 @@ class OrderController extends Controller
 
     public function order_index(){
 
-        $users_all = DB::table('questionnaire_answers')
+        $question = DB::table('questionnaire_answers')
             ->where('activeStatus',1)
             ->orderBy('id','DESC')
             ->get();
 
-        return view('admin.pages.order.order-list');
+        $id = Session()->get('admin_id');
+        $users = User::where('id',$id)->first();
+
+        return view('admin.pages.order.order-list', compact('users', 'question'));
     }
 
     //Get Order List

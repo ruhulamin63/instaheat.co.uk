@@ -56,17 +56,17 @@
                         <!--begin::Menu-->
                         <div class="cursor-pointer symbol symbol-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
                           
-                                @if(Session()->get('admin_image'))
-                                    <?php if (file_exists("../public".Session()->get('admin_image'))){ ?>
-                                        <img src="{{asset(Session()->get('admin_image'))}}" >
-                                    <?php } else{ ?>
-                                        <img src="{{asset('/media/avatars/blank.png')}}">
-                                    <?php } ?>
-                                @else
-                                    <img src="{{asset('/media/avatars/blank.png')}}" >
-                                @endif
+                            @if($users->image)
+                                <?php if (file_exists("../public".$users->image)){ ?>
+                                    <img src="{{$users->image}}" >
+                                <?php } else{ ?>
+                                    <img src="{{asset('/media/avatars/blank.png')}}">
+                                <?php } ?>
+                            @else
+                                <img src="{{asset('/media/avatars/blank.png')}}" >
+                            @endif
                                         
-                                <!-- <img src="{{asset('/media/avatars/blank.png')}}" > -->
+                            <!-- <img src="{{asset('/media/avatars/blank.png')}}" > -->
                         </div>
                         <!--begin::Menu-->
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
@@ -76,9 +76,9 @@
                                     <!--begin::Avatar-->
                                     <div class="symbol symbol-50px me-5">
 
-                                        @if(Session()->get('admin_image'))
-                                            <?php if (file_exists("../public".Session()->get('admin_image'))){ ?>
-                                                <img src="{{asset(Session()->get('admin_image'))}}" >
+                                        @if($users->image)
+                                            <?php if (file_exists("../public".$users->image)){ ?>
+                                                <img src="{{$users->image}}" >
                                             <?php } else{ ?>
                                                 <img src="{{asset('/media/avatars/blank.png')}}">
                                             <?php } ?>

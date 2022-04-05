@@ -60,11 +60,11 @@ class UserAuthController extends Controller
 
                 if($user->password == $password){
                     
-                    $request->session()->put('user_id', $user->id);
+                    $request->session()->put('admin_id', $user->id);
                     $request->session()->put('username', $user->username);
-                    $request->session()->put('first_name', $user->first_name);
-                    $request->session()->put('last_name', $user->last_name);
-                    $request->session()->put('status', $user->status);
+                    $request->session()->put('admin_first_name', $user->first_name);
+                    $request->session()->put('admin_last_name', $user->last_name);
+                    $request->session()->put('admin_status', $user->status);
                     $request->session()->put('admin_email', $user->email);
                     $request->session()->put('admin_address', $user->address);
                     $request->session()->put('admin_division', $user->division);

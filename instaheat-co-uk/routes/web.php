@@ -80,4 +80,14 @@ Route::group(['middleware'=>['checkSession']] , function(){
     Route::post('/update-service','ServiceController@update_service_details')->name('update.service.details');
     Route::post('/delete-service','ServiceController@delete_service')->name('delete.service');
 
+    //==========================================Profile=========================================================
+    //profile
+    Route::get('admin/setting', 'ProfileController@admin_settings')->name('admin.setting');
+    Route::get('admin/overview', 'ProfileController@admin_overview')->name('admin.overview');
+
+    Route::post('admin/setting/change_info', 'ProfileController@change_info')->name('admin.change.info');
+    Route::post('admin/setting/change_email', 'ProfileController@change_email')->name('admin.change.email');
+    Route::post('admin/setting/change_password', 'ProfileController@change_password')->name('admin.change.password');
+
+
 });

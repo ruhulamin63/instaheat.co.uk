@@ -19,8 +19,10 @@ class DashboardController extends Controller
     //======================== admin dashboard  ==========================
     public function admin_dashboard(){
         
-        //dd("test");
-        return view('admin.adminHome');
+        $id = Session()->get('admin_id');
+        $users = User::where('id',$id)->first();
+
+        return view('admin.adminHome', compact('users'));
     }
 
     //Get today's order List
