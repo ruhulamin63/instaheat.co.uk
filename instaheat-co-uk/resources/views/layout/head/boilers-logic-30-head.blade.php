@@ -28,6 +28,66 @@
         .hMtqQg{text-align:left;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;width:100%;} @media (min-width:768px){.hMtqQg{width:75%;}} .hMtqQg .boiler-features{list-style-position:inside;margin:0;padding:0;} .hMtqQg h3,.hMtqQg h4{font-family:'Roboto';margin:0 0 8px;} .hMtqQg p,.hMtqQg li{font-family:'Roboto Condensed';font-size:1rem;text-align:left;} .hMtqQg .central-heating-output,.hMtqQg .hotwater-flowrate{margin:0;} .hMtqQg .features-heading{margin:8px 0 0;} .hMtqQg .extras-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;} .hMtqQg .filter-container,.hMtqQg .thermostat-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 4px 16px;text-align:center;width:130px;} .hMtqQg .filter-container img,.hMtqQg .thermostat-container img{width:80px;} .hMtqQg .filter-container p,.hMtqQg .thermostat-container p{font-size:1rem;margin:8px 0 0;} .hMtqQg .filter-container img{width:60px;} .hMtqQg .extras-heading{margin:16px 0 8px;}
     </style>
 
+    <style>
+      
+      .dbODSx select[name='year_warranty'] {
+          padding-left: 6px;
+      }
+      .dbODSx select {
+          -webkit-flex-basis: 40%;
+          -ms-flex-preferred-size: 40%;
+          flex-basis: 40%;
+          min-width: 260px;
+          margin: 0 1% 8px;
+          height: 50px;
+          border-left: #333332 solid 10px;
+      }
+    * {
+        box-sizing: border-box;
+    }
+    select[name='year_warranty' i] {
+        padding: 1px 2px;
+    }
+
+    select {
+      writing-mode: horizontal-tb !important;
+      font-style: ;
+      font-variant-ligatures: ;
+      font-variant-caps: ;
+      font-variant-numeric: ;
+      font-variant-east-asian: ;
+      font-weight: ;
+      font-stretch: ;
+      font-size: ;
+      font-family: ;
+      text-rendering: auto;
+      color: -internal-light-dark(black, white);
+      letter-spacing: normal;
+      word-spacing: normal;
+      line-height: normal;
+      text-transform: none;
+      text-indent: 0px;
+      text-shadow: none;
+      display: inline-block;
+      text-align: start;
+      appearance: auto;
+      -webkit-rtl-ordering: logical;
+      cursor: text;
+      background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+      margin: 0em;
+      padding: 1px 2px;
+      border-width: 2px;
+      border-style: inset;
+      border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+      border-image: initial;
+    }
+    .dbODSx .price-contact {
+        font-family: 'Roboto';
+        text-align: left;
+    }
+
+    </style>
+
     <!-- <title data-react-helmet="true">Instaheat - Plumbing and Heating Engineers</title> -->
     <title><?=$title?></title>
 

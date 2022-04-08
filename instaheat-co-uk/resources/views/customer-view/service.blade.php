@@ -15,23 +15,7 @@
                 </div>
             </div>
             
-            <!-- @foreach ($services as $service )
-
-                <section class="sc-hMqMXs kjkdQh">
-                    <div class="image-container sc-kEYyzF jUEZEk" style="background-image:url({{$service->image}})"></div>
-                    
-                    <div class="content-container sc-kkGfuU xMCCl">
-                        <div class="wrapper">
-                            <h2>{{$service->service_name}}</h2>
-                            <p>{{$service->description}}</p>
-                            
-                            <div class="sc-gZMcBi gJQWhe">
-                                <a class="primary-cta" href="{{route('customer.contact')}}">Get In Touch Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            @endforeach -->
+           
             
             <section class="image-right sc-hMqMXs kjkdQh">
                 <div class="image-container sc-kEYyzF jUEZEk" style="background-image:url({{asset('custom/img/boiler-replacements.jpg')}})"></div>

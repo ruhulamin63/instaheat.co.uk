@@ -69,13 +69,15 @@
 																<!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
 																<th style="text-align: center;" class="min-w-100px">customer_name</th>
 																<th style="text-align: center;" class="min-w-100px">customer_contact_number</th>
+																<th style="text-align: center;" class="min-w-100px">year_warranty</th>
+																<th style="text-align: center;" class="min-w-100px">price</th>
 																<th style="text-align: center;" class="min-w-100px">fuel_type</th>
 																<th style="text-align: center;" class="min-w-100px">boiler_type</th>
 																<th style="text-align: center;" class="min-w-100px">convert_combi_boiler</th>
 																<th style="text-align: center;" class="min-w-100px">under_a_carport</th>
 																<th style="text-align: center;" class="min-w-100px">thirty_cm_away_window</th>
 																<th style="text-align: center;" class="min-w-100px">moving_5_meter</th>
-																<th style="text-align: center;" class="min-w-100px">fule_come_out</th>
+																<th style="text-align: center;" class="min-w-100px">fuel_come_out</th>
 																<th style="text-align: center;" class="min-w-100px">pitched_or_flat</th>
 																<th style="text-align: center;" class="min-w-100px">house_live_in</th>
 																<th style="text-align: center;" class="min-w-100px">number_of_bedroom</th>

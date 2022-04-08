@@ -15,8 +15,11 @@ class QuestionAnsSeeder extends Seeder
     public function run()
     {
         DB::table('questionnaire_answers')->insert([
-            'customer_name' => 'Ruhue Amin',
+            'boiler_id' => 1,
+            'customer_name' => 'Ruhul Amin',
             'customer_contact_number' => '017433698745',
+            'year_warranty' => 5,
+            'price' => 1400,
             'fuel_type' => 'Gas',
             'boiler_type' => 'Standard',
             'convert_combi_boiler' => 'Yes',

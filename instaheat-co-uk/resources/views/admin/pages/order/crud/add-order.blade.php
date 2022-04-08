@@ -68,6 +68,7 @@
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
+                                <span class="text-danger error-text convert_combi_boiler_error"></span>
                             </div>
                         </div>
 
@@ -81,6 +82,7 @@
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
+                                <span class="text-danger error-text under_a_carport_error"></span>
                             </div>
 
                             <div class="col-md-4">
@@ -91,16 +93,18 @@
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
+                                <span class="text-danger error-text thirty_cm_away_window_error"></span>
                             </div>
 
                             <div class="col-md-4">
                                 <br>
                                 <label class="fs-6 fw-bold mb-2">Moving 5 Meter</label>
                                 <select name="moving_5_meter" aria-label="Select a moving" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
-                                    <option value="">--Select--</option>
+                                    <option value="Null">--Select--</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
+                                <!-- <span class="text-danger error-text moving_5_meter_error"></span> -->
                             </div>
                         </div>
 
@@ -117,16 +121,18 @@
                                     <option value="Roof">Roof</option>
                                     <option value="Wall">Wall</option>
                                 </select>
+                                <span class="text-danger error-text fuel_come_out_error"></span>
                             </div>
 
                             <div class="col-md-4">
                                 <br>
                                 <label class="fs-6 fw-bold mb-2">pitch Of Flat</label>
                                 <select name="pitched_or_flat" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
-                                    <option value="">--Select--</option>
+                                    <option value="Null">--Select--</option>
                                     <option value="Pitched">Pitched</option>
                                     <option value="Flat">Flat</option>
                                 </select>
+                                <!-- <span class="text-danger error-text pitched_or_flat_error"></span> -->
                             </div>
 
                             <div class="col-md-4">
@@ -140,15 +146,16 @@
                                     <option value="Semi-Detatched">Semi-Detatched</option>
                                     <option value="Detatched">Detatched</option>
                                 </select>
+                                <span class="text-danger error-text house_live_in_error"></span>
                             </div>
 
                         </div>
 
                         <div class="row col-md-12">
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <br>
-                                <label class="fs-6 fw-bold mb-2">Number of Bedrooms</label>
+                                <label class="fs-6 fw-bold mb-2">Bedrooms</label>
                                 <select name="number_of_bedroom" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
                                     <option value="">--Select--</option>
                                     <option value="1">1</option>
@@ -157,17 +164,30 @@
                                     <option value="4">4</option>
                                     <option value="5+">5+</option>
                                 </select>
+                                <span class="text-danger error-text number_of_bedroom_error"></span>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <br>
-                                <label class="fs-6 fw-bold mb-2">Number of Bathrooms</label>
+                                <label class="fs-6 fw-bold mb-2">Bathrooms</label>
                                 <select name="number_of_bathroom" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
                                     <option value="">--Select--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3+">3+</option>
                                 </select>
+                                <span class="text-danger error-text number_of_bathroom_error"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <br>
+                                <label class="fs-6 fw-bold mb-2">Year of warranty</label>
+                                <select name="year_warranty" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
+                                    <option value="">Select</option>
+                                    <option value="5">Five</option>
+                                    <option value="10">Ten</option>
+                                </select>
+                                <span class="text-danger error-text year_warranty_error"></span>
                             </div>
 
                         </div>

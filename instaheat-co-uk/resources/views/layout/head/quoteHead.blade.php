@@ -3,11 +3,11 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         
-        <link rel="preload" href="{{asset('custom/component---src-layouts-index-js-b2e2f0bb68b8bb1344bd.js')}}" as="script"/>
+        <!-- <link rel="preload" href="{{asset('custom/component---src-layouts-index-js-b2e2f0bb68b8bb1344bd.js')}}" as="script"/>
         <link rel="preload" href="{{asset('custom/component---src-pages-get-a-quote-js-2c8c06996d88fdd7ce0b.js')}}" as="script"/>
         <link rel="preload" href="{{asset('custom/path---get-a-quote-a0e39f21c11f6a62c5ab.js')}}" as="script"/>
         <link rel="preload" href="{{asset('custom/app-4710518484a2dcbce1b6.js')}}" as="script"/>
-        <link rel="preload" href="{{asset('custom/commons-f7fd30e9f7445236ce15.js')}}" as="script"/>
+        <link rel="preload" href="{{asset('custom/commons-f7fd30e9f7445236ce15.js')}}" as="script"/> -->
     
     
         <style data-styled-components="dXQyxh cMvXxa fTWKLe dBsrLC bjPEky cBBHCG jAZGXd">
@@ -40,7 +40,7 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Condensed" rel="stylesheet"/>
 
 
-        <script>
+        <!-- <script>
             
             if(!(navigator.doNotTrack == "1" || window.doNotTrack == "1")) {
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -52,7 +52,7 @@
             ga('create', 'UA-129439565-1', 'auto', {});
                 
                 }
-        </script>
+        </script> -->
 
         <!-- <link rel="shortcut icon" href="{{asset('media/fabric icon/car-service.png')}}" id="gatsby-inlined-css" /> -->
         <!-- <link id="gatsby-inlined-css" rel="shortcut icon" href="../../../../public/css/instaheat-css/get_a_quote.css" /> -->
@@ -137,7 +137,7 @@
         <meta name="twitter:title" content="Instaheat - Plumbing and Heating Engineers"/>
       
       
-      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-pages-services-js-47ad6ad5d5f2997fbb5b.js')}}"></script>
+      <!-- <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-pages-services-js-47ad6ad5d5f2997fbb5b.js')}}"></script>
       <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---services-a0e39f21c11f6a62c5ab.js')}}"></script>
       <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-layouts-index-js-b2e2f0bb68b8bb1344bd.js')}}"></script>
       
@@ -152,6 +152,6 @@
       <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-30-i-4505ceef520637076a18.js')}}"></script>
       <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-32-cdi-2741706fa0c048cf2d5b.js')}}"></script>
       <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-34-cdi-dc7c1c851cc9f567b023.js')}}"></script>
-      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-36-cdi-4b20968fd88db12ab2ed.js')}}"></script>
+      <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---boilers-36-cdi-4b20968fd88db12ab2ed.js')}}"></script> -->
 
     </head>

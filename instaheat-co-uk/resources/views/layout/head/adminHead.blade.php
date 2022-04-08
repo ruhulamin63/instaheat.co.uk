@@ -22,12 +22,12 @@
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
         <link href="{{asset('plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('css/graph.css')}}" rel="stylesheet" type="text/css" />
+		<!-- <link href="{{asset('css/graph.css')}}" rel="stylesheet" type="text/css" /> -->
 		<!--end::Global Stylesheets Bundle-->
 
-		<link href="{{asset('Theme/vendor/fontawesome-free/css/all.min.css')}}">
-		<link href="{{asset('Theme/css/sb-admin-2.min.css" rel="stylesheet')}}">
-		<link href="{{asset('Theme/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet')}}">
+		<!-- <link href="{{asset('Theme/vendor/fontawesome-free/css/all.min.css')}}"> -->
+		<!-- <link href="{{asset('Theme/css/sb-admin-2.min.css" rel="stylesheet')}}"> -->
+		<!-- <link href="{{asset('Theme/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet')}}"> -->
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 	

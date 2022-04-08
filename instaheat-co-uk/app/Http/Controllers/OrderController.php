@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 
 use App\Models\QuestionnaireAnswer;
 use App\Models\User;
+use App\Models\Boiler;
 use Carbon\Carbon;
 use DataTables;
 
@@ -39,25 +40,25 @@ class OrderController extends Controller
             return DataTables::of($orders)
                 ->addIndexColumn()
 
-                ->addColumn('customer_name', function($orders){
+                // ->addColumn('customer_name', function($orders){
 
-                    return $orders->customer_name;
-                })
+                //     return $orders->customer_name;
+                // })
 
-                ->addColumn('customer_contact_number', function($orders){
+                // ->addColumn('customer_contact_number', function($orders){
 
-                    return $orders->customer_contact_number;
-                })
+                //     return $orders->customer_contact_number;
+                // })
 
-                ->addColumn('fuel_type', function($orders){
+                // ->addColumn('fuel_type', function($orders){
 
-                    return $orders->fuel_type;
-                })
+                //     return $orders->fuel_type;
+                // })
 
-                ->addColumn('boiler_type', function($orders){
+                // ->addColumn('boiler_type', function($orders){
 
-                    return $orders->boiler_type;
-                })
+                //     return $orders->boiler_type;
+                // })
 
                 ->addColumn('convert_combi_boiler', function($orders){
                     $yes="Yes";
@@ -108,14 +109,20 @@ class OrderController extends Controller
                 ->addColumn('moving_5_meter', function($orders){
                     $yes="Yes";
                     $no="No";
+                    $null="Null";
 
                     if($orders->moving_5_meter == "Yes"){
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
                                     <span class="p-1 mb-2 bg-warning text-dark" style="text-align: center;" class="min-w-100px">'.$yes.'</span>
                                 </div>';
-                    }else{
+                    }else if($orders->moving_5_meter == "No"){
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <span class="p-1 mb-2 bg-info text-white" style="text-align: center;" class="min-w-100px">'.$no.'</span>
+                                    <span class="p-1 mb-2 bg-warning text-dark" style="text-align: center;" class="min-w-100px">'.$no.'</span>
+                                </div>';
+                    }
+                    else{
+                        return '<div class="btn-group d-flex flex-column w-100 me-2">
+                                    <span class="p-1 mb-2 bg-info text-white" style="text-align: center;" class="min-w-100px">'.$null.'</span>
                                 </div>';
                     }
                 })
@@ -127,32 +134,38 @@ class OrderController extends Controller
                 ->addColumn('pitched_or_flat', function($orders){
                     $pitched="Pitched";
                     $flat="Flat";
+                    $null="Null";
 
                     if($orders->pitched_or_flat == "Pitched"){
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
                                     <span class="p-1 mb-2 bg-warning text-dark" style="text-align: center;" class="min-w-100px">'.$pitched.'</span>
                                 </div>';
-                    }else{
+                    }else if($orders->pitched_or_flat == "Flat"){
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <span class="p-1 mb-2 bg-info text-white" style="text-align: center;" class="min-w-100px">'.$flat.'</span>
+                                    <span class="p-1 mb-2 bg-warning text-dark" style="text-align: center;" class="min-w-100px">'.$flat.'</span>
+                                </div>';
+                    }
+                    else{
+                        return '<div class="btn-group d-flex flex-column w-100 me-2">
+                                    <span class="p-1 mb-2 bg-info text-white" style="text-align: center;" class="min-w-100px">'.$null.'</span>
                                 </div>';
                     }
                 })
                
-                ->addColumn('house_live_in', function($orders){
+                // ->addColumn('house_live_in', function($orders){
 
-                    return $orders->house_live_in;
-                })
+                //     return $orders->house_live_in;
+                // })
 
-                ->addColumn('number_of_bedroom', function($orders){
+                // ->addColumn('number_of_bedroom', function($orders){
 
-                    return $orders->number_of_bedroom;
-                })
+                //     return $orders->number_of_bedroom;
+                // })
 
-                ->addColumn('number_of_bathroom', function($orders){
+                // ->addColumn('number_of_bathroom', function($orders){
 
-                    return $orders->number_of_bathroom;
-                })
+                //     return $orders->number_of_bathroom;
+                // })
 
                 ->addColumn('status', function($orders){
                     if($orders->status == 0){
@@ -209,7 +222,7 @@ class OrderController extends Controller
                         </div>';
                 })
 
-                ->rawColumns(['customer_name', 'customer_contact_number', 'fuel_type', 'boiler_type', 'convert_combi_boiler', 'under_a_carport', 'thirty_cm_away_window', 'moving_5_meter','fuel_come_out', 'pitched_or_flat', 'house_live_in', 'number_of_bedroom', 'number_of_bathroom', 'status', 'actions'])
+                ->rawColumns(['convert_combi_boiler', 'under_a_carport', 'thirty_cm_away_window', 'moving_5_meter','fuel_come_out', 'pitched_or_flat', 'status', 'actions'])
                 ->make(true);
 
         }catch (\Exception $e) {
@@ -225,15 +238,38 @@ class OrderController extends Controller
         $validator = \Validator::make($request->all(), [
             'customer_name' => 'required',
             'customer_contact_number' => 'required|min:8|max:11',
+            'year_warranty' => 'required',
+            'fuel_type' => 'required',
+            'boiler_type' => 'required',
+            'convert_combi_boiler' => 'required',
+            'under_a_carport' => 'required',
+            'thirty_cm_away_window' => 'required',
+            'fuel_come_out' => 'required',
+            'house_live_in' => 'required',
+            'number_of_bedroom' => 'required',
+            'number_of_bathroom' => 'required',
         ]);
 
         if(!$validator->passes()){
             return response()->json(['code'=>0 , 'error'=>$validator->errors()->toArray()]);
         }else{
 
+            $boiler = Boiler::where('id',1)->first();
+
             $data=array();
+
+            $data['boiler_id']= 1;
+            
             $data['customer_name']=$request->customer_name;
             $data['customer_contact_number']=$request->customer_contact_number;
+            $data['year_warranty'] = $boiler->year_warranty;
+            
+            if($request->year_warranty == 5){
+                $data['price'] = $boiler->price_for_5_year;
+            }else{
+                $data['price'] = $boiler->price_for_10_year;
+            }
+
             $data['fuel_type']= $request->fuel_type;
             $data['boiler_type']= $request->boiler_type;
             $data['convert_combi_boiler']= $request->convert_combi_boiler;
@@ -278,20 +314,36 @@ class OrderController extends Controller
 
     //UPDATE Order DETAILS
     public function update_order_details(Request $request){
-        $order_id = $request->cid;
-
+        
         $validator = \Validator::make($request->all(),[
             'customer_name' => 'required',
             'customer_contact_number' => 'required',
+            'year_warranty' => 'required',
         ]);
 
         if(!$validator->passes()){
             return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
         }else{
 
+            $boiler = Boiler::where('id',1)->first();
+            //$question = QuestionnaireAnswer::where('boiler_id',1)->first();
+
+           // dd($boiler);
+
             $data=array();
+
+            //$data['boiler_id']= $boiler_id;
+
             $data['customer_name']=$request->customer_name;
             $data['customer_contact_number']=$request->customer_contact_number;
+            $data['year_warranty']=$request->year_warranty;
+
+            if($request->year_warranty == 5){
+                $data['price'] = $boiler->price_for_5_year;
+            }else{
+                $data['price'] = $boiler->price_for_10_year;
+            }
+
             $data['fuel_type']= $request->fuel_type;
             $data['boiler_type']= $request->boiler_type;
             $data['convert_combi_boiler']= $request->convert_combi_boiler;

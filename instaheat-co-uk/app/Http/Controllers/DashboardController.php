@@ -22,7 +22,81 @@ class DashboardController extends Controller
         $id = Session()->get('admin_id');
         $users = User::where('id',$id)->first();
 
-        return view('admin.adminHome', compact('users'));
+        $monthly_order= QuestionnaireAnswer::where('status',1)->where('created_at', '>', now()->subDays(1)->endOfDay())->orderBy('id','DESC')->get();
+
+        $monthly_income= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->where('created_at', '>', now()->subDays(30)->endOfDay())->sum('price');
+        $total_income= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->sum('price');
+        
+        $counts= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->count();
+        $new_order= QuestionnaireAnswer::where('status',1)->where('created_at', '>', now()->subDays(30)->endOfDay())->count();
+
+
+        // //==============================================================
+        // $profitData= Appointment::select('id','created_at')->get()->groupBy(function($profitData){
+        //     return Carbon::parse($profitData->created_at)->format('M');
+        // });
+
+        // $ProfitMonths=[];
+        
+        // foreach($profitData as $month => $values){
+        //     $ProfitMonths[]=$month;
+        // }
+
+
+        // // $ppp= Appointment::select('id','amount')->get()->sum('amount');
+        
+        // // $NetProfit = $ppp;
+        // // foreach($ppp as $$values){
+        // //     $NetProfit[]=$values->sum('amount');
+        // // }
+
+        // //============================User count===================================
+        // $data=User::select('id','created_at')->get()->groupBy(function($data){
+        //     return Carbon::parse($data->created_at)->format('M');
+        // });
+
+        // $months=[];
+        // $user_count=[];
+        // foreach($data as $month => $values){
+        //     $months[]=$month;
+        //     $user_count[]=count($values);
+        // }
+
+        // //============================Monthly appointment count===================================
+        // $appointment_data=Appointment::select('id','created_at')->get()->groupBy(function($data){
+        //     return Carbon::parse($data->created_at)->format('M');
+        // });
+
+        // $appointment_count=[];
+
+        // foreach($appointment_data as $month => $values){
+        //     $appointment_count[]=count($values);
+        // }
+
+        // //-----------------------------------------------------------------------------
+
+        // $start_date = date("Y").'-'.date("m").'-'.'01';
+        // $end_date = date("Y").'-'.date("m").'-'.'31';
+        // $net_profit = [];
+
+        // // yearly report
+        // $start = strtotime(date("Y") .'-01-01');
+        // $end = strtotime(date("Y") .'-12-31');
+        // while($start < $end)
+        // {
+        //     $start_date = date("Y").'-'.date('m', $start).'-'.'01';
+        //     $end_date = date("Y").'-'.date('m', $start).'-'.'31';
+
+        //     $profit = Appointment::whereDate('created_at', '>=' , $start_date)->whereDate('created_at', '<=' , $end_date)
+        //     ->where('status', 1)->where('activeStatus',1)->sum('amount');
+
+        //     $net_profit[] = number_format((float)$profit, 2, '.', '');
+        //     $start = strtotime("+1 month", $start);
+
+        //     //dd($user_count);
+        // }
+
+        return view('admin.adminHome', compact('users', 'new_order', 'monthly_order', 'monthly_income', 'total_income', 'counts'));
     }
 
     //Get today's order List

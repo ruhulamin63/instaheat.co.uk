@@ -5,29 +5,29 @@
   <!--begin::Page Custom Javascript(used by this page)-->
 
  
-  <script src="{{asset('/assets/demo/chart-area-demo.js')}}"></script>
+  <!-- <script src="{{asset('/assets/demo/chart-area-demo.js')}}"></script>
   <script src="{{asset('/assets/demo/custom-bar-chart-admin.js')}}"></script>
-  <script src="{{asset('/assets/demo/custom-bar-chart-member.js')}}"></script>
+  <script src="{{asset('/assets/demo/custom-bar-chart-member.js')}}"></script> -->
 
   
-  <script src="{{asset('/js/custom/widgets.js')}}"></script>
-  <script src="{{asset('/js/custom/modals/create-app.js')}}"></script>
-  <script src="{{asset('/js/custom/modals/upgrade-plan.js')}}"></script>
+  <!-- <script src="{{asset('/js/custom/widgets.js')}}"></script> -->
+  <!-- <script src="{{asset('/js/custom/modals/create-app.js')}}"></script> -->
+  <!-- <script src="{{asset('/js/custom/modals/upgrade-plan.js')}}"></script> -->
   <!--end::Page Custom Javascript-->
   <!--end::Javascript-->
 
     <!--begin::Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="{{asset('/js/custom/account/settings/signin-methods.js')}}"></script>
-		<script src="{{asset('/js/custom/account/settings/profile-details.js')}}"></script>
-		<script src="{{asset('/js/custom/account/settings/deactivate-account.js')}}"></script>
+		<script src="{{asset('js/custom/account/settings/signin-methods.js')}}"></script>
+		<!-- <script src="{{asset('/js/custom/account/settings/profile-details.js')}}"></script> -->
+		<!-- <script src="{{asset('/js/custom/account/settings/deactivate-account.js')}}"></script> -->
 		<script src="{{asset('/js/custom/modals/two-factor-authentication.js')}}"></script>
 		<!--end::Page Custom Javascript-->
 
-    <script src="{{asset('/Theme/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('/Theme/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <!-- <script src="{{asset('/Theme/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('/Theme/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script> -->
     <!-- Page level custom scripts -->
-    <script src="{{asset('/Theme/js/demo/datatables-demo.js')}}"></script>
+    <!-- <script src="{{asset('/Theme/js/demo/datatables-demo.js')}}"></script> -->
     <!--end::Page Custom Javascript-->
 
      <!-- Bootstrap core JavaScript-->

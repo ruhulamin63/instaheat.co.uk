@@ -26,7 +26,7 @@ class BoilerController extends Controller
         $id = Session()->get('admin_id');
         $users = User::where('id',$id)->first();
 
-        return view('admin.pages.boilers.boiler-list', compact('boilers'));
+        return view('admin.pages.boilers.boiler-list', compact('boilers', 'users'));
     }
 
     //Get Boiler List
@@ -46,34 +46,34 @@ class BoilerController extends Controller
                 //             </div>';
                 // })
 
-                ->addColumn('brand_name', function($boilers){
+                // ->addColumn('brand_name', function($boilers){
 
-                    return $boilers->brand_name;
-                })
+                //     return $boilers->brand_name;
+                // })
 
-                ->addColumn('model_name', function($boilers){
+                // ->addColumn('model_name', function($boilers){
 
-                    return $boilers->model_name;
-                })
+                //     return $boilers->model_name;
+                // })
 
-                ->addColumn('type', function($boilers){
+                // ->addColumn('type', function($boilers){
 
-                    return $boilers->type;
-                })
+                //     return $boilers->type;
+                // })
 
-                ->addColumn('central_heating_output', function($boilers){
+                // ->addColumn('central_heating_output', function($boilers){
 
-                    return $boilers->central_heating_output;
-                })
+                //     return $boilers->central_heating_output;
+                // })
 
-                ->addColumn('hot_water_flow_rate', function($boilers){
-                    return $boilers->hot_water_flow_rate;
-                })
+                // ->addColumn('hot_water_flow_rate', function($boilers){
+                //     return $boilers->hot_water_flow_rate;
+                // })
                
-                ->addColumn('short_desc', function($boilers){
+                // ->addColumn('short_desc', function($boilers){
 
-                    return $boilers->short_desc;
-                })
+                //     return $boilers->short_desc;
+                // })
 
                 ->addColumn('price_for_5_year', function($boilers){
 
@@ -117,7 +117,7 @@ class BoilerController extends Controller
                         </div>';
                 })
 
-                ->rawColumns(['brand_name', 'model_name', 'type', 'central_heating_output', 'hot_water_flow_rate', 'short_desc', 'price_for_5_year','price_for_10_year', 'actions'])
+                ->rawColumns(['price_for_5_year','price_for_10_year', 'actions'])
                 ->make(true);
 
         }catch (\Exception $e) {

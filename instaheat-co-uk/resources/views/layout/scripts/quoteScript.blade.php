@@ -1,4 +1,4 @@
-    <script id="webpack-manifest">
+    <!-- <script id="webpack-manifest">
         /*<![CDATA[*/window.webpackManifest={"231608221292675":"{{asset('custom/app-4710518484a2dcbce1b6.js')}}",
         "913892943986":"{{asset('custom/component---src-templates-boiler-page-js-3ae62e96d30acfe223a1.js')}}",
         "162898551421021":"{{asset('custom/component---src-pages-404-js-91b0f6dcba6a6c7226b0.js')}}",
@@ -40,14 +40,81 @@
         "257431895517821":"{{asset('custom/path---services-a0e39f21c11f6a62c5ab.js')}}",
         "178698757827068":"{{asset('custom/path---404-html-a0e39f21c11f6a62c5ab.js')}}",
         "114276838955818":"{{asset('custom/component---src-layouts-index-js-b2e2f0bb68b8bb1344bd.js')}}"}/*]]>*/
-    </script>
-        
-    <script>
+    </script> -->
+         
+    <!-- <script>
         /*<![CDATA[*/["{{asset('custom/commons-f7fd30e9f7445236ce15.js')}}",
         "{{asset('custom/app-4710518484a2dcbce1b6.js')}}",
         "{{asset('/custom/path---get-a-quote-a0e39f21c11f6a62c5ab.js')}}",
         "{{asset('custom/component---src-pages-get-a-quote-js-2c8c06996d88fdd7ce0b.js')}}",
         "{{asset('custom/component---src-layouts-index-js-b2e2f0bb68b8bb1344bd.js')}}"].forEach(function(s){document.write('<script src="{{asset('+s+')}}" defer></'+'script>')})/*]]>*/
-    </script>
-    <script src="{{asset('custom/smtpjs.com/v2/smtp.js')}}"></script>
+    </script> -->
+
+    <!-- <script src="{{asset('custom/smtpjs.com/v2/smtp.js')}}"></script>
     <script src="{{asset('custom/cdn.polyfill.io/v2/polyfill.min.js')}}"></script>
+ 
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    
+    <!-- <script>
+        //  $(document).ready(function () {
+        //     $('#Gas').click(function () {
+        //         var inputValue = $(this).attr("value");
+        //         $("." + inputValue).toggle();
+        //     });
+        // });
+
+        // jQuery(function(){
+        //     jQuery('#Gas').click(function(){
+        //         jQuery('.#div1').hide();
+        //         jQuery('#div2'+$(this).attr('.target')).show();
+        //     });
+        // });
+    </script>
+    
+    <script>
+
+        // $(document).ready(function(){
+        //     $("#question")
+        // });
+        
+        // //console.log("see");
+
+        // btn.addEventListener('click', ()=>{
+        //     if(div2.display ==='none'){
+        //         div2.display = 'block';
+        //     }else{
+        //         div2.display == 'none';
+        //     }
+        // });
+        
+       // console.log("oij");
+        // $(document).ready(function(){
+        //     $('.radio-custom-button-gas').click(function(){
+        //       //  console.log($(this).val());
+        //         localStorage.setItem('step-1',$(this).val());
+        //         //localStorage.setItem('step-2',$(this).val());
+
+        //         // const set_val = [
+        //         //     'red','green','blue'
+        //         // ];
+        //         // localStorage.setItem('get_array', JSON.stringify(set_val));
+        //         // const array_list = JSON.parse(localStorage.getItem('get_array'));
+
+        //         // console.log(array_list);
+
+
+        //         var stp = localStorage.getItem('step-1');
+
+        //         if(stp == 'Gas'){
+        //             //here will code
+        //             console.log("paici");
+        //         }
+        //     });
+
+        //     $('.reset-button').click(function(){
+        //       localStorage.clear();
+        //     });
+        // })
+    </script> -->

@@ -15,9 +15,12 @@ class CreateQuestionnaireAnswersTable extends Migration
     {
         Schema::create('questionnaire_answers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('boiler_id')->references('id')->on('boilers')->comment = 'get boiler id';
 
             $table->string('customer_name', 255)->nullable();
             $table->string('customer_contact_number', 255)->nullable();
+            $table->integer('year_warranty')->nullable();
+            $table->double('price', 15, 2)->nullable();
 
             $table->string('fuel_type', 255)->nullable();
             $table->string('boiler_type', 255)->nullable();
@@ -34,7 +37,7 @@ class CreateQuestionnaireAnswersTable extends Migration
             $table->string('number_of_bedroom', 255);
             $table->string('number_of_bathroom', 255);
 
-            $table->integer('status')->default(0)->comment = '0. Incomplete 1. Complete 3. Cencel';
+            $table->integer('status')->default(0)->comment = '0. Incomplete 1. Complete 2. Cancel';
             $table->integer('activeStatus')->nullable()->default(1)->comment = '1. Active 0. Delete';
             
             $table->timestamp('created_at')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
