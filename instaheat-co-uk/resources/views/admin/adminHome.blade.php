@@ -92,7 +92,7 @@
                                                         </span>
                                                         <!--end::Svg Icon-->
                                                         <a href="#" class="text-primary fw-bold fs-6" style="color: white !important;">Total Income</a>
-                                                        <span class="text-dark fw-bold text-dark d-block fs-1" style="color: white !important;">{{$total_income}}</span>
+                                                        <span class="text-dark fw-bold text-dark d-block fs-1" style="color: white !important;">£ {{$total_income}}</span>
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -110,7 +110,7 @@
                                                         </span>
                                                         <!--end::Svg Icon-->
                                                         <a href="#" class="text-primary fw-bold fs-6" style="color: white !important;">Monthly Income</a>
-                                                        <span class="text-dark fw-bold text-dark d-block fs-1" style="color: white !important;">{{$monthly_income}}</span>
+                                                        <span class="text-dark fw-bold text-dark d-block fs-1" style="color: white !important;">£ {{$monthly_income}}</span>
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
