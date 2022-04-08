@@ -11,7 +11,7 @@
                 <div class="sc-cSHVUG cBBHCG">
                     <div class="quote-app">
                         
-                        <div class="quote-app__questions">
+                        <div class="quote-app__questions" id="div1">
                             <div class="app-container">
 
                                 <div class="app-header">
@@ -58,7 +58,7 @@
                             </div>
                         </div>
 
-                        <!-- <div class="quote-app__questions target" id="div2" target="1">
+                        <div class="quote-app__questions target step-one" id="div2" target="1">
                             <div class="app-container">
                                 <div class="app-header">
                                     <h1>Get a fixed price quote now!</h1>
@@ -97,7 +97,290 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
+
+                        <div class="questionnaire-container-gradient step-one" id="div3">
+                            <div class="sc-cSHVUG cBBHCG">
+                                <div class="quote-app">
+                                    <div class="quote-app__questions">
+                                        <div class="app-container">
+                                            <div class="app-header">
+                                                <h1>Get a fixed price quote now!</h1>
+                                                <p>Simply answer the following questions to get your fixed price quote on a new boiler:</p>
+                                            </div>
+                                            <div class="questionnaire-container">
+                                                <div class="questionnaire">
+                                                    <h2 class="question">Do you want your boiler moving over 5 metres?</h2>
+                                                    <ul class="answer-options">
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Yes" data-addon="350" value="Yes">
+                                                            <label class="radio-custom-label" for="Yes">Yes</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="No" value="No">
+                                                            <label class="radio-custom-label" for="No">No</label>
+                                                        </l1>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="image-container-questionnaire">
+                                                <img src="{{asset('custom/img/q4.jpg')}}" alt="image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- if you yes then div3 -->
+                        <div class="questionnaire-container-gradient step-one" id="div4">
+                            <div class="sc-kpOJdX gmoiPL">
+                                <div class="quote-app">
+                                    <div class="quote-app__questions">
+                                        <div class="app-container">
+                                            <div class="app-header">
+                                                <h1>Get a fixed price quote now!</h1>
+                                                <p>Simply answer the following questions to get your fixed price quote on a new boiler:</p>
+                                            </div>
+                                            <div class="questionnaire-container">
+                                                <div class="questionnaire">
+                                                    <h2 class="question">Would you like to convert to a combi boiler?</h2>
+                                                    <ul class="answer-options">
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Yes" data-addon="650" data-eliminateboilers="12ri,15ri,18ri,24ri,12i,15i,18i,24i,s15,s18,s24,s30,Heat-15,Heat-18,Heat-24,Heat-30" value="Yes">
+                                                            <label class="radio-custom-label" for="Yes">Yes</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="No" data-eliminateboilers="25i,30i,32cdi,34cdi,36cdi,Logic-24,Logic-30,Logic-35,highflow-440cdi,highflow-550cdi" value="No">
+                                                            <label class="radio-custom-label" for="No">No</label>
+                                                        </l1>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="image-container-questionnaire">
+                                                <img src="{{asset('custom/img/q3.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="questionnaire-container-gradient step-one" id="div5">
+                            <div class="sc-cSHVUG cBBHCG">
+                                <div class="quote-app">
+                                    <div class="quote-app__questions">
+                                        <div class="app-container">
+                                            <div class="app-header">
+                                                <h1>Get a fixed price quote now!</h1>
+                                                <p>Simply answer the following questions to get your fixed price quote on a new boiler:</p>
+                                            </div>
+                                            <div class="questionnaire-container">
+                                                <div class="questionnaire">
+                                                    <h2 class="question">Where does your flue come out?</h2>
+                                                    <ul class="answer-options">
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Roof" data-addon="350" value="Roof">
+                                                            <label class="radio-custom-label" for="Roof">Roof</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Wall" data-skipquestion="1" value="Wall">
+                                                            <label class="radio-custom-label" for="Wall">Wall</label>
+                                                        </l1>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="image-container-questionnaire">
+                                                <img src="{{asset('custom/img/q5.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="questionnaire-container-gradient step-one" id="div6">
+                            <div class="sc-cSHVUG cBBHCG">
+                                <div class="quote-app">
+                                    <div class="quote-app__questions">
+                                        <div class="app-container">
+                                            <div class="app-header">
+                                                <h1>Get a fixed price quote now!</h1>
+                                                <p>Simply answer the following questions to get your fixed price quote on a new boiler:</p>
+                                            </div>
+                                            <div class="questionnaire-container">
+                                                <div class="questionnaire">
+                                                    <h2 class="question">is the roof pitched or flat?</h2>
+                                                    <ul class="answer-options">
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Pitched" data-skipquestion="2" value="Pitched">
+                                                            <label class="radio-custom-label" for="Pitched">Pitched</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Flat" data-skipquestion="2" value="Flat">
+                                                            <label class="radio-custom-label" for="Flat">Flat</label>
+                                                        </l1>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="image-container-questionnaire">
+                                                <img src="{{asset('custom/img/q6.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="questionnaire-container-gradient step-one" id="div7">
+                            <div class="sc-cSHVUG cBBHCG">
+                                <div class="quote-app">
+                                    <div class="quote-app__questions">
+                                        <div class="app-container">
+                                            <div class="app-header">
+                                                <h1>Get a fixed price quote now!</h1>
+                                                <p>Simply answer the following questions to get your fixed price quote on a new boiler:</p>
+                                            </div>
+                                            <div class="questionnaire-container">
+                                                <div class="questionnaire">
+                                                    <h2 class="question">Which type of house do you live in?</h2>
+                                                    <ul class="answer-options">
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Flat" data-eliminateboilers="highflow-440cdi,highflow-550cdi,32cdi,34cdi,36cdi,Logic-35,18ri,24ri,Heat-24,Heat-30,s24,s30,18i,24i" value="Flat">
+                                                            <label class="radio-custom-label" for="Flat">Flat</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Bungalow" value="Bungalow">
+                                                            <label class="radio-custom-label" for="Bungalow">Bungalow</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Terrace" data-eliminateboilers="highflow-440cdi,highflow-550cdi,s30,Heat-30" value="Terrace">
+                                                            <label class="radio-custom-label" for="Terrace">Terrace</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Semi-detatched" value="Semi-detatched">
+                                                            <label class="radio-custom-label" for="Semi-detatched">Semi-detatched</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="Detatched" value="Detatched">
+                                                            <label class="radio-custom-label" for="Detatched">Detatched</label>
+                                                        </l1>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="image-container-questionnaire">
+                                                <img src="{{asset('custom/img/q9.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="questionnaire-container-gradient step-one" id="div8">
+                            <div class="sc-cSHVUG cBBHCG">
+                                <div class="quote-app">
+                                    <div class="quote-app__questions">
+                                        <div class="app-container">
+                                            <div class="app-header">
+                                                <h1>Get a fixed price quote now!</h1>
+                                                <p>Simply answer the following questions to get your fixed price quote on a new boiler:</p>
+                                            </div>
+                                            <div class="questionnaire-container">
+                                                <div class="questionnaire">
+                                                    <h2 class="question">How many bedrooms?</h2>
+                                                    <ul class="answer-options">
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="1" data-eliminateboilers="Logic-35,34cdi,36cdi,highflow-440cdi,highflow-550cdi,24ri,24i,Heat-24,s24,Heat-30,s30" value="1">
+                                                            <label class="radio-custom-label" for="1">1</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="2" data-eliminateboilers="36cdi,highflow-440cdi,highflow-550cdi,24ri,24i,Heat-24,s24,Heat-30,s30" value="2">
+                                                            <label class="radio-custom-label" for="2">2</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="3" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,Heat-15,s15" value="3">
+                                                            <label class="radio-custom-label" for="3">3</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="4" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,Heat-15,s15" value="4">
+                                                            <label class="radio-custom-label" for="4">4</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="5+" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,18ri,18i,Heat-15,s15,Heat-18,s18" value="5+">
+                                                            <label class="radio-custom-label" for="5+">5+</label>
+                                                        </l1>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="image-container-questionnaire">
+                                                <img src="{{asset('custom/img/q10.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="questionnaire-container-gradient step-one" id="div9">
+                            <div class="sc-cSHVUG cBBHCG">
+                                <div class="quote-app">
+                                    <div class="quote-app__questions">
+                                        <div class="app-container">
+                                            <div class="app-header">
+                                                <h1>Get a fixed price quote now!</h1>
+                                                <p>Simply answer the following questions to get your fixed price quote on a new boiler:</p>
+                                            </div>
+                                            <div class="questionnaire-container">
+                                                <div class="questionnaire">
+                                                    <h2 class="question">How many bathrooms?</h2>
+                                                    <ul class="answer-options">
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="1" data-eliminateboilers="Logic-35,32cdi,34cdi,36cdi,highflow-440cdi,highflow-550cdi" value="1">
+                                                            <label class="radio-custom-label" for="1">1</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="2" data-eliminateboilers="Logic-24,highflow-440cdi,highflow-550cdi,12ri,12i,15ri,15i,Heat-15,s15" value="2">
+                                                            <label class="radio-custom-label" for="2">2</label>
+                                                        </l1>
+                                                        <l1 class="answer-option">
+                                                            <input type="radio" class="radio-custom-button" name="radio-group" id="3+" data-eliminateboilers="Logic-30,30i,12ri,12i,15ri,15i,Heat-15,s15,12ri,12i,15ri,15i,Heat-18,s18" value="3+">
+                                                            <label class="radio-custom-label" for="3+">3+</label>
+                                                        </l1>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="image-container-questionnaire">
+                                                <img src="{{asset('custom/img/q11.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="questionnaire-container-gradient step-one" id="give-us-a-call">
+                            <div class="sc-kpOJdX gmoiPL">
+                                <div class="quote-app">
+                                    <div class="quote-app__questions">
+                                        <div>
+                                            <div class="sc-chPdSV biOeyM">
+                                                <div class="cta-wrapper" style="width: 100%;text-align: center;">
+                                                    <a class="reset-cta" href="{{route('customer.home')}}" style="box-sizing: border-box;display: block; min-width: 544px; border-left: 10px solid rgb(51, 51, 51); display: block; position: relative;margin: 0px auto 8px;max-width: 260px;background-color: rgb(244, 237, 237);padding: 16px;border-left: 10px solid rgb(246, 176, 93);min-width: 260px;font-family: Roboto Condensed; text-decoration: none;color: rgb(51, 51, 51);font-size: 1.2rem;box-sizing: border-box;">Reset Questionnaire</a>
+                                                </div>
+                                                
+                                                <div class="sc-kAzzGY dcYXXm" style="width: 100%;text-align: center; width: 100%; max-width: 600px; margin: 0px auto; display: block; box-sizing: border-box; width: 100%; text-align: center;">
+                                                    <img src="{{asset('custom/img/callUsImage.jpg')}}" alt="call Instaheat Now" style="width: 100%;text-align: center; width: 100%; max-width: 600px; margin: 0px auto; display: block;">
+                                                    <h2 class="call-us-header">Give us a call</h2>
+                                                    <p>Based on the answers you gave in the instant quote questionnaire, it would probably be easier if you get in touch and we can discuss your needs in more detail.</p>
+                                                    <p>Head over to the <a href="{{route('customer.contact')}}">contact now</a> page and contact us by any of the methods listed on there.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

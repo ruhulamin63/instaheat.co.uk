@@ -51,27 +51,12 @@
     </script> -->
 
     <!-- <script src="{{asset('custom/smtpjs.com/v2/smtp.js')}}"></script>
-    <script src="{{asset('custom/cdn.polyfill.io/v2/polyfill.min.js')}}"></script>
+    <script src="{{asset('custom/cdn.polyfill.io/v2/polyfill.min.js')}}"></script> -->
  
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
-    <!-- <script>
-        //  $(document).ready(function () {
-        //     $('#Gas').click(function () {
-        //         var inputValue = $(this).attr("value");
-        //         $("." + inputValue).toggle();
-        //     });
-        // });
-
-        // jQuery(function(){
-        //     jQuery('#Gas').click(function(){
-        //         jQuery('.#div1').hide();
-        //         jQuery('#div2'+$(this).attr('.target')).show();
-        //     });
-        // });
-    </script>
     
     <script>
 
@@ -89,32 +74,35 @@
         //     }
         // });
         
-       // console.log("oij");
-        // $(document).ready(function(){
-        //     $('.radio-custom-button-gas').click(function(){
-        //       //  console.log($(this).val());
-        //         localStorage.setItem('step-1',$(this).val());
-        //         //localStorage.setItem('step-2',$(this).val());
+       //console.log("oij");
 
-        //         // const set_val = [
-        //         //     'red','green','blue'
-        //         // ];
-        //         // localStorage.setItem('get_array', JSON.stringify(set_val));
-        //         // const array_list = JSON.parse(localStorage.getItem('get_array'));
+        $(document).ready(function(){
+            $('.radio-custom-button-gas').click(function(){
+              //  console.log($(this).val());
+                localStorage.setItem('step-1',$(this).val());
+                //localStorage.setItem('step-2',$(this).val());
 
-        //         // console.log(array_list);
+                // const set_val = [
+                //     'red','green','blue'
+                // ];
+                // localStorage.setItem('get_array', JSON.stringify(set_val));
+                // const array_list = JSON.parse(localStorage.getItem('get_array'));
+
+                // console.log(array_list);
 
 
-        //         var stp = localStorage.getItem('step-1');
+                var stp = localStorage.getItem('step-1');
 
-        //         if(stp == 'Gas'){
-        //             //here will code
-        //             console.log("paici");
-        //         }
-        //     });
+                if(stp == 'Gas'){
+                    //here will code
+                    $('#div2').removeClass('step-one')
+                    $('#div1').addClass('step-one')
+                    console.log("paici");
+                }
+            });
 
-        //     $('.reset-button').click(function(){
-        //       localStorage.clear();
-        //     });
-        // })
-    </script> -->
+            $('.reset-button').click(function(){
+              localStorage.clear();
+            });
+        })
+    </script>

@@ -126,8 +126,14 @@
             {bottom:4px;left:50%;margin-left:-4px;border-width:4px 4px 0;border-top-color:#6c6c6c}
         </style>
 
+        <style>
+            .step-one{
+                display:none
+            }
+        </style>
 
-        <meta property="og:type" content="website"/>
+
+        <!-- <meta property="og:type" content="website"/>
         <meta property="og:title" content="Instaheat - Plumbing and Heating Engineers"/>
         <meta property="og:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
         <meta property="og:url" content="https://www.instaheat-solutions.co.uk/"/>
@@ -135,7 +141,7 @@
         <meta name="twitter:card" content="summary"/>
         <meta name="twitter:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
         <meta name="twitter:title" content="Instaheat - Plumbing and Heating Engineers"/>
-      
+       -->
       
       <!-- <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/component---src-pages-services-js-47ad6ad5d5f2997fbb5b.js')}}"></script>
       <script type="text/javascript" charset="utf-8" async="" src="{{asset('custom/path---services-a0e39f21c11f6a62c5ab.js')}}"></script>
