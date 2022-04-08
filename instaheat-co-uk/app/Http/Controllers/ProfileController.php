@@ -64,6 +64,12 @@ class ProfileController extends Controller{
 
         if($query){
 
+            // $req->session()->flash('admin_first_name');
+            // $req->session()->flash('admin_last_name');
+            // $req->session()->flash('admin_address');
+            // $req->session()->flash('admin_phone');
+            // $req->session()->flash('admin_image');
+
             $req->session()->put('admin_first_name', $users->first_name);
             $req->session()->put('admin_last_name', $users->last_name);
             $req->session()->put('admin_address', $users->address);
@@ -96,7 +102,7 @@ class ProfileController extends Controller{
                 'message' => 'Required data missing.'
             ]);
         }else{
-            $id = Session()->get('user_id');
+            $id = Session()->get('admin_id');
 
             $users = User::find($id);
 
@@ -104,7 +110,8 @@ class ProfileController extends Controller{
 
             if($users->save()){
 
-                $req->session()->put('user_email', $users->email);
+                $req->session()->flash('admin_email');
+                $req->session()->put('admin_email', $users->email);
 
                 return redirect()->back()->with([
                     'error' => false,
@@ -132,12 +139,12 @@ class ProfileController extends Controller{
             'newpassword' => [
                 'required',
                 'string',
-                'min:8',
+                'min:4',
                 'max:20',
-                'regex:/[a-z]/',
-                'regex:/[A-Z]/',
-                'regex:/[0-9]/',
-                'regex:/[@$!%*#?&]/',
+                // 'regex:/[a-z]/',
+                // 'regex:/[A-Z]/',
+                // 'regex:/[0-9]/',
+                // 'regex:/[@$!%*#?&]/',
             ],
             'confirmpassword' => 'required|same:newpassword'
         ]);
@@ -149,8 +156,8 @@ class ProfileController extends Controller{
             ]);
         }else{
 
-            $id = Session()->get('user_id');
-            $session_password = Session()->get('user_password');
+            $id = Session()->get('admin_id');
+            $session_password = Session()->get('admin_password');
 
             $users = User::find($id);
 
@@ -167,15 +174,16 @@ class ProfileController extends Controller{
 
                     return redirect()->back()->with([
                         'error' => true,
-                        'message' => 'Newpassword & confirmpassword password not match !'
+                        'message' => 'New & confirm password not match !'
                     ]);
                 }else{
-
+                    //dd($users);
                     $users->password = md5($req->newpassword);
 
                     if($users->update()){
-        
-                        $req->session()->put('user_password', $users->password);
+                        
+                        $req->session()->flash('admin_password');
+                        $req->session()->put('admin_password', $users->password);
         
                         return redirect()->back()->with([
                             'error' => false,

@@ -108,7 +108,7 @@ License: For each use you must have a valid license purchased only from above li
 
 								<!--begin::Link-->
 								<!-- <div class="text-gray-400 fw-bold fs-4">Don't have an account ?
-									<a href="{{route('admin.register')}}" class="link-primary fw-bolder">Sign up here</a>
+									<a href="#" class="link-primary fw-bolder">Sign up here</a>
 								</div> -->
 								<!--end::Link-->
 							</div>
