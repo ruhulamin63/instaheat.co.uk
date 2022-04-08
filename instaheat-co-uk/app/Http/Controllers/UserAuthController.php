@@ -18,22 +18,6 @@ class UserAuthController extends Controller
         return view('authenticate.signin');
     }
 
-    //===============================view signin page=========================================
-    // public function signinIndex(Request $request){
-    //     // session_start();
-
-    //     if($request->session()->has('username')){
-    //         if($request->session()->get('status') == 1){
-    //             return redirect('/admin/home');
-    //         }else{
-    //             return view('authenticate.signin');
-    //         }
-    //     }else{
-    //         return view('authenticate.signin');
-    //     }
-
-    // }
-
     //===============================view login page=========================================
     public function loggedin(Request $request){
 
@@ -107,78 +91,78 @@ class UserAuthController extends Controller
     }
 
     //===============================create user page=========================================
-    public function signup(){
-        return view('authenticate.signup');
-    }
+    // public function signup(){
+    //     return view('authenticate.signup');
+    // }
 
-    public function CreateNewUser(Request $request){
+    // public function CreateNewUser(Request $request){
 
-        $validator = Validator::make($request->all(), [
-            'firstName' => ['required', 'min:3' ,'max:30'],
-            'lastName' => ['required', 'min:3' ,'max:30'],
-            'username' => 'required',
-            'address' => 'required',
-            'division' => 'required',
-            'country' => 'required',
-            'password' => [
-                            'required',
-                            'string',
-                            'min:4',
-                            'max:20',
-                            // 'regex:/[a-z]/',
-                            // 'regex:/[A-Z]/',
-                            // 'regex:/[0-9]/',
-                            // 'regex:/[@$!%*#?&]/',
-                        ],
-            'confirm-password' => 'required|same:password',
-            'phone' => 'required|min:11|max:15'
+    //     $validator = Validator::make($request->all(), [
+    //         'firstName' => ['required', 'min:3' ,'max:30'],
+    //         'lastName' => ['required', 'min:3' ,'max:30'],
+    //         'username' => 'required',
+    //         'address' => 'required',
+    //         'division' => 'required',
+    //         'country' => 'required',
+    //         'password' => [
+    //                         'required',
+    //                         'string',
+    //                         'min:4',
+    //                         'max:20',
+    //                         // 'regex:/[a-z]/',
+    //                         // 'regex:/[A-Z]/',
+    //                         // 'regex:/[0-9]/',
+    //                         // 'regex:/[@$!%*#?&]/',
+    //                     ],
+    //         'confirm-password' => 'required|same:password',
+    //         'phone' => 'required|min:11|max:15'
 
-        ]);
+    //     ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()->with([
-                'error' => true,
-                'message' => 'Required data missing.'
-            ]);
-        }else{
+    //     if ($validator->fails()) {
+    //         return redirect()->back()->with([
+    //             'error' => true,
+    //             'message' => 'Required data missing.'
+    //         ]);
+    //     }else{
 
-            $user=DB::table('users')
-            ->where('phone',$request->phone)
-            ->orWhere('username',$request->username)
-            ->first();
+    //         $user=DB::table('users')
+    //         ->where('phone',$request->phone)
+    //         ->orWhere('username',$request->username)
+    //         ->first();
 
-            if($user){
+    //         if($user){
 
-                return redirect()->back()->with([
-                    'error' => true,
-                    'message' => 'Username or Phone Already register'
-                ]);
+    //             return redirect()->back()->with([
+    //                 'error' => true,
+    //                 'message' => 'Username or Phone Already register'
+    //             ]);
 
-            }else{
+    //         }else{
 
-                $data=array();
-                $data['first_name']=$request->firstName;
-                $data['last_name']=$request->lastName;
-                $data['username']=$request->username;
-                $data['password']=md5($request->password);
-                $data['address']=$request->address;
-                $data['email']=$request->email;
-                $data['phone']=$request->phone;
-                $data['division']=$request->division;
-                $data['country']=$request->country;
-                $data['status']=1;
+    //             $data=array();
+    //             $data['first_name']=$request->firstName;
+    //             $data['last_name']=$request->lastName;
+    //             $data['username']=$request->username;
+    //             $data['password']=md5($request->password);
+    //             $data['address']=$request->address;
+    //             $data['email']=$request->email;
+    //             $data['phone']=$request->phone;
+    //             $data['division']=$request->division;
+    //             $data['country']=$request->country;
+    //             $data['status']=1;
 
-                $insert_user = DB::table('users')->insert($data);
+    //             $insert_user = DB::table('users')->insert($data);
                
-                if($insert_user){
+    //             if($insert_user){
 
-                    return redirect()->route('admin.login')->with('message', 'User Create Successfully');
-                }else{
-                    return redirect()->route('admin.login')->with([
-                        'message' => 'Something Wrong !'
-                    ]);
-                }
-            }
-        }
-    }
+    //                 return redirect()->route('admin.login')->with('message', 'User Create Successfully');
+    //             }else{
+    //                 return redirect()->route('admin.login')->with([
+    //                     'message' => 'Something Wrong !'
+    //                 ]);
+    //             }
+    //         }
+    //     }
+    // }
 }

@@ -94,7 +94,7 @@ License: For each use you must have a valid license purchased only from above li
 										</span>
 									</div>
 									<!--end::Input wrapper-->
-									<a href="{{ url('/') }}" class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
+									<!-- <a href="{{ url('/') }}" class="link-primary fs-6 fw-bolder">Forgot Password ?</a> -->
 							</div>
 							<!--end::Input group=-->
 
@@ -107,9 +107,9 @@ License: For each use you must have a valid license purchased only from above li
 								</button>
 
 								<!--begin::Link-->
-								<div class="text-gray-400 fw-bold fs-4">Don't have an account ?
+								<!-- <div class="text-gray-400 fw-bold fs-4">Don't have an account ?
 									<a href="{{route('admin.register')}}" class="link-primary fw-bolder">Sign up here</a>
-								</div>
+								</div> -->
 								<!--end::Link-->
 							</div>
 							<!--end::Actions-->

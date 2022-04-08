@@ -22,8 +22,8 @@ Route::get('/', function () {
     Route::get('/login', 'UserAuthController@signin')->name('admin.login');
     Route::post('/login', 'UserAuthController@loggedin')->name('admin.login');
 
-    Route::get('/register', 'UserAuthController@signup');
-    Route::post('/register', 'UserAuthController@CreateNewUser')->name('admin.register');
+    // Route::get('/register', 'UserAuthController@signup');
+    // Route::post('/register', 'UserAuthController@CreateNewUser')->name('admin.register');
 
     Route::get('/logout','UserAuthController@logout')->name('admin.logout');
 
