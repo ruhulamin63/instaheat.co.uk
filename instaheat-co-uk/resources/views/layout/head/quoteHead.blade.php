@@ -130,6 +130,41 @@
             .step-one{
                 display:none
             }
+            .step-two{
+                display:none
+            }
+            .step-three{
+                display:none
+            }
+            .step-four{
+                display:none
+            }
+            .step-five{
+                display:none
+            }
+            .step-six{
+                display:none
+            }
+            .step-seven{
+                display:none
+            }
+            .step-eight{
+                display:none
+            }
+            .step-nine{
+                display:none
+            }
+            .step-ten{
+                display:none
+            }
+
+            .step-eleven{
+                display:none
+            }
+
+            .step-twelve{
+                display:none
+            }
         </style>
 
 
