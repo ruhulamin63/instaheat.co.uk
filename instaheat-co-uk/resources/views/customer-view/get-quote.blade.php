@@ -22,29 +22,29 @@
                                     <div class="questionnaire">
                                         <h2 class="question">Which type of fuel does your boiler use?</h2>
                                         <ul class="answer-options">
-                                            <l1 class="answer-option">
+                                            <li class="answer-option">
                                                 <input type="radio" class="radio-custom-button-gas" name="radio-group" id="Gas" value="Gas"/>
                                 
                                                 <label class="radio-custom-label" for="Gas">Gas</label>
-                                            </l1>
+                                            </li>
                                             
-                                            <l1 class="answer-option">
+                                            <li class="answer-option">
                                                 <input type="radio" class="radio-custom-button-electricity" name="radio-group" id="Electricity" value="Electricity" data-eliminateBoilers="25i,30i,32cdi,34cdi,36cdi,12ri,15ri,18ri,24ri,12i,15i,18i,24i,s15,s18,s24,s30,Logic-24,Logic-30,Logic-35,Heat-15,Heat-18,Heat-24,Heat-30,highflow-440cdi,highflow-550cdi"/>
                                                
                                                 <label class="radio-custom-label" for="Electricity">Electricity</label>
-                                            </l1>
+                                            </li>
                                             
-                                            <l1 class="answer-option">
+                                            <li class="answer-option">
                                                 <input type="radio" class="radio-custom-button-lpg" name="radio-group" id="LPG" value="LPG" data-eliminateBoilers="25i,30i,32cdi,34cdi,36cdi,12ri,15ri,18ri,24ri,12i,15i,18i,24i,s15,s18,s24,s30,Logic-24,Logic-30,Logic-35,Heat-15,Heat-18,Heat-24,Heat-30,highflow-440cdi,highflow-550cdi"/>
                                                 
                                                 <label class="radio-custom-label" for="LPG">LPG</label>
-                                            </l1>
+                                            </li>
                                             
-                                            <l1 class="answer-option">
+                                            <li class="answer-option">
                                                 <input type="radio" class="radio-custom-button-oil" name="radio-group" id="Oil" value="Oil" data-eliminateBoilers="25i,30i,32cdi,34cdi,36cdi,12ri,15ri,18ri,24ri,12i,15i,18i,24i,s15,s18,s24,s30,Logic-24,Logic-30,Logic-35,Heat-15,Heat-18,Heat-24,Heat-30,highflow-440cdi,highflow-550cdi"/>
                                                
                                                 <label class="radio-custom-label" for="Oil">Oil</label>
-                                            </l1>
+                                            </li>
                                         </ul>
                                     </div>
                                     
@@ -57,25 +57,25 @@
                                     <div class="questionnaire">
                                         <h2 class="question">Which type of boiler?</h2>
                                         <ul class="answer-options">
-                                            <l1 class="answer-option">
+                                            <li class="answer-option">
                                                 <input type="radio" class="radio-custom-button-combi" name="radio-group" id="Combi" data-skipquestion="1" data-eliminateboilers="12ri,15ri,18ri,24ri,12i,15i,18i,24i,s15,s18,s24,s30,Heat-15,Heat-18,Heat-24,Heat-30" value="Combi">
                                                 <label class="radio-custom-label" for="Combi">Combi</label>
-                                            </l1>
+                                            </li>
                                             
-                                            <l1 class="answer-option">
+                                            <li class="answer-option">
                                                 <input type="radio" class="radio-custom-button-standard" name="radio-group" id="Standard" data-eliminateboilers="12i,15i,18i,24i,s15,s18,s24,s30" value="Standard">
                                                 <label class="radio-custom-label" for="Standard">Standard</label>
-                                            </l1>
+                                            </li>
                                             
-                                            <l1 class="answer-option">
+                                            <li class="answer-option">
                                                 <input type="radio" class="radio-custom-button-system" name="radio-group" id="System" data-eliminateboilers="12ri,15ri,18ri,24ri,Heat-15,Heat-18,Heat-24,Heat-30" value="System">
                                                 <label class="radio-custom-label" for="System">System</label>
-                                            </l1>
+                                            </li>
                                             
-                                            <l1 class="answer-option">
+                                            <li class="answer-option">
                                                 <input type="radio" class="radio-custom-button" name="radio-group" id="Back-boiler" data-eliminateboilers="12ri,15ri,18ri,24ri,Heat-15,Heat-18,Heat-24,Heat-30" value="System">
-                                                <label class="radio-custom-label" for="Back Boiler">Back Boiler</label>
-                                            </l1>
+                                                <label class="radio-custom-label" for="System">Back Boiler</label>
+                                            </li>
                                         </ul>
                                     </div>
 
@@ -89,14 +89,14 @@
                                         <div class="questionnaire">
                                             <h2 class="question">Do you want your boiler moving over 5 metres?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-moving-yes" name="radio-group" id="Yes" data-addon="350" value="Yes">
                                                     <label class="radio-custom-label" for="Yes">Yes</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-moving-no" name="radio-group" id="No" value="No">
                                                     <label class="radio-custom-label" for="No">No</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -110,14 +110,14 @@
                                         <div class="questionnaire">
                                             <h2 class="question">Would you like to convert to a combi boiler?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button" name="radio-group" id="Yes" data-addon="650" data-eliminateboilers="12ri,15ri,18ri,24ri,12i,15i,18i,24i,s15,s18,s24,s30,Heat-15,Heat-18,Heat-24,Heat-30" value="Yes">
                                                     <label class="radio-custom-label" for="Yes">Yes</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button" name="radio-group" id="No" data-eliminateboilers="25i,30i,32cdi,34cdi,36cdi,Logic-24,Logic-30,Logic-35,highflow-440cdi,highflow-550cdi" value="No">
                                                     <label class="radio-custom-label" for="No">No</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -131,14 +131,14 @@
                                         <div class="questionnaire">
                                             <h2 class="question">Where does your flue come out?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-roof" name="radio-group" id="Roof" data-addon="350" value="Roof">
                                                     <label class="radio-custom-label" for="Roof">Roof</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-wall" name="radio-group" id="Wall" data-skipquestion="1" value="Wall">
                                                     <label class="radio-custom-label" for="Wall">Wall</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -152,14 +152,14 @@
                                         <div class="questionnaire">
                                             <h2 class="question">Is the roof pitched or flat?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-pictched-flat" name="radio-group" id="Pitched" data-skipquestion="2" value="Pitched">
                                                     <label class="radio-custom-label" for="Pitched">Pitched</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-pictched-flat" name="radio-group" id="Flat" data-skipquestion="2" value="Flat">
                                                     <label class="radio-custom-label" for="Flat">Flat</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -168,19 +168,19 @@
                                     </div>
                                 </div>
 
-                                <div class="app-container step-eleven" id="Carport">
+                                <div class="app-container step-eleven" id="Is-the-flue-under-a-carport">
                                     <div class="questionnaire-container">
                                         <div class="questionnaire">
                                             <h2 class="question">Is the flue under a carport?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="Carport-Yes" data-addon="360" value="Yes">
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button yes" name="radio-group" id="Yes" value="Yes">
                                                     <label class="radio-custom-label" for="Yes">Yes</label>
-                                                </l1>
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="Carport-No" value="No">
+                                                </li>
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="No" value="No">
                                                     <label class="radio-custom-label" for="No">No</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -194,14 +194,14 @@
                                         <div class="questionnaire">
                                             <h2 class="question">Is the flue 30cm away from the window?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-window" name="radio-group" id="Yes" value="Yes">
                                                     <label class="radio-custom-label" for="Yes">Yes</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-window" name="radio-group" id="No" data-addon="60" value="No">
                                                     <label class="radio-custom-label" for="No">No</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -215,26 +215,26 @@
                                         <div class="questionnaire">
                                             <h2 class="question">Which type of house do you live in?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-Flat" name="radio-group" id="Flat" data-eliminateboilers="highflow-440cdi,highflow-550cdi,32cdi,34cdi,36cdi,Logic-35,18ri,24ri,Heat-24,Heat-30,s24,s30,18i,24i" value="Flat">
                                                     <label class="radio-custom-label" for="Flat">Flat</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-Bungalow" name="radio-group" id="Bungalow" value="Bungalow">
                                                     <label class="radio-custom-label" for="Bungalow">Bungalow</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-Terrace" name="radio-group" id="Terrace" data-eliminateboilers="highflow-440cdi,highflow-550cdi,s30,Heat-30" value="Terrace">
                                                     <label class="radio-custom-label" for="Terrace">Terrace</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-Semi-detatched" name="radio-group" id="Semi-detatched" value="Semi-detatched">
                                                     <label class="radio-custom-label" for="Semi-detatched">Semi-detatched</label>
-                                                </l1>
-                                                <l1 class="answer-option">
+                                                </li>
+                                                <li class="answer-option">
                                                     <input type="radio" class="radio-custom-button-Detatched" name="radio-group" id="Detatched" value="Detatched">
                                                     <label class="radio-custom-label" for="Detatched">Detatched</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -248,26 +248,26 @@
                                         <div class="questionnaire">
                                             <h2 class="question">How many bedrooms?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button-Bedroom-one" name="radio-group" id="bedroom-one" data-eliminateboilers="Logic-35,34cdi,36cdi,highflow-440cdi,highflow-550cdi,24ri,24i,Heat-24,s24,Heat-30,s30" value="1">
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="1" data-eliminateboilers="Logic-35,34cdi,36cdi,highflow-440cdi,highflow-550cdi,24ri,24i,Heat-24,s24,Heat-30,s30" value="1">
                                                     <label class="radio-custom-label" for="1">1</label>
-                                                </l1>
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="bedroom-2" data-eliminateboilers="36cdi,highflow-440cdi,highflow-550cdi,24ri,24i,Heat-24,s24,Heat-30,s30" value="2">
+                                                </li>
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="2" data-eliminateboilers="36cdi,highflow-440cdi,highflow-550cdi,24ri,24i,Heat-24,s24,Heat-30,s30" value="2">
                                                     <label class="radio-custom-label" for="2">2</label>
-                                                </l1>
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="bedroom-3" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,Heat-15,s15" value="3">
+                                                </li>
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="3" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,Heat-15,s15" value="3">
                                                     <label class="radio-custom-label" for="3">3</label>
-                                                </l1>
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="bedroom-4" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,Heat-15,s15" value="4">
+                                                </li>
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="4" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,Heat-15,s15" value="4">
                                                     <label class="radio-custom-label" for="4">4</label>
-                                                </l1>
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="bedroom-5+" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,18ri,18i,Heat-15,s15,Heat-18,s18" value="5+">
+                                                </li>
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button 5" name="radio-group" id="5+" data-eliminateboilers="Logic-24,25i,12ri,12i,15ri,15i,18ri,18i,Heat-15,s15,Heat-18,s18" value="5+">
                                                     <label class="radio-custom-label" for="5+">5+</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -281,18 +281,18 @@
                                         <div class="questionnaire">
                                             <h2 class="question">How many bathrooms?</h2>
                                             <ul class="answer-options">
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="1" data-eliminateboilers="Logic-35,32cdi,34cdi,36cdi,highflow-440cdi,highflow-550cdi" value="1">
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button bathroom-one" name="radio-group" id="11" data-eliminateboilers="Logic-35,32cdi,34cdi,36cdi,highflow-440cdi,highflow-550cdi" value="1">
                                                     <label class="radio-custom-label" for="11">1</label>
-                                                </l1>
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="2" data-eliminateboilers="Logic-24,highflow-440cdi,highflow-550cdi,12ri,12i,15ri,15i,Heat-15,s15" value="2">
-                                                    <label class="radio-custom-label" for="2">2</label>
-                                                </l1>
-                                                <l1 class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="3+" data-eliminateboilers="Logic-30,30i,12ri,12i,15ri,15i,Heat-15,s15,12ri,12i,15ri,15i,Heat-18,s18" value="3+">
+                                                </li>
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button" name="radio-group" id="22" data-eliminateboilers="Logic-24,highflow-440cdi,highflow-550cdi,12ri,12i,15ri,15i,Heat-15,s15" value="2">
+                                                    <label class="radio-custom-label" for="22">2</label>
+                                                </li>
+                                                <li class="answer-option">
+                                                    <input type="radio" class="radio-custom-button 3" name="radio-group" id="3+" data-eliminateboilers="Logic-30,30i,12ri,12i,15ri,15i,Heat-15,s15,12ri,12i,15ri,15i,Heat-18,s18" value="3+">
                                                     <label class="radio-custom-label" for="3+">3+</label>
-                                                </l1>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -314,6 +314,76 @@
                                             <p>Head over to the <a href="{{route('customer.contact')}}">contact now</a> page and contact us by any of the methods listed on there.</p>
                                         </div>
                                     </div>
+                                </div>
+
+                                <style>
+                                    .dHVeug {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        justify-content: space-evenly;
+                                    }
+                                    * {
+                                        box-sizing: border-box;
+                                    }
+                                </style>
+
+                                <div class="sc-chPdSV biOeyM step-final" id="final-step">
+                                    <div class="cta-wrapper">
+                                        <a class="reset-cta">Reset Questionnaire</a>
+                                    </div>
+                                    
+                                    <div class="form-data">
+                                        <p><strong>2</strong> boilers meet your needs. Click on 'Find out more' to get more information about a boiler and to make an enquiry**</p>
+                                    </div>
+                                    
+                                    <div class="sc-cSHVUG iYEWGf">
+                                        <div>
+                                            <img class="brand-logo" src="{{asset('custom/img/Worcester.png')}}" alt="Worcester">
+                                            <h3>18ri Standard Boiler</h3>
+                                            <p class="boiler-details">Includes VAT, fitting, filter and flushed &amp; protected</p>
+                                        </div>
+                                        
+                                        <img class="boiler-image" src="{{asset('custom/img/18ri.jpg')}}" alt="Worcester 18ri White">
+                                        <div class="price-wrapper">
+                                            <div class="price">
+                                                <span class="price">£1860 <span class="warranty-message">(5 year warranty)</span></span>
+                                            </div>
+                                            
+                                            <p class="price-divider">or</p>
+                                            
+                                            <div class="price">
+                                                <span class="price">£2060 <span class="warranty-message">(10 year warranty)</span></span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sc-bdVaJa eyNdej">
+                                            <a class="primary-cta" href="/boilers/18ri">Find out more</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- <div class="sc-cSHVUG iYEWGf">
+                                        <div>
+                                            <img class="brand-logo" src="/img/Ideal.png" alt="Ideal">
+                                            <h3>Heat-18 Standard Boiler</h3>
+                                            <p class="boiler-details">Includes VAT, fitting, filter and flushed &amp; protected</p>
+                                        </div>
+                                        
+                                        <img class="boiler-image" src="/img/Heat-18.jpg" alt="Ideal Heat-18 White">
+                                        <div class="price-wrapper">
+                                            <div class="price">
+                                                <span class="price">£1685 <span class="warranty-message">(5 year warranty)</span></span>
+                                            </div>
+                                            <p class="price-divider">or</p>
+                                            <div class="price">
+                                                <span class="price">£1885 <span class="warranty-message">(10 year warranty)</span></span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sc-bdVaJa eyNdej">
+                                            <a class="primary-cta" href="/boilers/heat-18">Find out more</a>
+                                        </div>
+                                    </div> -->
+                                    <p class="footnote">**Although boiler quotes should be accurate, these are not 100% finalised until you give us a call</p>
                                 </div>
                                 
                             </div>

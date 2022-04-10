@@ -206,16 +206,16 @@
         //==================flue come out wall=================
         $(document).ready(function(){
             $('.radio-custom-button-wall').click(function(){
-                $('#carport').removeClass('carport')
+                $('#Is-the-flue-under-a-carport').removeClass('step-eleven')
                 $('#Where-does-your-flue-come-out').addClass('step-five')
             });
         });
 
         //==================Is-the-flue-under-a-carport=================
         $(document).ready(function(){
-            $('#Carport-Yes').click(function(){
+            $('.yes').click(function(){
                 $('#Window').removeClass('step-twelve')
-                $('#Carport').addClass('step-eleven')
+                $('#Is-the-flue-under-a-carport').addClass('step-eleven')
             });
         });
 
@@ -273,15 +273,66 @@
 
 
 
-         //==================How many bedrooms=================
-         $(document).ready(function(){
-            $('#bedroom-one').click(function(){
+        //==================How many bedrooms=================
+        $(document).ready(function(){
+            $('#1').click(function(){
                 $('#How-many-bathrooms').removeClass('step-nine')
-                $('#hi').addClass('step-eight')
-
-                console.log("test")
+                $('#How-many-bedrooms').addClass('step-eight')
             });
         });
+
+        $(document).ready(function(){
+            $('#2').click(function(){
+                $('#How-many-bathrooms').removeClass('step-nine')
+                $('#How-many-bedrooms').addClass('step-eight')
+            });
+        });
+
+        $(document).ready(function(){
+            $('#3').click(function(){
+                $('#How-many-bathrooms').removeClass('step-nine')
+                $('#How-many-bedrooms').addClass('step-eight')
+            });
+        });
+
+        $(document).ready(function(){
+            $('#4').click(function(){
+                $('#How-many-bathrooms').removeClass('step-nine')
+                $('#How-many-bedrooms').addClass('step-eight')
+            });
+        });
+
+        $(document).ready(function(){
+            $('.5').click(function(){
+                $('#How-many-bathrooms').removeClass('step-nine')
+                $('#How-many-bedrooms').addClass('step-eight')
+            });
+        });
+
+
+
+        //==================How many badthroom=================
+        $(document).ready(function(){
+            $('#11').click(function(){
+                $('#final-step').removeClass('step-final')
+                $('#How-many-bathrooms').addClass('step-nine')
+            });
+        });
+
+        $(document).ready(function(){
+            $('#22').click(function(){
+                $('#final-step').removeClass('step-final')
+                $('#How-many-bathrooms').addClass('step-nine')
+            });
+        });
+
+        $(document).ready(function(){
+            $('.3').click(function(){
+                $('#final-step').removeClass('step-final')
+                $('#How-many-bathrooms').addClass('step-nine')
+            });
+        });
+
 
 
 

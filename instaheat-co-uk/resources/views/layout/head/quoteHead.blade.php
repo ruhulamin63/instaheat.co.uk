@@ -165,6 +165,10 @@
             .step-twelve{
                 display:none
             }
+
+            .step-final{
+                display: none
+            }
         </style>
 
 
