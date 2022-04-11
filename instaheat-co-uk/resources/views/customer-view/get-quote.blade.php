@@ -316,16 +316,6 @@
                                     </div>
                                 </div>
 
-                                {{-- <style>
-                                    .dHVeug {
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                        justify-content: space-evenly;
-                                    }
-                                    * {
-                                        box-sizing: border-box;
-                                    }
-                                </style> --}}
                                 <div class="app-container final-step" id="boiler-list">
                                     <div class="questionnaire-container">
                                         <div class="questionnaire">
