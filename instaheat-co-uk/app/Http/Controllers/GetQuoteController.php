@@ -32,8 +32,12 @@ class GetQuoteController extends Controller
     }
 
     public function boiler_logic_list(){
-        //dd("test");
-        return view('customer-view.boiler-logic-list');
+
+        $boilers = DB::table('boilers')
+            ->orderBy('id','DESC')
+            ->get();
+
+        return view('customer-view.boiler-logic-list', compact('boilers'));
     }
 
     public function question_2(){

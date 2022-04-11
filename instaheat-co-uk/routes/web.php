@@ -28,7 +28,7 @@ Route::get('/', function () {
     Route::get('/logout','UserAuthController@logout')->name('admin.logout');
 
     //================test controller=================
-    Route::get('/test', 'TestController@test')->name('test');
+    // Route::get('/test', 'TestController@test')->name('test');
 
 
 

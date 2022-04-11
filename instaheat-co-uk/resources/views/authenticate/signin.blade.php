@@ -72,7 +72,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Col-->
 								<div class="col-xl-12">
 									<label class="form-label fw-bolder text-dark fs-6">Username</label>
-									<input class="form-control form-control-lg form-control-solid" type="text" placeholder="username" name="username" value="{{ old('username')}}" autocomplete="off" /> {{-- {{ old('username')}} --}}
+									<input class="form-control form-control-lg form-control-solid" type="text" placeholder="username" name="username" value="" autocomplete="off" /> {{-- {{ old('username')}} --}}
 								</div>
 								<!--end::Col-->
 							</div>
@@ -87,7 +87,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Label-->
 									<!--begin::Input wrapper-->
 									<div class="position-relative mb-3">
-										<input class="form-control form-control-lg form-control-solid" type="password" name="password" value="{{ old('password')}}" placeholder="password" autocomplete="off" />
+										<input class="form-control form-control-lg form-control-solid" type="password" name="password" value="" placeholder="password" autocomplete="off" />
 										<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 											<i class="bi bi-eye-slash fs-2"></i>
 											<i class="bi bi-eye fs-2 d-none"></i>

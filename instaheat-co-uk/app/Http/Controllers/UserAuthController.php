@@ -32,7 +32,7 @@ class UserAuthController extends Controller
                 'message' => 'Required data missing.'
             ]);
         }else{
-            $password=md5($request->input('password'));
+            $password=md5($request->password);
 
             $user=DB::table('users')
             ->where('username',$request->input('username'))
@@ -58,7 +58,8 @@ class UserAuthController extends Controller
                     $request->session()->put('admin_password', $user->password);
 
                     if($user->status == 1){
-                        return redirect('/admin-home')->with('message', 'Logged In Successfully');
+                        //dd('test');
+                        return redirect()->route('admin.login')->with('message', 'Logged In Successfully');
                     }else{
                         return redirect()->back()->with([
                             'error' => true,
