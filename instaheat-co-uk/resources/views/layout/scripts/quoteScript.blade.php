@@ -314,21 +314,23 @@
         //==================How many badthroom=================
         $(document).ready(function(){
             $('#11').click(function(){
-                $('#final-step').removeClass('step-final')
+                $('#boiler-list').removeClass('final-step')
                 $('#How-many-bathrooms').addClass('step-nine')
             });
         });
 
         $(document).ready(function(){
             $('#22').click(function(){
-                $('#final-step').removeClass('step-final')
+                $('#boiler-list').removeClass('final-step')
                 $('#How-many-bathrooms').addClass('step-nine')
             });
         });
 
+
+        //==============boiler list======================
         $(document).ready(function(){
             $('.3').click(function(){
-                $('#final-step').removeClass('step-final')
+                $('#boiler-list').removeClass('final-step')
                 $('#How-many-bathrooms').addClass('step-nine')
             });
         });

@@ -59,7 +59,7 @@ class UserAuthController extends Controller
 
                     if($user->status == 1){
                         //dd('test');
-                        return redirect()->route('admin.login')->with('message', 'Logged In Successfully');
+                        return redirect()->route('admin.home')->with('message', 'Logged In Successfully');
                     }else{
                         return redirect()->back()->with([
                             'error' => true,

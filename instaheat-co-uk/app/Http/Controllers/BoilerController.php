@@ -194,7 +194,9 @@ class BoilerController extends Controller
 
     //UPDATE Order DETAILS
     public function update_boiler_details(Request $request){
-        $order_id = $request->cid;
+        $boiler_id = $request->cid;
+
+        //dd($order_id);
 
         $validator = \Validator::make($request->all(),[
             'brand_name' => 'required',
@@ -205,15 +207,16 @@ class BoilerController extends Controller
             return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
         }else{
 
-            $data=array();
-            $data['brand_name']=$request->brand_name;
-            $data['model_name']=$request->model_name;
-            $data['type']= $request->type;
-            $data['central_heating_output']= $request->central_heating_output;
-            $data['hot_water_flow_rate']= $request->hot_water_flow_rate;
-            $data['short_desc']= $request->short_desc;
-            $data['price_for_5_year']= $request->price_for_5_year;
-            $data['price_for_10_year']= $request->price_for_10_year;
+            $boilers = Boiler::find($boiler_id);
+
+            $boilers->brand_name = $request->brand_name;
+            $boilers->model_name = $request->model_name;
+            $boilers->type = $request->type;
+            $boilers->central_heating_output = $request->central_heating_output;
+            $boilers->hot_water_flow_rate = $request->hot_water_flow_rate;
+            $boilers->short_desc = $request->short_desc;
+            $boilers->price_for_5_year = $request->price_for_5_year;
+            $boilers->price_for_10_year = $request->price_for_10_year;
 
             if($request->avatar !=""){
                 $image = $request->file('avatar');
@@ -226,12 +229,10 @@ class BoilerController extends Controller
                 $success=$image->move($upload_path,$image_full_name);
                 $imageData='/media/boiler/'.$image_full_name;
 
-                $data['image']=$imageData;
+                $boilers->image=$imageData;
             }
-
-    
-
-            $query = DB::table('boilers')->update($data);
+            
+            $query = $boilers->update();
 
             //dd("test");
 

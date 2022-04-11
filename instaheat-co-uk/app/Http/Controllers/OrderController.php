@@ -314,6 +314,7 @@ class OrderController extends Controller
 
     //UPDATE Order DETAILS
     public function update_order_details(Request $request){
+        $order_id = $request->order_id;
         
         $validator = \Validator::make($request->all(),[
             'customer_name' => 'required',
@@ -334,31 +335,58 @@ class OrderController extends Controller
 
             //$data['boiler_id']= $boiler_id;
 
-            $data['customer_name']=$request->customer_name;
-            $data['customer_contact_number']=$request->customer_contact_number;
-            $data['year_warranty']=$request->year_warranty;
+            // $data['customer_name']=$request->customer_name;
+            // $data['customer_contact_number']=$request->customer_contact_number;
+            // $data['year_warranty']=$request->year_warranty;
 
+            $orderDetails = QuestionnaireAnswer::find($order_id);
+
+            $orderDetails->customer_name = $request->customer_name;
+            $orderDetails->customer_contact_number = $request->customer_contact_number;
+            $orderDetails->year_warranty = $request->year_warranty;
+            
             if($request->year_warranty == 5){
-                $data['price'] = $boiler->price_for_5_year;
+                //$data['price'] = $boiler->price_for_5_year;
+                $orderDetails->price = $request->price;
             }else{
-                $data['price'] = $boiler->price_for_10_year;
+                //$data['price'] = $boiler->price_for_10_year;
+                $orderDetails->price = $request->price;
             }
 
-            $data['fuel_type']= $request->fuel_type;
-            $data['boiler_type']= $request->boiler_type;
-            $data['convert_combi_boiler']= $request->convert_combi_boiler;
-            $data['under_a_carport']= $request->under_a_carport;
-            $data['thirty_cm_away_window']= $request->thirty_cm_away_window;
-            $data['moving_5_meter']= $request->moving_5_meter;
-            $data['fuel_come_out']= $request->fuel_come_out;
-            $data['pitched_or_flat']= $request->pitched_or_flat;
-            $data['house_live_in']= $request->house_live_in;
-            $data['number_of_bedroom']= $request->number_of_bedroom;
-            $data['number_of_bathroom']= $request->number_of_bathroom;
-            $data['status']= 0;
-            $data['activeStatus']= 1;
+            // $data['fuel_type']= $request->fuel_type;
+            // $data['boiler_type']= $request->boiler_type;
+            // $data['convert_combi_boiler']= $request->convert_combi_boiler;
+            // $data['under_a_carport']= $request->under_a_carport;
+            // $data['thirty_cm_away_window']= $request->thirty_cm_away_window;
+            // $data['moving_5_meter']= $request->moving_5_meter;
+            // $data['fuel_come_out']= $request->fuel_come_out;
+            // $data['pitched_or_flat']= $request->pitched_or_flat;
+            // $data['house_live_in']= $request->house_live_in;
+            // $data['number_of_bedroom']= $request->number_of_bedroom;
+            // $data['number_of_bathroom']= $request->number_of_bathroom;
+            // $data['status']= 0;
+            // $data['activeStatus']= 1;
 
-            $query = DB::table('questionnaire_answers')->update($data);
+            $orderDetails->fuel_type = $request->fuel_type;
+            $orderDetails->boiler_type = $request->boiler_type;
+            $orderDetails->convert_combi_boiler = $request->convert_combi_boiler;
+            $orderDetails->under_a_carport = $request->under_a_carport;
+            $orderDetails->thirty_cm_away_window = $request->thirty_cm_away_window;
+
+            $orderDetails->moving_5_meter = $request->moving_5_meter;
+            $orderDetails->fuel_come_out = $request->fuel_come_out;
+            $orderDetails->pitched_or_flat = $request->pitched_or_flat;
+            $orderDetails->thirty_cm_away_window = $request->thirty_cm_away_window;
+            $orderDetails->house_live_in = $request->house_live_in;
+
+            $orderDetails->number_of_bedroom = $request->number_of_bedroom;
+            $orderDetails->number_of_bathroom = $request->number_of_bathroom;
+            $orderDetails->status = 0;
+            $orderDetails->activeStatus = 1;
+
+
+            //$query = DB::table('questionnaire_answers')->update($data);
+            $query = $orderDetails->update();
 
             //dd("test");
 

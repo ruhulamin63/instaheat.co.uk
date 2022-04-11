@@ -13,7 +13,7 @@
                 <div class="modal-body">
                     <input type="hidden" name="cid">
                     <div class="modal-body py-10 px-lg-27">
-                        <h6>#Boiler Information</h6>
+                        <h6>#Boiler Information</h6><br>
                         <div class="row col-md-12">
 
                             <div class="col-md-6">
@@ -80,14 +80,14 @@
 
                             <div class="col-md-4">
                                 <!--begin::Label-->
-                                <label class="fs-6 fw-bold mb-2">Choose Photo</label>
+                                {{-- <label class="fs-6 fw-bold mb-2">Choose Photo</label> --}}
                                 <!--end::Label-->
                                 <div class="col-lg-8">
                                     
                                     <!--begin::Image input-->
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url({{asset('media/avatars/blank.png')}})">
                                         <!--begin::Preview existing avatar-->
-                                        <div class="image-input-wrapper w-125px h-125px bgi-position-center" style="background-size: 75%; background-image: url({{asset('media/svg/brand-logos/volicity-9.svg')}})"></div>
+                                        <div class="image-input-wrapper w-80px h-80px bgi-position-center" style="background-size: 75%; background-image: url({{asset('media/svg/brand-logos/volicity-9.svg')}})"></div>
                                         <!--end::Preview existing avatar-->
                                         <!--begin::Label-->
                                         <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
@@ -111,7 +111,7 @@
                                     </div>
                                     <!--end::Image input-->
                                     <!--begin::Hint-->
-                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                    {{-- <div class="form-text">Allowed file types: png, jpg, jpeg.</div> --}}
                                     <!--end::Hint-->
                                     <br>
                                 </div>

@@ -18,8 +18,12 @@ use DataTables;
 class GetQuoteController extends Controller
 {
     public function customer_getQuote(){
-        //dd("test");
-        return view('customer-view.get-quote');
+
+        $boilers = DB::table('boilers')
+        ->orderBy('id','DESC')
+        ->get();
+
+        return view('customer-view.get-quote', compact('boilers'));
     }
 
     public function boiler_logic_30(){

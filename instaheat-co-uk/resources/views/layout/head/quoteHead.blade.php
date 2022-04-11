@@ -39,6 +39,14 @@
 
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Condensed" rel="stylesheet"/>
 
+        {{-- =============================================================== --}}
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
         <!-- <script>
             
@@ -166,7 +174,7 @@
                 display:none
             }
 
-            .step-final{
+            .final-step{
                 display: none
             }
         </style>
@@ -674,7 +682,7 @@
             } */
 
             .card {
-                background-color: #c1e8ed;
+                /* background-color: #c1e8ed; */
                 width: 400px;
                 padding: 10px;
                 border: 1px solid #eee
@@ -706,12 +714,5 @@
                 box-shadow: none
             }
         </style>
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 
     </head>

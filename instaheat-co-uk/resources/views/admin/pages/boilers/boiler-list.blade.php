@@ -33,63 +33,64 @@
 					</div>
 					<!--end::Toolbar-->
 
-                    <!--begin::Post-->
-					
-					<!--begin::Row-->
-					<div class="row gy-5 gx-xl-8">
-						<!--begin::Col-->
-						<div class="col-xl-12">
-							<div class="card card-xxl-stretch mb-5 mb-xl-8">
-								<!--begin::Card header-->
-								<div class="card-header">
-									<h3 class="card-title align-items-start flex-column">
-										<span class="card-label fw-bolder fs-3 mb-1">Boilers List Information</span>
-										<span class="text-muted mt-1 fw-bold fs-7">All boilers list</span>
-									</h3>
-									<div class="card-toolbar">
-										<button class="btn btn-sm btn-light-primary" id="boilerBtn"><i class="fas fa-plus"></i>Added Boiler</button>
+					<!--begin::Container-->
+					<div style="margin-left: 10px;" class="row col-md-12">
+						<!--begin::Row-->
+						<div class="row gy-5 gx-xl-8">
+							<!--begin::Col-->
+							<div class="col-xl-12">
+								<div class="card card-xxl-stretch mb-5 mb-xl-8">
+									<!--begin::Card header-->
+									<div class="card-header">
+										<h3 class="card-title align-items-start flex-column">
+											<span class="card-label fw-bolder fs-3 mb-1">Boilers List Information</span>
+											<span class="text-muted mt-1 fw-bold fs-7">All boilers list</span>
+										</h3>
+										<div class="card-toolbar">
+											<button class="btn btn-sm btn-light-primary" id="boilerBtn"><i class="fas fa-plus"></i>Added Boiler</button>
+										</div>
 									</div>
-								</div>
-								<!--end::Card header-->
+									<!--end::Card header-->
 
-								@include('admin.pages.boilers.crud-boiler.add-boiler')
-								
-								<div class="row" style="margin-top: 45px">
-									<div class="col-md-12">
+									@include('admin.pages.boilers.crud-boiler.add-boiler')
+									
+									<div class="row" style="margin-top: 45px">
+										<div class="col-md-12">
 
-										<!--begin::Body-->
-										<div class="card-body py-3">
-											<!--begin::Table container-->
-											<div class="card-body">
-												<div class="table-responsive">
-													<table class="table table-hover table-condensed" id="all-boiler-table">
-														<thead>
-															<tr style="background-color: #E74C3C; color:white !important">
-																<!-- <th><input type="checkbox" name="main_checkbox"><label></label></th> -->
-																<!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
-                                                                <!-- <th style="text-align: center;" class="min-w-100px">Image</th> -->
-																<th style="text-align: center;" class="min-w-100px">Brand Name</th>
-																<th style="text-align: center;" class="min-w-100px">Model Name</th>
-																<th style="text-align: center;" class="min-w-100px">Type </th>
-																<th style="text-align: center;" class="min-w-100px">Central Heat</th>
-																<th style="text-align: center;" class="min-w-100px">Hot Water</th>
-																<th style="text-align: center;" class="min-w-100px">Short Desc</th>
-																<th style="text-align: center;" class="min-w-100px">Price for 5 Year</th>
-																<th style="text-align: center;" class="min-w-100px">Price for 10 Year</th>
-																<th style="text-align: center;" class="min-w-100px">Actions</th>
-																<!-- <button class="btn btn-sm btn-danger d-none" id="deleteAllBtn">Delete All</button> -->
-															</tr>
-														</thead>
+											<!--begin::Body-->
+											<div class="card-body py-3">
+												<!--begin::Table container-->
+												<div class="card-body">
+													<div class="table-responsive">
+														<table class="table table-hover table-condensed" id="all-boiler-table">
+															<thead>
+																<tr style="background-color: #E74C3C; color:white !important">
+																	<!-- <th><input type="checkbox" name="main_checkbox"><label></label></th> -->
+																	<!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
+																	<!-- <th style="text-align: center;" class="min-w-100px">Image</th> -->
+																	<th style="text-align: center;" class="min-w-100px">Brand Name</th>
+																	<th style="text-align: center;" class="min-w-100px">Model Name</th>
+																	<th style="text-align: center;" class="min-w-100px">Type </th>
+																	<th style="text-align: center;" class="min-w-100px">Central Heat</th>
+																	<th style="text-align: center;" class="min-w-100px">Hot Water</th>
+																	<th style="text-align: center;" class="min-w-100px">Short Desc</th>
+																	<th style="text-align: center;" class="min-w-100px">Price for 5 Year</th>
+																	<th style="text-align: center;" class="min-w-100px">Price for 10 Year</th>
+																	<th style="text-align: center;" class="min-w-100px">Actions</th>
+																	<!-- <button class="btn btn-sm btn-danger d-none" id="deleteAllBtn">Delete All</button> -->
+																</tr>
+															</thead>
 
-														<tbody></tbody>
+															<tbody></tbody>
 
-													</table>
+														</table>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
+									@include('admin.pages.boilers.crud-boiler.edit-boiler')
 								</div>
-								@include('admin.pages.boilers.crud-boiler.edit-boiler')
 							</div>
 						</div>
 					</div>

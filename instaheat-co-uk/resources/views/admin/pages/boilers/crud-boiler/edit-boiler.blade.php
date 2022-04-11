@@ -63,7 +63,7 @@
 
                     <br><hr><br>
 
-                    <h6>#Price Information</h6>
+                    <h6>#Price Information</h6><br>
                     <div class="row col-md-12">
                         <div class="col-md-4">
                             <br>
@@ -88,7 +88,7 @@
                                 <!--begin::Image input-->
                                 <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url({{asset('media/avatars/blank.png')}})">
                                     <!--begin::Preview existing avatar-->
-                                    <!--begin: Pic-->
+                                    {{-- <!--begin: Pic-->
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-100px symbol-fixed position-relative">
                                             
@@ -98,7 +98,8 @@
                                                 <img src="{{asset('/media/avatars/blank.png')}}" >
                                             @endif
                                         </div>
-                                    </div>
+                                    </div> --}}
+                                    <div class="image-input-wrapper w-80px h-80px bgi-position-center" style="background-size: 75%; background-image: url({{asset('media/svg/brand-logos/volicity-9.svg')}})"></div>
                                     <!--end::Preview existing avatar-->
                                     <!--begin::Label-->
                                     <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
@@ -122,7 +123,7 @@
                                 </div>
                                 <!--end::Image input-->
                                 <!--begin::Hint-->
-                                <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                {{-- <div class="form-text">Allowed file types: png, jpg, jpeg.</div> --}}
                                 <!--end::Hint-->
                                 <br>
                             </div>
