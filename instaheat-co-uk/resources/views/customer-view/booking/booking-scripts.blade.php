@@ -31,29 +31,25 @@
           var customer_contact_number = $("#customer_contact_number").val()
           var year_warranty = $("#year_warranty").val()
 
+          var myItem = localStorage.getItem('test');
+
           if(customer_name && booking_id && customer_contact_number && year_warranty){
            
-            $.post('<?= route("boilers.logic.30.booking") ?>',{booking_id:booking_id, customer_name: customer_name, customer_contact_number:customer_contact_number, year_warranty:year_warranty, _token:'{{csrf_token()}}'}, function(data){
-                  console.log('post request')    
+            $.post('<?= route("boilers.logic.30.booking") ?>',{booking_id:booking_id, customer_name: customer_name, customer_contact_number:customer_contact_number, year_warranty:year_warranty, myItem:myItem, _token:'{{csrf_token()}}'}, function(data){
+                 // console.log('post request')    
                 //alert(data.details.customer_name);
-                    //console.log(data.details.customer_name);
-
-                    $('.booking_from').find('form')[0].reset();
-                    $('.booking_from').find('span.error-text').text('');
+                    
               },'json');
 
           }else{
-            alert("Empty");
+            alert("Empty submit not allow !");
+            // $('.customer_contact_number_error').find('span.error-text').text('');
           }
-
-          // alert(booking_id);
-          console.log(customer_name);
-
              
         });
 
         // =============================================UPDATE COUNTRY DETAILS==============================================
-        $('#update-booking-form').on('submit', function(e){
+        $('#adding-booking-form').on('submit', function(e){
           e.preventDefault();
           var form = this;
           $.ajax({

@@ -12,13 +12,13 @@
         //         localStorage.setItem('step-1',$(this).val());
         //         //localStorage.setItem('step-2',$(this).val());
 
-        //         // const set_val = [
-        //         //     'red','green','blue'
-        //         // ];
-        //         // localStorage.setItem('get_array', JSON.stringify(set_val));
-        //         // const array_list = JSON.parse(localStorage.getItem('get_array'));
+                // const set_val = [
+                //     'red','green','blue'
+                // ];
+                // localStorage.setItem('get_array', JSON.stringify(set_val));
+                // const array_list = JSON.parse(localStorage.getItem('get_array'));
 
-        //         // console.log(array_list);
+                // console.log(array_list);
 
 
         //         var stp = localStorage.getItem('step-1');
@@ -422,6 +422,32 @@
                 arr.push(item)
 
                 localStorage.setItem("test",JSON.stringify(arr))
+
+                localStorage.setItem('get_array_list', JSON.stringify(arr));
+                const array_list = JSON.parse(localStorage.getItem('test'));
+
+                    toastr.options.preventDuplicates = true;
+                    $.ajaxSetup({
+                        headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    //console.log('test');
+                    $(function(){
+                    
+
+                        if(array_list){
+                            
+                            $.post('<?= route("boilers.logic.30.booking") ?>',{array_list:array_list, _token:'{{csrf_token()}}'}, function(data){
+                            
+                            },'json');
+
+                        }else{
+                            alert("Array list null !");
+                        }
+                    });
+
+
             });
 
             $('.reset-cta').click(function(){
@@ -438,6 +464,32 @@
                 arr.push(item)
 
                 localStorage.setItem("test",JSON.stringify(arr))
+
+                localStorage.setItem('get_array_list', JSON.stringify(arr));
+                const array_list = JSON.parse(localStorage.getItem('test'));
+
+                    toastr.options.preventDuplicates = true;
+                    $.ajaxSetup({
+                        headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    //console.log('test');
+                    $(function(){
+                    
+
+                        if(array_list){
+                            
+                            $.post('<?= route("boilers.logic.30.booking") ?>',{array_list:array_list, _token:'{{csrf_token()}}'}, function(data){
+                            
+                            },'json');
+
+                        }else{
+                            alert("Array list null !");
+                        }
+                    });
+
+
             });
 
             $('.reset-cta').click(function(){
@@ -455,7 +507,31 @@
                 let item=document.getElementById("bathroom-three-plus").value
                 arr.push(item)
 
-                localStorage.setItem("test",JSON.stringify(arr))
+                localStorage.setItem('test',JSON.stringify(arr))
+
+                // localStorage.setItem('get_array_list', JSON.stringify(arr));
+                // const array_list = JSON.parse(localStorage.getItem('test'));
+
+                    // toastr.options.preventDuplicates = true;
+                    // $.ajaxSetup({
+                    //     headers:{
+                    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    //     }
+                    // });
+                    // //console.log('test');
+                    // $(function(){
+                    
+
+                    //     if(array_list){
+                            
+                    //         $.post('<?= route("boilers.logic.30.booking") ?>',{array_list:array_list, _token:'{{csrf_token()}}'}, function(data){
+                            
+                    //         },'json');
+
+                    //     }else{
+                    //         alert("Array list null !");
+                    //     }
+                    // });
             });
 
             $('.reset-cta').click(function(){
@@ -463,13 +539,6 @@
             });
         });
 
-    </script>
-
-    <script>
-        localStorage.setItem('get_array_list', JSON.stringify('test'));
-        const array_list = JSON.parse(localStorage.getItem('get_array_list'));
-
-        console.log(array_list);
     </script>
 
     <script src="{{ asset('jquery/jquery-3.6.0.min.js') }}"></script>

@@ -46,6 +46,7 @@ class GetQuoteController extends Controller
 
     public function boiler_logic_30_booking(Request $request){
         $booking_id = $request->booking_id;
+
         // $customer_name = $request->customer_name;
         // $customer_contact_number = $request->customer_contact_number;
         // $year_warranty = $request->year_warranty;
@@ -53,6 +54,8 @@ class GetQuoteController extends Controller
         $boilers = Boiler::where('id',$booking_id)->first();
 
         //Storage::disk('test')->put('example.txt', 'Contents');
+
+        //dd($request->array_list);
 
         $validator = \Validator::make($request->all(), [
             'customer_name' => 'required',
@@ -68,34 +71,48 @@ class GetQuoteController extends Controller
 
             $data=array();
 
-            $data['boiler_id']= $id;
+            $data['boiler_id']= $booking_id;
             
             $data['customer_name']=$request->customer_name;
             $data['customer_contact_number']=$request->customer_contact_number;
             $data['year_warranty'] = $request->year_warranty;
             
             if($request->year_warranty == 5){
-                $data['price'] = $boiler->price_for_5_year;
+                $data['price'] = $boilers->price_for_5_year;
             }else{
-                $data['price'] = $boiler->price_for_10_year;
+                $data['price'] = $boilers->price_for_10_year;
             }
 
-            //dd('test');
+            //dd($request->myItem);
 
-            $data['fuel_type']= $request->fuel_type;
-            $data['boiler_type']= $request->boiler_type;
-            $data['convert_combi_boiler']= $request->convert_combi_boiler;
-            $data['under_a_carport']= $request->under_a_carport;
-            $data['thirty_cm_away_window']= $request->thirty_cm_away_window;
-            $data['moving_5_meter']= $request->moving_5_meter;
-            $data['fuel_come_out']= $request->fuel_come_out;
-            $data['pitched_or_flat']= $request->pitched_or_flat;
-            $data['house_live_in']= $request->house_live_in;
-            $data['number_of_bedroom']= $request->number_of_bedroom;
-            $data['number_of_bathroom']= $request->number_of_bathroom;
+            if($request->myItem){
 
-            $data['status']= 0;
-            $data['activeStatus']= 1;
+                for ($i = 0; $i < count($request->myItem); $i++) {
+                    QuestionnaireAnswer::create([
+                        'fuel_type' => $fuel_type->id,
+                    ]);
+                }
+            }else{
+
+                $data['boiler_type']= $request->boiler_type;
+                $data['convert_combi_boiler']= $request->convert_combi_boiler;
+                $data['under_a_carport']= $request->under_a_carport;
+                $data['thirty_cm_away_window']= $request->thirty_cm_away_window;
+                $data['moving_5_meter']= $request->moving_5_meter;
+                $data['fuel_come_out']= "test"; //$request->fuel_come_out;
+                $data['pitched_or_flat']= "test"; // $request->pitched_or_flat;
+                $data['house_live_in']= "test"; // $request->house_live_in;
+                $data['number_of_bedroom']= "test"; // $request->number_of_bedroom;
+                $data['number_of_bathroom']= "test"; // $request->number_of_bathroom;
+
+                $data['status']= 0;
+                $data['activeStatus']= 1;
+            }
+
+            //$array = $request->array_list;
+
+            // dd($array);
+            // dd("test");
 
             $query = DB::table('questionnaire_answers')->insert($data);
 
