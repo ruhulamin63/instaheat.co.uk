@@ -3,12 +3,15 @@
         <meta charSet="utf-8"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        
-        <!-- <link rel="preload" href="{{asset('/custom/component---src-layouts-index-js-b2e2f0bb68b8bb1344bd.js')}}" as="script"/>
-        <link rel="preload" href="{{asset('/custom/component---src-pages-index-js-0830a1be8d29586d9890.js')}}" as="script"/>
-        <link rel="preload" href="{{asset('/custom/path---index-bf6ac978a4f8df8d915b.js')}}" as="script"/>
-        <link rel="preload" href="{{asset('/custom/app-4710518484a2dcbce1b6.js')}}" as="script"/>
-        <link rel="preload" href="{{asset('/custom/commons-f7fd30e9f7445236ce15.js')}}" as="script"/> -->
+
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Instaheat - Plumbing and Heating Engineers"/>
+        <meta property="og:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
+        <meta property="og:url" content="https://www.instaheat-solutions.co.uk/"/>
+        <meta property="og:site_name" content="Instaheat"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
+        <meta name="twitter:title" content="Instaheat - Plumbing and Heating Engineers"/>
         
         
         <style data-styled-components="dXQyxh cMvXxa fTWKLe dBsrLC bjPEky eYvcHd cLwmKb hzTcjZ gJQWhe kjQdfE eEGeuV iDWFHY cDJcwK kIMWRb gpoCfw chesTf jAZGXd">
@@ -170,12 +173,12 @@
         <!-- <title data-react-helmet="true">Instaheat | Home</title> -->
         <title><?=$title?></title>
 
-
-        <link data-react-helmet="true" rel="shortcut icon" type="image/png" href="{{asset('/custom/static/favicon.45bef44b.png')}}"/>
-
         <meta data-react-helmet="true" name="description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
         <meta data-react-helmet="true" name="keywords" content="Plumbing, Heating, Boilers, Lancashire, North West, Corgi, Gas Engineers"/>
 
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <link data-react-helmet="true" rel="shortcut icon" type="image/png" href="{{asset('/custom/static/favicon.45bef44b.png')}}"/>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Condensed" rel="stylesheet"/>
 
 
@@ -260,14 +263,5 @@
             {position:absolute;width:0;height:0;border-color:transparent;border-style:solid}.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow
             {bottom:4px;left:50%;margin-left:-4px;border-width:4px 4px 0;border-top-color:#6c6c6c}
         </style>
-
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Instaheat - Plumbing and Heating Engineers"/>
-        <meta property="og:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
-        <meta property="og:url" content="https://www.instaheat-solutions.co.uk/"/>
-        <meta property="og:site_name" content="Instaheat"/>
-        <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
-        <meta name="twitter:title" content="Instaheat - Plumbing and Heating Engineers"/>
 
     </head>
