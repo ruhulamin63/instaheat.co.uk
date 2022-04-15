@@ -10,24 +10,16 @@
             <div class="sc-bZQynM dbODSx">
 
                 @foreach($boilers as $item)
-                    {{-- <img class="boiler-image" src="{{asset('custom/img/Logic-30.jpg')}}" alt="Ideal Logic-30 White"/> --}}
-                    <!--begin: Pic-->
-                    {{-- <div class="me-7 mb-4">
-                        <div class="boiler-image"> --}}
-                            
-                            @if($item->image)
-                                <?php if (file_exists("../public".$item->image)){ ?>
-                                    <img class="boiler-image" style="padding-right: 15px;" src="{{$item->image}}" >
-                                <?php } else{ ?>
-                                    <img class="boiler-image" src="{{asset('/media/avatars/blank.png')}}">
-                                <?php } ?>
-                            @else
-                                <img class="boiler-image" src="{{asset('/media/avatars/blank.png')}}" >
-                            @endif
-
-                            {{-- <div class="position-absolute translate-left bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px"></div> --}}
-                        {{-- </div>
-                    </div> --}}
+   
+                    @if($item->image)
+                        <?php if (file_exists("../public".$item->image)){ ?>
+                            <img class="boiler-image" style="padding-right: 15px;" src="{{$item->image}}" >
+                        <?php } else{ ?>
+                            <img class="boiler-image" style="padding-right: 15px;" src="{{asset('/media/avatars/blank.png')}}">
+                        <?php } ?>
+                    @else
+                        <img class="boiler-image" style="padding-right: 15px;" src="{{asset('/media/avatars/blank.png')}}" >
+                    @endif
 
                     <div class="sc-gzVnrw hMtqQg">
                         <img class="brand-logo" src="{{asset('custom/img/Ideal.png')}}" alt="Ideal"/>
@@ -101,7 +93,7 @@
                                 </select>
                                 {{-- <span class="text-danger error-text year_warranty_error"></span> --}}
                                 
-                                <div class="cta-container">
+                                <div class="cta-container" id="adding-booking-button">
                                     
                                     <button type="submit" class="btn btn-lg btn-primary fw-bolder me-3 my-2">
                                         <a class="submit-btn" data-id="{{$item->id}}" id="addBookingBtn">Order Now</a>

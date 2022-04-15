@@ -25,17 +25,17 @@ class CreateQuestionnaireAnswersTable extends Migration
             $table->string('fuel_type', 255)->nullable();
             $table->string('boiler_type', 255)->nullable();
 
-            $table->string('convert_combi_boiler', 255)->nullable()->default("Null")->comment = 'Yes or No';
-            $table->string('under_a_carport', 255)->nullable()->default("Null")->comment = 'Yes or No';
-            $table->string('thirty_cm_away_window', 255)->nullable()->default("Null")->comment = 'Yes or No';
+            $table->string('convert_combi_boiler', 255)->nullable()->comment = 'Yes or No';
+            $table->string('under_a_carport', 255)->nullable()->comment = 'Yes or No';
+            $table->string('thirty_cm_away_window', 255)->nullable()->comment = 'Yes or No';
 
-            $table->string('moving_5_meter',255)->nullable()->default("Null")->comment = 'Yes or No';
+            $table->string('moving_5_meter',255)->nullable()->comment = 'Yes or No';
 
-            $table->string('fuel_come_out', 255);
-            $table->string('pitched_or_flat', 255)->default("Null")->comment = 'Pitched or Flat';
-            $table->string('house_live_in', 255);
-            $table->string('number_of_bedroom', 255);
-            $table->string('number_of_bathroom', 255);
+            $table->string('fuel_come_out', 255)->nullable()->comment = 'Roof or Wall';
+            $table->string('pitched_or_flat', 255)->nullable()->comment = 'Pitched or Flat';
+            $table->string('house_live_in', 255)->nullable();
+            $table->string('number_of_bedroom', 255)->nullable();
+            $table->string('number_of_bathroom', 255)->nullable();
 
             $table->integer('status')->default(0)->comment = '0. Incomplete 1. Complete 2. Cancel';
             $table->integer('activeStatus')->nullable()->default(1)->comment = '1. Active 0. Delete';

@@ -73,8 +73,8 @@
                                             </li>
                                             
                                             <li class="answer-option">
-                                                <input type="radio" class="radio-custom-button" name="back_boiler" id="Back-boiler" value="System">
-                                                <label class="radio-custom-label" for="System">Back Boiler</label>
+                                                <input type="radio" class="radio-custom-button" name="back_boiler" id="Back-boiler" value="Back-boiler">
+                                                <label class="radio-custom-label" for="Back-boiler">Back Boiler</label>
                                             </li>
                                         </ul>
                                     </div>
@@ -153,11 +153,11 @@
                                             <h2 class="question">Is the roof pitched or flat?</h2>
                                             <ul class="answer-options">
                                                 <li class="answer-option">
-                                                    <input type="radio" class="radio-custom-button-pictched-flat" name="radio-group" id="roof-pitched" data-skipquestion="2" value="Pitched">
+                                                    <input type="radio" class="radio-custom-button" name="roof_pitched" id="roof-pitched" data-skipquestion="2" value="Pitched">
                                                     <label class="radio-custom-label" for="roof-pitched">Pitched</label>
                                                 </li>
                                                 <li class="answer-option">
-                                                    <input type="radio" class="radio-custom-button-pictched-flat" name="radio-group" id="roof-flat" data-skipquestion="2" value="Flat">
+                                                    <input type="radio" class="radio-custom-button" name="roof_flat" id="roof-flat" data-skipquestion="2" value="Flat">
                                                     <label class="radio-custom-label" for="roof-flat">Flat</label>
                                                 </li>
                                             </ul>
@@ -228,7 +228,7 @@
                                                     <label class="radio-custom-label" for="you-live-in-Terrace">Terrace</label>
                                                 </li>
                                                 <li class="answer-option">
-                                                    <input type="radio" class="radio-custom-button" name="you_live_in_semi_detatched" id="you-live-in-Semi-detatched" value="Semi-detatched">
+                                                    <input type="radio" class="radio-custom-button" name="you_live_in_semi_detatched" id="you-live-in-Semi-detatched" value="Semi detatched">
                                                     <label class="radio-custom-label" for="you-live-in-Semi-detatched">Semi-detatched</label>
                                                 </li>
                                                 <li class="answer-option">
@@ -265,7 +265,7 @@
                                                     <label class="radio-custom-label" for="bedroom-four">4</label>
                                                 </li>
                                                 <li class="answer-option">
-                                                    <input type="radio" class="radio-custom-button 5" name="bedroom_five_plus" id="bedroom-five-plus" value="5+">
+                                                    <input type="radio" class="radio-custom-button" name="bedroom_five_plus" id="bedroom-five-plus" value="5+">
                                                     <label class="radio-custom-label" for="bedroom-five-plus">5+</label>
                                                 </li>
                                             </ul>
@@ -376,7 +376,6 @@
                                 </div>
 
                                
-                                
                             </div>
                         </div>
                     </div>

@@ -47,15 +47,7 @@ class GetQuoteController extends Controller
     public function boiler_logic_30_booking(Request $request){
         $booking_id = $request->booking_id;
 
-        // $customer_name = $request->customer_name;
-        // $customer_contact_number = $request->customer_contact_number;
-        // $year_warranty = $request->year_warranty;
-
         $boilers = Boiler::where('id',$booking_id)->first();
-
-        //Storage::disk('test')->put('example.txt', 'Contents');
-
-        //dd($request->array_list);
 
         $validator = \Validator::make($request->all(), [
             'customer_name' => 'required',
@@ -83,36 +75,116 @@ class GetQuoteController extends Controller
                 $data['price'] = $boilers->price_for_10_year;
             }
 
-            //dd($request->myItem);
+            //dd($request->roof_pitched);
 
-            if($request->myItem){
-
-                for ($i = 0; $i < count($request->myItem); $i++) {
-                    QuestionnaireAnswer::create([
-                        'fuel_type' => $fuel_type->id,
-                    ]);
-                }
-            }else{
-
-                $data['boiler_type']= $request->boiler_type;
-                $data['convert_combi_boiler']= $request->convert_combi_boiler;
-                $data['under_a_carport']= $request->under_a_carport;
-                $data['thirty_cm_away_window']= $request->thirty_cm_away_window;
-                $data['moving_5_meter']= $request->moving_5_meter;
-                $data['fuel_come_out']= "test"; //$request->fuel_come_out;
-                $data['pitched_or_flat']= "test"; // $request->pitched_or_flat;
-                $data['house_live_in']= "test"; // $request->house_live_in;
-                $data['number_of_bedroom']= "test"; // $request->number_of_bedroom;
-                $data['number_of_bathroom']= "test"; // $request->number_of_bathroom;
-
-                $data['status']= 0;
-                $data['activeStatus']= 1;
+            if($request->item_gas == 'Gas'){
+                $data['fuel_type']= $request->item_gas;
             }
 
-            //$array = $request->array_list;
+            if($request->item_combi == 'Combi'){
+                $data['boiler_type']= $request->item_combi;
+            }
+            if($request->item_standard == 'Standard'){
+                $data['boiler_type']= $request->item_standard;
+            }
+            if($request->item_system == 'System'){
+                $data['boiler_type']= $request->item_system;
+            }
+            if($request->item_back_boiler == 'Back-boiler'){
+                $data['boiler_type']= $request->item_back_boiler;
+            }
 
-            // dd($array);
-            // dd("test");
+            if($request->yes_combi_boiler == 'Yes'){
+                $data['convert_combi_boiler']= $request->yes_combi_boiler;
+            }
+            if($request->no_combi_boiler == 'No'){
+                $data['convert_combi_boiler']= $request->no_combi_boiler;
+            }
+            if($request->moving_over_yes == 'Yes'){
+                $data['moving_5_meter']= $request->moving_over_yes;
+            }
+            if($request->moving_over_no == 'No'){
+                $data['moving_5_meter']= $request->moving_over_no;
+            }
+
+            if($request->come_out_roof == 'Roof'){
+                $data['fuel_come_out']= $request->come_out_roof;
+            }
+            if($request->come_out_wall == 'Wall'){
+                $data['fuel_come_out']= $request->come_out_wall;
+            }
+
+            if($request->roof_pitched == 'Pitched'){
+                $data['pitched_or_flat']= $request->roof_pitched;
+            }
+            if($request->roof_flat == 'Flat'){
+                $data['pitched_or_flat']= $request->roof_flat;
+            }
+            if($request->under_a_carport_yes == 'Yes'){
+                $data['under_a_carport']= $request->under_a_carport_yes;
+            }
+            if($request->under_a_carport_no == 'No'){
+                $data['under_a_carport']= $request->under_a_carport_no;
+            }
+            
+            if($request->from_the_window_yes == 'Yes'){
+                $data['thirty_cm_away_window']= $request->from_the_window_yes;
+            }
+            if($request->from_the_window_no == 'No'){
+                $data['thirty_cm_away_window']= $request->from_the_window_no;
+            }
+            
+            if($request->you_live_in_flat == 'Flat'){
+                $data['house_live_in']= $request->you_live_in_flat;
+            }
+            if($request->you_live_in_bungalow == 'Bungalow'){
+                $data['house_live_in']= $request->you_live_in_bungalow;
+            }
+            if($request->you_live_in_terrace == 'Terrace'){
+                $data['house_live_in']= $request->you_live_in_terrace;
+            }
+            if($request->you_live_in_semi_detatched == 'Semi detatched'){
+                $data['house_live_in']= $request->you_live_in_demi_detatched;
+            }
+            if($request->you_live_in_detatched == 'Detatched'){
+                $data['house_live_in']= $request->you_live_in_detatched;
+            }
+            
+            if($request->bedroom_one == '1'){
+                $data['number_of_bedroom']= $request->bedroom_one;
+            }
+            if($request->bedroom_two == '2'){
+                $data['number_of_bedroom']= $request->bedroom_two;
+            }else if($request->bedroom_three == '3'){
+                $data['number_of_bedroom']= $request->bedroom_three;
+            }
+            if($request->bedroom_four == '4'){
+                $data['number_of_bedroom']= $request->bedroom_four;
+            }
+            if($request->bedroom_five_plus == '5+'){
+                $data['number_of_bedroom']= $request->bedroom_five_plus;
+            }
+            if($request->bathroom_one == '1'){
+                $data['number_of_bathroom']= $request->bathroom_one;
+            }
+            if($request->bathroom_two == '2'){
+                $data['number_of_bathroom']= $request->bathroom_two;
+            }
+            if($request->bathroom_three_plus == '3+'){
+                $data['number_of_bathroom']= $request->bathroom_three_plus;
+            }
+
+            // else{
+            //     return response()->json([
+            //         'code' => 0,
+            //         'msg' => 'Something went wrong.'
+            //     ],412);
+
+            //     echo "something is wrong!";
+            // }
+
+            $data['status']= 0;
+            $data['activeStatus']= 1;
 
             $query = DB::table('questionnaire_answers')->insert($data);
 

@@ -68,10 +68,10 @@
                 $('#Which-type-of-fuel-does-your-boiler-use').addClass('step-one')
 
                 let item=document.getElementById("Gas").value
-                arr.push(item)
-                    //break
-
-                //localStorage.setItem("test",JSON.stringify(arr))
+                //arr.push(item)
+                //localStorage.setItem("gas",JSON.stringify(item))
+                localStorage.setItem('gas',$(this).val());
+    
             });
         });
 
@@ -120,7 +120,9 @@
                 $('#Which-type-of-boiler').addClass('step-one')
 
                 let item=document.getElementById("Combi").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("combi",JSON.stringify(item))
+                localStorage.setItem('combi',$(this).val());
             });
         });
 
@@ -131,7 +133,9 @@
                 $('#Which-type-of-boiler').addClass('step-one')
 
                 let item=document.getElementById("Standard").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("standard",JSON.stringify(item))
+                localStorage.setItem('standard',$(this).val());
             });
             // console.log('test');
         });
@@ -143,7 +147,9 @@
                 $('#Which-type-of-boiler').addClass('step-one')
 
                 let item=document.getElementById("System").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("system",JSON.stringify(item))
+                localStorage.setItem('system',$(this).val());
             });
         });
 
@@ -154,7 +160,9 @@
                 $('#Which-type-of-boiler').addClass('step-one')
 
                 let item=document.getElementById("Back-boiler").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("back-boiler",JSON.stringify(item))
+                localStorage.setItem('back-boiler',$(this).val());
             });
         });
 
@@ -167,7 +175,9 @@
                 //console.log('test');
 
                 let item=document.getElementById("Yes-combi-boiler").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("yes-combi-boiler",JSON.stringify(item))
+                localStorage.setItem('yes-combi-boiler',$(this).val());
             });
         });
          
@@ -179,7 +189,9 @@
                 //console.log('test');
 
                 let item=document.getElementById("No-combi-boiler").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("no-combi-boiler",JSON.stringify(item))
+                localStorage.setItem('no-combi-boiler',$(this).val());
             });
         });
 
@@ -191,9 +203,9 @@
                 $('#Do-you-want-your-boiler-moving-over-5-metres').addClass('step-three')
 
                 let item=document.getElementById("moving-over-yes").value
-                arr.push(item)
-
-                //localStorage.setItem("test",JSON.stringify(arr))
+                //arr.push(item)
+                //localStorage.setItem("moving-over-yes",JSON.stringify(item))
+                localStorage.setItem('moving-over-yes',$(this).val());
             });
         });
 
@@ -204,7 +216,9 @@
                 $('#Do-you-want-your-boiler-moving-over-5-metres').addClass('step-three')
 
                 let item=document.getElementById("moving-over-no").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("moving-over-no",JSON.stringify(item))
+                localStorage.setItem('moving-over-no',$(this).val());
             });
         });
 
@@ -215,7 +229,9 @@
                 $('#Where-does-your-flue-come-out').addClass('step-five')
 
                 let item=document.getElementById("come-out-roof").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("come-out-roof",JSON.stringify(item))
+                localStorage.setItem('come-out-roof',$(this).val());
             });
         });
         //==================flue come out wall=================
@@ -225,7 +241,9 @@
                 $('#Where-does-your-flue-come-out').addClass('step-five')
 
                 let item=document.getElementById("come-out-wall").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("come-out-wall",JSON.stringify(item))
+                localStorage.setItem('come-out-wall',$(this).val());
             });
         });
 
@@ -236,7 +254,9 @@
                 $('#Is-the-roof-pitched-or-flat').addClass('step-six')
 
                 let item=document.getElementById("roof-pitched").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("roof-pitched",JSON.stringify(item))
+                localStorage.setItem('roof-pitched',$(this).val());
             });
         });
         //==================roof-flat=================
@@ -246,7 +266,9 @@
                 $('#Is-the-roof-pitched-or-flat').addClass('step-six')
 
                 let item=document.getElementById("roof-flat").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("roof-flat",JSON.stringify(item))
+                localStorage.setItem('roof-flat',$(this).val());
             });
         });
 
@@ -259,7 +281,9 @@
                 $('#Is-the-flue-under-a-carport').addClass('step-eleven')
 
                 let item=document.getElementById("under-a-carport-yes").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("under-a-carport-yes",JSON.stringify(item))
+                localStorage.setItem('under-a-carport-yes',$(this).val());
             });
         });
 
@@ -270,7 +294,9 @@
                 $('#Is-the-flue-under-a-carport').addClass('step-eleven')
 
                 let item=document.getElementById("under-a-carport-no").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("under-a-carport-no",JSON.stringify(item))
+                localStorage.setItem('under-a-carport-no',$(this).val());
             });
         });
 
@@ -283,7 +309,9 @@
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
                 let item=document.getElementById("you-live-in-Flat").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("you-live-in-Flat",JSON.stringify(item))
+                localStorage.setItem('you-live-in-flat',$(this).val());
             });
         });
 
@@ -294,7 +322,9 @@
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
                 let item=document.getElementById("you-live-in-Bungalow").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("you-live-in-Bungalow",JSON.stringify(item))
+                localStorage.setItem('you-live-in-bungalow',$(this).val());
             });
         });
 
@@ -305,7 +335,9 @@
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
                 let item=document.getElementById("you-live-in-Terrace").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("you-live-in-Terrace",JSON.stringify(item))
+                localStorage.setItem('you-live-in-terrace',$(this).val());
             });
         });
 
@@ -316,7 +348,9 @@
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
                 let item=document.getElementById("you-live-in-Semi-detatched").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("you-live-in-Semi-detatched",JSON.stringify(item))
+                localStorage.setItem('you-live-in-semi-detatched',$(this).val());
             });
         });
 
@@ -327,7 +361,9 @@
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
                 let item=document.getElementById("you-live-in-Detatched").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("you-live-in-Detatched",JSON.stringify(item))
+                localStorage.setItem('you-live-in-detatched',$(this).val());
             });
             //console.log('test')
         });
@@ -341,7 +377,9 @@
                 $('#Is-the-flue-thirty-away-from-the-window').addClass('step-twelve')
 
                 let item=document.getElementById("from-the-window-Yes").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("from-the-window-Yes",JSON.stringify(item))
+                localStorage.setItem('from-the-window-yes',$(this).val());
             });
             //console.log('test')
         });
@@ -352,7 +390,9 @@
                 $('#Is-the-flue-thirty-away-from-the-window').addClass('step-twelve')
 
                 let item=document.getElementById("from-the-window-No").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("from-the-window-No",JSON.stringify(item))
+                localStorage.setItem('from-the-window-no',$(this).val());
             });
             //console.log('test')
         });
@@ -367,7 +407,9 @@
                 $('#How-many-bedrooms').addClass('step-eight')
 
                 let item=document.getElementById("bedroom-one").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("bedroom-one",JSON.stringify(item))
+                localStorage.setItem('number-of-bedroom-one',$(this).val());
             });
         });
 
@@ -377,7 +419,9 @@
                 $('#How-many-bedrooms').addClass('step-eight')
 
                 let item=document.getElementById("bedroom-two").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("bedroom-two",JSON.stringify(item))
+                localStorage.setItem('number-of-bedroom-two',$(this).val());
             });
         });
 
@@ -387,7 +431,9 @@
                 $('#How-many-bedrooms').addClass('step-eight')
 
                 let item=document.getElementById("bedroom-three").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("bedroom-three",JSON.stringify(item))
+                localStorage.setItem('number-of-bedroom-three',$(this).val());
             });
         });
 
@@ -397,7 +443,9 @@
                 $('#How-many-bedrooms').addClass('step-eight')
 
                 let item=document.getElementById("bedroom-four").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("bedroom-four",JSON.stringify(item))
+                localStorage.setItem('number-of-bedroom-four',$(this).val());
             });
         });
 
@@ -407,7 +455,9 @@
                 $('#How-many-bedrooms').addClass('step-eight')
 
                 let item=document.getElementById("bedroom-five-plus").value
-                arr.push(item)
+                //arr.push(item)
+                //localStorage.setItem("bedroom-five-plus",JSON.stringify(item))
+                localStorage.setItem('number-of-bedroom-five-plus',$(this).val());
             });
         });
 
@@ -419,35 +469,9 @@
                 $('#How-many-bathrooms').addClass('step-nine')
 
                 let item=document.getElementById("bathroom-one").value
-                arr.push(item)
-
-                localStorage.setItem("test",JSON.stringify(arr))
-
-                localStorage.setItem('get_array_list', JSON.stringify(arr));
-                const array_list = JSON.parse(localStorage.getItem('test'));
-
-                    toastr.options.preventDuplicates = true;
-                    $.ajaxSetup({
-                        headers:{
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-                    //console.log('test');
-                    $(function(){
-                    
-
-                        if(array_list){
-                            
-                            $.post('<?= route("boilers.logic.30.booking") ?>',{array_list:array_list, _token:'{{csrf_token()}}'}, function(data){
-                            
-                            },'json');
-
-                        }else{
-                            alert("Array list null !");
-                        }
-                    });
-
-
+                //arr.push(item)
+                //localStorage.setItem("bathroom-one",JSON.stringify(item))
+                localStorage.setItem('bathroom-one',$(this).val());
             });
 
             $('.reset-cta').click(function(){
@@ -461,35 +485,9 @@
                 $('#How-many-bathrooms').addClass('step-nine')
 
                 let item=document.getElementById("bathroom-two").value
-                arr.push(item)
-
-                localStorage.setItem("test",JSON.stringify(arr))
-
-                localStorage.setItem('get_array_list', JSON.stringify(arr));
-                const array_list = JSON.parse(localStorage.getItem('test'));
-
-                    toastr.options.preventDuplicates = true;
-                    $.ajaxSetup({
-                        headers:{
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-                    //console.log('test');
-                    $(function(){
-                    
-
-                        if(array_list){
-                            
-                            $.post('<?= route("boilers.logic.30.booking") ?>',{array_list:array_list, _token:'{{csrf_token()}}'}, function(data){
-                            
-                            },'json');
-
-                        }else{
-                            alert("Array list null !");
-                        }
-                    });
-
-
+                //arr.push(item)
+                //localStorage.setItem("bathroom-two",JSON.stringify(item))
+                localStorage.setItem('bathroom-two',$(this).val());
             });
 
             $('.reset-cta').click(function(){
@@ -505,33 +503,9 @@
                 $('#How-many-bathrooms').addClass('step-nine')
 
                 let item=document.getElementById("bathroom-three-plus").value
-                arr.push(item)
-
-                localStorage.setItem('test',JSON.stringify(arr))
-
-                // localStorage.setItem('get_array_list', JSON.stringify(arr));
-                // const array_list = JSON.parse(localStorage.getItem('test'));
-
-                    // toastr.options.preventDuplicates = true;
-                    // $.ajaxSetup({
-                    //     headers:{
-                    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    //     }
-                    // });
-                    // //console.log('test');
-                    // $(function(){
-                    
-
-                    //     if(array_list){
-                            
-                    //         $.post('<?= route("boilers.logic.30.booking") ?>',{array_list:array_list, _token:'{{csrf_token()}}'}, function(data){
-                            
-                    //         },'json');
-
-                    //     }else{
-                    //         alert("Array list null !");
-                    //     }
-                    // });
+                //arr.push(item)
+                //localStorage.setItem('bathroom-three-plus',$(this).val());
+                localStorage.setItem('bathroom-three-plus',$(this).val());
             });
 
             $('.reset-cta').click(function(){
