@@ -286,12 +286,11 @@ class DashboardController extends Controller
         if(!$validator->passes()){
             return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
         }else{
+            
+            $todays_order = QuestionnaireAnswer::find($order_id);
 
-            $data=array();
-            $data['status']= $request->status;
-
-            $query = DB::table('questionnaire_answers')->update($data);
-
+            $todays_order->status = $request->status;
+            $query = $todays_order->update();
 
             if($query){
                 return response()->json(['code'=>1, 'msg'=>'Order status have been changed'],200);

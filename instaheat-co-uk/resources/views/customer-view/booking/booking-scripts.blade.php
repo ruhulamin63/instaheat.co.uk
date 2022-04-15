@@ -8,8 +8,6 @@
   <script src="{{ asset('toastr/toastr.min.js') }}"></script>
 
 
-
-
   <!-- appointment table data search -->
 
   <script>
@@ -26,6 +24,8 @@
          //===========================================================edit get details==================================================
         $(document).on('click','#addBookingBtn', function(){
           var booking_id = $(this).data('id');
+
+          //alert(booking_id)
 
           var customer_name = $("#customer_name").val()
           var customer_contact_number = $("#customer_contact_number").val()
@@ -73,10 +73,11 @@
           var bathroom_two = localStorage.getItem('bathroom-two');
           var bathroom_three_plus = localStorage.getItem('bathroom-three-plus');
 
-          if(customer_name && booking_id && customer_contact_number && year_warranty){
+          //if(customer_name && booking_id && customer_contact_number && year_warranty){
+            
            
             $.post('<?= route("boilers.logic.30.booking") ?>',
-            {booking_id:booking_id, customer_name: customer_name, customer_contact_number:customer_contact_number,year_warranty:year_warranty, 
+              {booking_id:booking_id, customer_name: customer_name, customer_contact_number:customer_contact_number,year_warranty:year_warranty, 
               item_gas:item_gas,
               item_combi:item_combi, item_standard:item_standard, item_system:item_system, item_back_boiler:item_back_boiler,
               yes_combi_boiler:yes_combi_boiler, no_combi_boiler:no_combi_boiler, moving_over_yes:moving_over_yes, moving_over_no:moving_over_no, 
@@ -87,17 +88,19 @@
               you_live_in_bungalow:you_live_in_bungalow, you_live_in_terrace:you_live_in_terrace, you_live_in_semi_detatched:you_live_in_semi_detatched, you_live_in_detatched:you_live_in_detatched,
               bedroom_one:bedroom_one, bedroom_two:bedroom_two, bedroom_three:bedroom_three, bedroom_four:bedroom_four, bedroom_five_plus:bedroom_five_plus,
               bathroom_one:bathroom_one, bathroom_two:bathroom_two, bathroom_three_plus:bathroom_three_plus,
-
               _token:'{{csrf_token()}}'}, function(data){
                  // console.log('post request')    
-                //alert(data.details.customer_name);
-                    
-              },'json');
+                //alert(customer_name);
 
-          }else{
-            alert("Empty submit not allow !");
-            // $('.customer_contact_number_error').find('span.error-text').text('');
-          }
+                $('.addBooking').find('form')[0].reset();
+                $('.addBooking').find('span.error-text').text('');
+              //  $('.addBooking').modal('show');
+            },'json');
+
+          //}
+          // else{
+          //   alert("Empty submit not allow !");
+          // }
              
         });
 
@@ -121,9 +124,8 @@
                         $(form).find('span.'+prefix+'_error').text(val[0]);
                     });
                 }else{
-                    //$('#all-boiler-table').DataTable().ajax.reload(null, false);
+                    //$('#adding-booking-button').ajax.reload(null, false);
                     // $('.addBooking').modal('hide');
-                    // $('.addBooking').find('form')[0].reset();
                     toastr.success(data.msg);
                 }
               }

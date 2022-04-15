@@ -173,15 +173,11 @@
         <!-- <title data-react-helmet="true">Instaheat | Home</title> -->
         <title><?=$title?></title>
 
-        <meta data-react-helmet="true" name="description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
-        <meta data-react-helmet="true" name="keywords" content="Plumbing, Heating, Boilers, Lancashire, North West, Corgi, Gas Engineers"/>
-
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <link data-react-helmet="true" rel="shortcut icon" type="image/png" href="{{asset('/custom/static/favicon.45bef44b.png')}}"/>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Condensed" rel="stylesheet"/>
-
-
+        
         <script>
 
             if(!(navigator.doNotTrack == "1" || window.doNotTrack == "1")) {

@@ -10,11 +10,8 @@
 
         <form action="<?= route('today.update.order.status.change') ?>" method="post" id="today-order-status-change-form">
             @csrf
-
+            <input type="hidden" name="cid">
             <div class="modal-body">
-            
-                <input type="hidden" name="cid">
-                
                 <div class="row col-md-12">
                     <label class="fs-6 fw-bold mb-2">Status</label>
                     <select style="width: 300px;" name="status" id="status" aria-label="Select a Status" data-control="select2" data-placeholder="Select a Type..." class="form-select form-select-solid fw-bolder">

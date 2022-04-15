@@ -46,6 +46,7 @@ class GetQuoteController extends Controller
 
     public function boiler_logic_30_booking(Request $request){
         $booking_id = $request->booking_id;
+        //dd($booking_id);
 
         $boilers = Boiler::where('id',$booking_id)->first();
 
@@ -190,15 +191,19 @@ class GetQuoteController extends Controller
 
 
             if($query){
-                return response()->json([
-                    'code' => 1,
-                    'msg' => 'Order created successfully.'
-                ],200);
+                // return response()->json([
+                //     'code' => 1,
+                //     'msg' => 'Order created successfully.'
+                // ],200);
+
+                return redirect()->route('customer.home');
+                //alert('Order created successfully');
             }else{
-                return response()->json([
-                    'code' => 0,
-                    'msg' => 'Something went wrong.'
-                ],412);
+                // return response()->json([
+                //     'code' => 0,
+                //     'msg' => 'Something went wrong.'
+                // ],412);
+                alert('Some thing is wrong!');
             }
         }
         

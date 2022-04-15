@@ -2,12 +2,9 @@
     <meta charSet="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    
-    <link rel="preload" href="{{asset('custom/component---src-layouts-index-js-b2e2f0bb68b8bb1344bd.js')}}" as="script"/>
-    <link rel="preload" href="{{asset('custom/component---src-pages-contact-js-a29d99f267e0d2291155.js')}}" as="script"/>
-    <link rel="preload" href="{{asset('custom/path---contact-a0e39f21c11f6a62c5ab.js')}}" as="script"/>
-    <link rel="preload" href="{{asset('custom/app-4710518484a2dcbce1b6.js')}}" as="script"/>
-    <link rel="preload" href="{{asset('custom/commons-f7fd30e9f7445236ce15.js')}}" as="script"/>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+  
     
     <style data-styled-components="dXQyxh cMvXxa fTWKLe dBsrLC bjPEky dbODSx hMtqQg jAZGXd">
         /* sc-component-id: sc-bdVaJa */
@@ -42,49 +39,49 @@
           height: 50px;
           border-left: #333332 solid 10px;
       }
-    * {
+      * {
         box-sizing: border-box;
-    }
-    select[name='year_warranty' i] {
-        padding: 1px 2px;
-    }
+      }
+      select[name='year_warranty' i] {
+          padding: 1px 2px;
+      }
 
-    select {
-      writing-mode: horizontal-tb !important;
-      font-style: ;
-      font-variant-ligatures: ;
-      font-variant-caps: ;
-      font-variant-numeric: ;
-      font-variant-east-asian: ;
-      font-weight: ;
-      font-stretch: ;
-      font-size: ;
-      font-family: ;
-      text-rendering: auto;
-      color: -internal-light-dark(black, white);
-      letter-spacing: normal;
-      word-spacing: normal;
-      line-height: normal;
-      text-transform: none;
-      text-indent: 0px;
-      text-shadow: none;
-      display: inline-block;
-      text-align: start;
-      appearance: auto;
-      -webkit-rtl-ordering: logical;
-      cursor: text;
-      background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-      margin: 0em;
-      padding: 1px 2px;
-      border-width: 2px;
-      border-style: inset;
-      border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-      border-image: initial;
-    }
-    .dbODSx .price-contact {
-        font-family: 'Roboto';
-        text-align: left;
-    }
+      select {
+        writing-mode: horizontal-tb !important;
+        font-style: ;
+        font-variant-ligatures: ;
+        font-variant-caps: ;
+        font-variant-numeric: ;
+        font-variant-east-asian: ;
+        font-weight: ;
+        font-stretch: ;
+        font-size: ;
+        font-family: ;
+        text-rendering: auto;
+        color: -internal-light-dark(black, white);
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: auto;
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+        margin: 0em;
+        padding: 1px 2px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+        border-image: initial;
+      }
+      .dbODSx .price-contact {
+          font-family: 'Roboto';
+          text-align: left;
+      }
 
     </style>
 
@@ -93,10 +90,6 @@
 
 
     <link data-react-helmet="true" rel="shortcut icon" type="image/png" href="{{asset('custom/static/favicon.45bef44b.png')}}"/>
-
-    <meta data-react-helmet="true" name="description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
-    <meta data-react-helmet="true" name="keywords" content="Plumbing, Heating, Boilers, Lancashire, North West, Corgi, Gas Engineers"/>
-
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Condensed" rel="stylesheet"/>
 
     <script>
@@ -188,13 +181,29 @@
     </style>
 
     <!-- <style data-styled-components=""></style> -->
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="{{asset('css/fonts_googleapis_300_400_500_600_700.css')}}"/>
+    <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+        <link href="{{asset('plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('css/graph.css')}}" rel="stylesheet" type="text/css" />
+    <!--end::Global Stylesheets Bundle-->
 
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Instaheat - Plumbing and Heating Engineers"/>
-    <meta property="og:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
-    <meta property="og:url" content="https://www.instaheat-solutions.co.uk/"/>
-    <meta property="og:site_name" content="Instaheat"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
-    <meta name="twitter:title" content="Instaheat - Plumbing and Heating Engineers"/>
+    <link href="{{asset('Theme/vendor/fontawesome-free/css/all.min.css')}}">
+    <link href="{{asset('Theme/css/sb-admin-2.min.css" rel="stylesheet')}}">
+    <link href="{{asset('Theme/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet')}}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+
+    <!-- Custom fonts for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- Custom styles for this template-->
+
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>

@@ -435,10 +435,10 @@ class OrderController extends Controller
             return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
         }else{
 
-            $data=array();
-            $data['status']= $request->status;
+            $order_list = QuestionnaireAnswer::find($order_id);
 
-            $query = DB::table('questionnaire_answers')->update($data);
+            $order_list->status = $request->status;
+            $query = $order_list->update();
 
 
             if($query){

@@ -77,36 +77,51 @@
                         <h4 class="contact-heading">What next?</h4>
                         <p>Call us now on<br/><a href="tel:07710246710"><span class="number">07710 246710</span></a></p>
 
-                        <div class="form-data booking_from" id="adding-booking-form">
+                        <form class="addBooking" action="{{ route('boilers.logic.30.booking') }}" method="post" id="adding-booking-button">
+                            @csrf
+
                             <p>Or fill in your name and number below and we will endeavour to get back to you as soon as possible. By sending the form we will have your questionnaire results to hand to discuss your quote in further detail.</p>
                             
-                             <input class="name-input" type="text" placeholder="Name" id="customer_name" name="customer_name">
-                                {{-- <span class="text-danger error-text customer_name_error"></span> --}}
+                            <div class="modal-body py-10 px-lg-27">
+                                {{-- <input type="hidden" name="booking_id" value="" /> --}}
+                                <div class="row col-md-12">
+                                    <div class="col-md-4">
+                                        <label class="fs-6 fw-bold mb-2">Name</label>
+                                        <input class="form-control form-control-solid" type="text" placeholder="Name" id="customer_name" name="customer_name">
+                                        <span class="text-danger error-text customer_name_error"></span>
+                                    </div>
 
-                                <input class="phone-input" type="text" placeholder="Number" id="customer_contact_number" name="customer_contact_number">
-                                {{-- <span class="text-danger error-text customer_contact_number_error" ></span> --}}
+                                    <div class="col-md-4">
+                                        <label class="fs-6 fw-bold mb-2">Mobile Number</label>
+                                        <input  type="text" class="form-control form-control-solid" type="text" placeholder="Number" id="customer_contact_number" name="customer_contact_number">
+                                        <span class="text-danger error-text customer_contact_number_error" ></span>
+                                    </div>
 
-                                <select name="year_warranty" id="year_warranty" aria-label="Select a year" data-control="select2" data-placeholder="Select a Year" class="form-select form-select-solid fw-bolder">
-                                    <option value="">--Select--</option>
-                                    <option value="5">Five</option>
-                                    <option value="10">Ten</option>
-                                </select>
-                                {{-- <span class="text-danger error-text year_warranty_error"></span> --}}
-                                
-                                <div class="cta-container" id="adding-booking-button">
-                                    
-                                    <button type="submit" class="btn btn-lg btn-primary fw-bolder me-3 my-2">
-                                        <a class="submit-btn" data-id="{{$item->id}}" id="addBookingBtn">Order Now</a>
-                                        <a class="submit-btn" href="{{route('customer.home')}}">No Thanks</a>
-                                    </button>
+                                    <div class="col-md-4">
+                                        <label class="fs-6 fw-bold mb-2">Year of warranty</label>
+                                        <select name="year_warranty" id="year_warranty" aria-label="Select a year" data-control="select2" data-placeholder="Select a Year"class="form-control form-control-solid">
+                                            <option value="">--Select--</option>
+                                            <option value="5">Five</option>
+                                            <option value="10">Ten</option>
+                                        </select>
+                                        <span class="text-danger error-text year_warranty_error"></span>
+                                    </div>
                                 </div>
-                        </div>
-                        
+                            </div>
+                                    
+                            <div class="cta-container">
+                                
+                                <button type="submit" class="btn btn-lg btn-primary fw-bolder me-3 my-2">
+                                    <a href="{{route('customer.home')}}" class="submit-btn" data-id="{{$item->id}}" id="addBookingBtn">Order Now</a>
+                                    <a class="submit-btn" href="{{route('customer.home')}}">No Thanks</a>
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    @include('customer-view.booking.booking-scripts')
+                   
                 @endforeach
             </div>
-
+            @include('customer-view.booking.booking-scripts')
         </div>
     </div>
 
