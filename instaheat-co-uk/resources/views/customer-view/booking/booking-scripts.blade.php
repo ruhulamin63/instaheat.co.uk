@@ -99,7 +99,10 @@
                       });
                   }else{
                       toastr.success(data.msg);
-                      window.location.reload();
+                      //window.location.reload();
+                      setTimeout(function(){
+                        window.location.reload(1);
+                      }, 5000);
                   }
                 }
               });
