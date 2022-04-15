@@ -48,8 +48,7 @@ class GetQuoteController extends Controller
         $booking_id = $request->booking_id;
         //dd($booking_id);
 
-        $boilers = Boiler::where('id',$booking_id)->first();
-
+       
         $validator = \Validator::make($request->all(), [
             'customer_name' => 'required',
             'customer_contact_number' => 'required',
@@ -60,7 +59,7 @@ class GetQuoteController extends Controller
             return response()->json(['code'=>0 , 'error'=>$validator->errors()->toArray()]);
         }else{
 
-            //$boiler = Boiler::where('id',$id)->first();
+            $boilers = Boiler::where('id',$booking_id)->first();
 
             $data=array();
 
@@ -150,7 +149,7 @@ class GetQuoteController extends Controller
             if($request->you_live_in_detatched == 'Detatched'){
                 $data['house_live_in']= $request->you_live_in_detatched;
             }
-            
+
             if($request->bedroom_one == '1'){
                 $data['number_of_bedroom']= $request->bedroom_one;
             }
@@ -175,14 +174,6 @@ class GetQuoteController extends Controller
                 $data['number_of_bathroom']= $request->bathroom_three_plus;
             }
 
-            // else{
-            //     return response()->json([
-            //         'code' => 0,
-            //         'msg' => 'Something went wrong.'
-            //     ],412);
-
-            //     echo "something is wrong!";
-            // }
 
             $data['status']= 0;
             $data['activeStatus']= 1;
@@ -191,22 +182,17 @@ class GetQuoteController extends Controller
 
 
             if($query){
-                // return response()->json([
-                //     'code' => 1,
-                //     'msg' => 'Order created successfully.'
-                // ],200);
-
-                return redirect()->route('customer.home');
-                //alert('Order created successfully');
+                return response()->json([
+                    'code' => 1,
+                    'msg' => 'Order created successfully.'
+                ],200);
             }else{
-                // return response()->json([
-                //     'code' => 0,
-                //     'msg' => 'Something went wrong.'
-                // ],412);
-                alert('Some thing is wrong!');
+                return response()->json([
+                    'code' => 0,
+                    'msg' => 'Something went wrong.'
+                ],412);
             }
         }
-        
     }
 
     // public function boiler_logic_30_details(Request $request, $id){

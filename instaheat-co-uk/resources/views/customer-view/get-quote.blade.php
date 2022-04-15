@@ -364,21 +364,21 @@
                                                     @endforeach --}}
                                                     @foreach ($boilers as $item)
                                                         
-                                                        <div class="card mb-3" style="max-width: 540px;">
+                                                        <div class="card mb-3" style="width: 320px;">
                                                             <div class="px-2 mt-3"> <a href="/boiler-logic-30/{{$item->id}}" class="btn btn-primary px-3 find-more">Find out more</a> </div>
                                                             <br>
                                                             <div class="row g-0">
                                                                 <div class="col-md-4">
-                                                                {{-- <img src="..." class="img-fluid rounded-start" alt="..."> --}}
-                                                                @if($item->image)
-                                                                    <?php if (file_exists("../public".$item->image)){ ?>
-                                                                    <img src="{{asset($item->image)}}" class="img-fluid rounded-start" alt="..." >
-                                                                    <?php } else{ ?>
-                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded-start" alt="...">
-                                                                    <?php } ?>
-                                                                @else
-                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded-start" alt="...">
-                                                                @endif
+                                                                    {{-- <img src="..." class="img-fluid rounded-start" alt="..."> --}}
+                                                                    @if($item->image)
+                                                                        <?php if (file_exists("../public".$item->image)){ ?>
+                                                                        <img src="{{asset($item->image)}}" class="img-fluid rounded-start" alt="..." >
+                                                                        <?php } else{ ?>
+                                                                        <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded-start" alt="...">
+                                                                        <?php } ?>
+                                                                    @else
+                                                                        <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded-start" alt="...">
+                                                                    @endif
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <div class="card-body">
@@ -387,11 +387,11 @@
                                                                         <div class="px-2">
                                                                             <div class="price-wrapper">
                                                                                 <div class="price">
-                                                                                    <span class="price" style="color:red">£{{$item->price_for_5_year}} <span class="warranty-message">(5 year warranty)</span></span>
+                                                                                    <span class="price" style="color:red">£{{$item->price_for_5_year}}<span class="warranty-message">(5 year warranty)</span></span>
                                                                                 </div>
                                                                             
                                                                                 <div class="price">
-                                                                                    <span class="price" style="color:red">£{{$item->price_for_10_year}} <span class="warranty-message">(10 year warranty)</span></span>
+                                                                                    <span class="price" style="color:red">£{{$item->price_for_10_year}}<span class="warranty-message">(10 year warranty)</span></span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

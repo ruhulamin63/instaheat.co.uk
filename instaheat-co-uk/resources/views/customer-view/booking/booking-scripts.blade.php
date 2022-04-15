@@ -25,7 +25,7 @@
         $(document).on('click','#addBookingBtn', function(){
           var booking_id = $(this).data('id');
 
-          alert(booking_id)
+          //alert(booking_id)
 
           var customer_name = $("#customer_name").val()
           var customer_contact_number = $("#customer_contact_number").val()
@@ -73,9 +73,8 @@
           var bathroom_two = localStorage.getItem('bathroom-two');
           var bathroom_three_plus = localStorage.getItem('bathroom-three-plus');
 
-          //if(customer_name && booking_id && customer_contact_number && year_warranty){
+          if(customer_name && booking_id && customer_contact_number && year_warranty){
             
-           
             $.post('<?= route("boilers.logic.30.booking") ?>',
               {booking_id:booking_id, customer_name: customer_name, customer_contact_number:customer_contact_number,year_warranty:year_warranty, 
               item_gas:item_gas,
@@ -89,49 +88,33 @@
               bedroom_one:bedroom_one, bedroom_two:bedroom_two, bedroom_three:bedroom_three, bedroom_four:bedroom_four, bedroom_five_plus:bedroom_five_plus,
               bathroom_one:bathroom_one, bathroom_two:bathroom_two, bathroom_three_plus:bathroom_three_plus,
               _token:'{{csrf_token()}}'}, function(data){
-                 // console.log('post request')    
-                //alert(customer_name);
+                
 
-                $('.addBooking').find('form')[0].reset();
-                $('.addBooking').find('span.error-text').text('');
-              //  $('.addBooking').modal('show');
+              //data.preventDefault();
+              $.ajax({
+                success: function(data){
+                  if(data.code == 0){
+                      $.each(data.error, function(prefix, val){
+                          $(form).find('span.'+prefix+'_error').text(val[0]);
+                      });
+                  }else{
+                      toastr.success(data.msg);
+                      window.location.reload();
+                  }
+                }
+              });
+              
             },'json');
 
-          //}
-          // else{
-          //   alert("Empty submit not allow !");
-          // }
+          }
+          else{
+            alert("Empty submit not allow !");
+          }
              
         });
 
-        // =============================================UPDATE COUNTRY DETAILS==============================================
-        $('#adding-booking-button').on('submit', function(e){
-          e.preventDefault();
-          var form = this;
-          $.ajax({
-              url:$(form).attr('action'),
-              method:$(form).attr('method'),
-              data:new FormData(form),
-              processData:false,
-              dataType:'json',
-              contentType:false,
-              beforeSend: function(){
-                    $(form).find('span.error-text').text('');
-              },
-              success: function(data){
-                if(data.code == 0){
-                    $.each(data.error, function(prefix, val){
-                        $(form).find('span.'+prefix+'_error').text(val[0]);
-                    });
-                }else{
-                    //$('#adding-booking-button').ajax.reload(null, false);
-                    // $('.addBooking').modal('hide');
-                    toastr.success(data.msg);
-                }
-              }
-          });
-        });
 
       });
 
   </script>
+
