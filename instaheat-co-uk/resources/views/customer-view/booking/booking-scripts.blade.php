@@ -25,7 +25,7 @@
         $(document).on('click','#addBookingBtn', function(){
           var booking_id = $(this).data('id');
 
-          //alert(booking_id)
+          alert(booking_id)
 
           var customer_name = $("#customer_name").val()
           var customer_contact_number = $("#customer_contact_number").val()

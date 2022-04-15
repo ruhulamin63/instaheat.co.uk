@@ -52,7 +52,7 @@ class GetQuoteController extends Controller
 
         $validator = \Validator::make($request->all(), [
             'customer_name' => 'required',
-            'customer_contact_number' => 'required|min:6|max:16',
+            'customer_contact_number' => 'required',
             'year_warranty' => 'required',
         ]);
 

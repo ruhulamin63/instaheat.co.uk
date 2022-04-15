@@ -77,7 +77,7 @@
                         <h4 class="contact-heading">What next?</h4>
                         <p>Call us now on<br/><a href="tel:07710246710"><span class="number">07710 246710</span></a></p>
 
-                        <form class="addBooking" action="{{ route('boilers.logic.30.booking') }}" method="post" id="adding-booking-button">
+                        {{-- <form > --}}
                             @csrf
 
                             <p>Or fill in your name and number below and we will endeavour to get back to you as soon as possible. By sending the form we will have your questionnaire results to hand to discuss your quote in further detail.</p>
@@ -109,14 +109,13 @@
                                 </div>
                             </div>
                                     
-                            <div class="cta-container">
-                                
-                                <button type="submit" class="btn btn-lg btn-primary fw-bolder me-3 my-2">
-                                    <a href="{{route('customer.home')}}" class="submit-btn" data-id="{{$item->id}}" id="addBookingBtn">Order Now</a>
+                            <div class="cta-container" class="addBooking" id="adding-booking-button">
+                                {{-- <button type="submit" class="btn btn-lg btn-primary fw-bolder me-3 my-2"> --}}
+                                    <a class="submit-btn" data-id="{{$item->id}}" id="addBookingBtn">Order Now</a>
                                     <a class="submit-btn" href="{{route('customer.home')}}">No Thanks</a>
-                                </button>
+                                {{-- </button> --}}
                             </div>
-                        </form>
+                        {{-- </form> --}}
                     </div>
                    
                 @endforeach

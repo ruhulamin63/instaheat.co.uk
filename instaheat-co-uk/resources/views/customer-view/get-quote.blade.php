@@ -327,13 +327,10 @@
                                                     <p>** <strong>4</strong> boilers meet your needs. Click on 'Find out more' to get more information about a boiler and to make an enquiry **</p>
                                                 </div>
                                                 
-                                                <div class="container mt-5 mb-5 d-flex" id="boiler-list">
+                                                {{-- <div class="container mt-5 mb-5 d-flex" id="boiler-list"> --}}
 
-                                                    @foreach ($boilers as $item)
+                                                    {{-- @foreach ($boilers as $item)
                                                         <div class="card">
-
-                                                            {{-- data-id="{{$item->id}}" id="addBookingBtn" --}}
-
                                                             <div class="px-2 mt-3"> <a href="/boiler-logic-30/{{$item->id}}" class="btn btn-primary px-3 find-more">Find out more</a> </div>
                                                             <div class="inner-card"> 
                                                                 @if($item->image)
@@ -364,18 +361,52 @@
                                                                 
                                                             </div>
                                                         </div>
+                                                    @endforeach --}}
+                                                    @foreach ($boilers as $item)
+                                                        
+                                                        <div class="card mb-3" style="max-width: 540px;">
+                                                            <div class="px-2 mt-3"> <a href="/boiler-logic-30/{{$item->id}}" class="btn btn-primary px-3 find-more">Find out more</a> </div>
+                                                            <br>
+                                                            <div class="row g-0">
+                                                                <div class="col-md-4">
+                                                                {{-- <img src="..." class="img-fluid rounded-start" alt="..."> --}}
+                                                                @if($item->image)
+                                                                    <?php if (file_exists("../public".$item->image)){ ?>
+                                                                    <img src="{{asset($item->image)}}" class="img-fluid rounded-start" alt="..." >
+                                                                    <?php } else{ ?>
+                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded-start" alt="...">
+                                                                    <?php } ?>
+                                                                @else
+                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded-start" alt="...">
+                                                                @endif
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title">{{$item->model_name}} {{$item->type}} Boiler </h5>
+                                                                        <p class="card-text" style="text-overflow: ellipsis; text-align: justify;">{{$item->short_desc}}</p>
+                                                                        <div class="px-2">
+                                                                            <div class="price-wrapper">
+                                                                                <div class="price">
+                                                                                    <span class="price" style="color:red">£{{$item->price_for_5_year}} <span class="warranty-message">(5 year warranty)</span></span>
+                                                                                </div>
+                                                                            
+                                                                                <div class="price">
+                                                                                    <span class="price" style="color:red">£{{$item->price_for_10_year}} <span class="warranty-message">(10 year warranty)</span></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     @endforeach
-                                                </div>
-
-                                                
-                                            
+                                                {{-- </div> --}}
+                                              
                                                 <p class="footnote">*** Although boiler quotes should be accurate, these are not 100% finalised until you give us a call ***</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                               
                             </div>
                         </div>
                     </div>
