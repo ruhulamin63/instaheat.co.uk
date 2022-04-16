@@ -362,6 +362,7 @@
                                                             </div>
                                                         </div>
                                                     @endforeach --}}
+                                                    
                                                     @foreach ($boilers as $item)
                                                         
                                                         <div class="card mb-3" style="width: 320px;">

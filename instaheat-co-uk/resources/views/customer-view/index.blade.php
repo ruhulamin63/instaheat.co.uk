@@ -4,7 +4,7 @@
 ?>
 @section('body')
 
-<div id="___gatsby">
+  <div id="___gatsby">
     <div data-reactroot="">
       
       <div>
@@ -51,7 +51,7 @@
           </section>
                 
           <div class="sc-htoDjs iDWFHY">
-            <div>Here at Instaheat we take great pride in providing an efficient, affordable and reliable service. Based in Wigan, we have over 10 years experience in plumbing and heating. We carry out installations, repairs and servicing to boilers and central heating systems as well as bathroom refurbs. We only provide boilers from the most reputable brands. These include:-</div>
+            <div style="text-overflow: ellipsis; text-align: justify;">Here at Instaheat we take great pride in providing an efficient, affordable and reliable service. Based in Wigan, we have over 10 years experience in plumbing and heating. We carry out installations, repairs and servicing to boilers and central heating systems as well as bathroom refurbs. We only provide boilers from the most reputable brands. These include:-</div>
           </div>
 
           <section class="sc-kpOJdX cDJcwK">
@@ -123,6 +123,6 @@
       </div>
 
     </div>
-</div>
+  </div>
 
 @endsection
