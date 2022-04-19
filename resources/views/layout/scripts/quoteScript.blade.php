@@ -40,37 +40,36 @@
 
                 //==========================================================
 
-                let arr=[]
-
-                // we are making an todo list function
-
-                // document.getElementById("Which-type-of-fuel-does-your-boiler-use").onclick=(e)=>{
-
-
-                //     let item=document.getElementById("Gas").value
-                //     arr.push(item)
-                //     //break
-
-                //     localStorage.setItem("test",JSON.stringify(arr))
-
-                //     // 
-
-                //     // console.log(getitem)
-
-                //     e.preventDefault()
-                // }
+        //let arr=[]
 
 
         //==================gas=================
         $(document).ready(function(){
             $('#Gas').click(function(){
-                $('#Which-type-of-boiler').removeClass('step-one')
-                $('#Which-type-of-fuel-does-your-boiler-use').addClass('step-one')
-
-                let item=document.getElementById("Gas").value
+                
+                //let item=document.getElementById("Gas").value
                 //arr.push(item)
                 //localStorage.setItem("gas",JSON.stringify(item))
-                localStorage.setItem('gas',$(this).val());
+                
+
+                //==================================================
+
+                var final_step_1 = localStorage.getItem('bathroom-one');
+                var final_step_2 = localStorage.getItem('bathroom-two');
+                var final_step_3 = localStorage.getItem('bathroom-three-plus');
+
+                if(final_step_1 == '1' || final_step_2 == '2' || final_step_3 == '3+'){
+                    $('#boiler-list').removeClass('final-step')
+                    $('#Which-type-of-fuel-does-your-boiler-use').addClass('step-one')
+
+                    // console.log(final_step_1)
+                    // console.log(final_step_2)
+                    // console.log(final_step_3)
+                }else{
+                    localStorage.setItem('gas',$(this).val());
+                    $('#Which-type-of-boiler').removeClass('step-one')
+                    $('#Which-type-of-fuel-does-your-boiler-use').addClass('step-one')
+                }
     
             });
         });
@@ -119,7 +118,7 @@
                 $('#Do-you-want-your-boiler-moving-over-5-metres').removeClass('step-three')
                 $('#Which-type-of-boiler').addClass('step-one')
 
-                let item=document.getElementById("Combi").value
+                //let item=document.getElementById("Combi").value
                 //arr.push(item)
                 //localStorage.setItem("combi",JSON.stringify(item))
                 localStorage.setItem('combi',$(this).val());
@@ -132,7 +131,7 @@
                 $('#Would-you-like-to-convert-to-a-combi-boiler').removeClass('step-four')
                 $('#Which-type-of-boiler').addClass('step-one')
 
-                let item=document.getElementById("Standard").value
+                //let item=document.getElementById("Standard").value
                 //arr.push(item)
                 //localStorage.setItem("standard",JSON.stringify(item))
                 localStorage.setItem('standard',$(this).val());
@@ -146,7 +145,7 @@
                 $('#Would-you-like-to-convert-to-a-combi-boiler').removeClass('step-four')
                 $('#Which-type-of-boiler').addClass('step-one')
 
-                let item=document.getElementById("System").value
+                //let item=document.getElementById("System").value
                 //arr.push(item)
                 //localStorage.setItem("system",JSON.stringify(item))
                 localStorage.setItem('system',$(this).val());
@@ -159,7 +158,7 @@
                 $('#Would-you-like-to-convert-to-a-combi-boiler').removeClass('step-four')
                 $('#Which-type-of-boiler').addClass('step-one')
 
-                let item=document.getElementById("Back-boiler").value
+                //let item=document.getElementById("Back-boiler").value
                 //arr.push(item)
                 //localStorage.setItem("back-boiler",JSON.stringify(item))
                 localStorage.setItem('back-boiler',$(this).val());
@@ -174,7 +173,7 @@
             
                 //console.log('test');
 
-                let item=document.getElementById("Yes-combi-boiler").value
+                //let item=document.getElementById("Yes-combi-boiler").value
                 //arr.push(item)
                 //localStorage.setItem("yes-combi-boiler",JSON.stringify(item))
                 localStorage.setItem('yes-combi-boiler',$(this).val());
@@ -188,7 +187,7 @@
 
                 //console.log('test');
 
-                let item=document.getElementById("No-combi-boiler").value
+                //let item=document.getElementById("No-combi-boiler").value
                 //arr.push(item)
                 //localStorage.setItem("no-combi-boiler",JSON.stringify(item))
                 localStorage.setItem('no-combi-boiler',$(this).val());
@@ -202,7 +201,7 @@
                 $('#Where-does-your-flue-come-out').removeClass('step-five')
                 $('#Do-you-want-your-boiler-moving-over-5-metres').addClass('step-three')
 
-                let item=document.getElementById("moving-over-yes").value
+                //let item=document.getElementById("moving-over-yes").value
                 //arr.push(item)
                 //localStorage.setItem("moving-over-yes",JSON.stringify(item))
                 localStorage.setItem('moving-over-yes',$(this).val());
@@ -215,7 +214,7 @@
                 $('#Where-does-your-flue-come-out').removeClass('step-five')
                 $('#Do-you-want-your-boiler-moving-over-5-metres').addClass('step-three')
 
-                let item=document.getElementById("moving-over-no").value
+                //let item=document.getElementById("moving-over-no").value
                 //arr.push(item)
                 //localStorage.setItem("moving-over-no",JSON.stringify(item))
                 localStorage.setItem('moving-over-no',$(this).val());
@@ -228,7 +227,7 @@
                 $('#Is-the-roof-pitched-or-flat').removeClass('step-six')
                 $('#Where-does-your-flue-come-out').addClass('step-five')
 
-                let item=document.getElementById("come-out-roof").value
+                //let item=document.getElementById("come-out-roof").value
                 //arr.push(item)
                 //localStorage.setItem("come-out-roof",JSON.stringify(item))
                 localStorage.setItem('come-out-roof',$(this).val());
@@ -240,7 +239,7 @@
                 $('#Is-the-flue-under-a-carport').removeClass('step-eleven')
                 $('#Where-does-your-flue-come-out').addClass('step-five')
 
-                let item=document.getElementById("come-out-wall").value
+                //let item=document.getElementById("come-out-wall").value
                 //arr.push(item)
                 //localStorage.setItem("come-out-wall",JSON.stringify(item))
                 localStorage.setItem('come-out-wall',$(this).val());
@@ -253,7 +252,7 @@
                 $('#Which-type-of-house-do-you-live-in').removeClass('step-seven')
                 $('#Is-the-roof-pitched-or-flat').addClass('step-six')
 
-                let item=document.getElementById("roof-pitched").value
+                //let item=document.getElementById("roof-pitched").value
                 //arr.push(item)
                 //localStorage.setItem("roof-pitched",JSON.stringify(item))
                 localStorage.setItem('roof-pitched',$(this).val());
@@ -265,7 +264,7 @@
                 $('#Which-type-of-house-do-you-live-in').removeClass('step-seven')
                 $('#Is-the-roof-pitched-or-flat').addClass('step-six')
 
-                let item=document.getElementById("roof-flat").value
+                //let item=document.getElementById("roof-flat").value
                 //arr.push(item)
                 //localStorage.setItem("roof-flat",JSON.stringify(item))
                 localStorage.setItem('roof-flat',$(this).val());
@@ -280,7 +279,7 @@
                 $('#Is-the-flue-thirty-away-from-the-window').removeClass('step-twelve')
                 $('#Is-the-flue-under-a-carport').addClass('step-eleven')
 
-                let item=document.getElementById("under-a-carport-yes").value
+                //let item=document.getElementById("under-a-carport-yes").value
                 //arr.push(item)
                 //localStorage.setItem("under-a-carport-yes",JSON.stringify(item))
                 localStorage.setItem('under-a-carport-yes',$(this).val());
@@ -293,7 +292,7 @@
                 $('#Is-the-flue-thirty-away-from-the-window').removeClass('step-twelve')
                 $('#Is-the-flue-under-a-carport').addClass('step-eleven')
 
-                let item=document.getElementById("under-a-carport-no").value
+                //let item=document.getElementById("under-a-carport-no").value
                 //arr.push(item)
                 //localStorage.setItem("under-a-carport-no",JSON.stringify(item))
                 localStorage.setItem('under-a-carport-no',$(this).val());
@@ -308,7 +307,7 @@
                 $('#How-many-bedrooms').removeClass('step-eight')
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
-                let item=document.getElementById("you-live-in-Flat").value
+                //let item=document.getElementById("you-live-in-Flat").value
                 //arr.push(item)
                 //localStorage.setItem("you-live-in-Flat",JSON.stringify(item))
                 localStorage.setItem('you-live-in-flat',$(this).val());
@@ -321,7 +320,7 @@
                 $('#How-many-bedrooms').removeClass('step-eight')
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
-                let item=document.getElementById("you-live-in-Bungalow").value
+                //let item=document.getElementById("you-live-in-Bungalow").value
                 //arr.push(item)
                 //localStorage.setItem("you-live-in-Bungalow",JSON.stringify(item))
                 localStorage.setItem('you-live-in-bungalow',$(this).val());
@@ -334,7 +333,7 @@
                 $('#How-many-bedrooms').removeClass('step-eight')
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
-                let item=document.getElementById("you-live-in-Terrace").value
+                //let item=document.getElementById("you-live-in-Terrace").value
                 //arr.push(item)
                 //localStorage.setItem("you-live-in-Terrace",JSON.stringify(item))
                 localStorage.setItem('you-live-in-terrace',$(this).val());
@@ -347,7 +346,7 @@
                 $('#How-many-bedrooms').removeClass('step-eight')
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
-                let item=document.getElementById("you-live-in-Semi-detatched").value
+                //let item=document.getElementById("you-live-in-Semi-detatched").value
                 //arr.push(item)
                 //localStorage.setItem("you-live-in-Semi-detatched",JSON.stringify(item))
                 localStorage.setItem('you-live-in-semi-detatched',$(this).val());
@@ -360,7 +359,7 @@
                 $('#How-many-bedrooms').removeClass('step-eight')
                 $('#Which-type-of-house-do-you-live-in').addClass('step-seven')
 
-                let item=document.getElementById("you-live-in-Detatched").value
+                //let item=document.getElementById("you-live-in-Detatched").value
                 //arr.push(item)
                 //localStorage.setItem("you-live-in-Detatched",JSON.stringify(item))
                 localStorage.setItem('you-live-in-detatched',$(this).val());
@@ -376,7 +375,7 @@
                 $('#Which-type-of-house-do-you-live-in').removeClass('step-seven')
                 $('#Is-the-flue-thirty-away-from-the-window').addClass('step-twelve')
 
-                let item=document.getElementById("from-the-window-Yes").value
+                //let item=document.getElementById("from-the-window-Yes").value
                 //arr.push(item)
                 //localStorage.setItem("from-the-window-Yes",JSON.stringify(item))
                 localStorage.setItem('from-the-window-yes',$(this).val());
@@ -389,7 +388,7 @@
                 $('#Which-type-of-house-do-you-live-in').removeClass('step-seven')
                 $('#Is-the-flue-thirty-away-from-the-window').addClass('step-twelve')
 
-                let item=document.getElementById("from-the-window-No").value
+                //let item=document.getElementById("from-the-window-No").value
                 //arr.push(item)
                 //localStorage.setItem("from-the-window-No",JSON.stringify(item))
                 localStorage.setItem('from-the-window-no',$(this).val());
@@ -406,7 +405,7 @@
                 $('#How-many-bathrooms').removeClass('step-nine')
                 $('#How-many-bedrooms').addClass('step-eight')
 
-                let item=document.getElementById("bedroom-one").value
+               // let item=document.getElementById("bedroom-one").value
                 //arr.push(item)
                 //localStorage.setItem("bedroom-one",JSON.stringify(item))
                 localStorage.setItem('number-of-bedroom-one',$(this).val());
@@ -418,7 +417,7 @@
                 $('#How-many-bathrooms').removeClass('step-nine')
                 $('#How-many-bedrooms').addClass('step-eight')
 
-                let item=document.getElementById("bedroom-two").value
+                //let item=document.getElementById("bedroom-two").value
                 //arr.push(item)
                 //localStorage.setItem("bedroom-two",JSON.stringify(item))
                 localStorage.setItem('number-of-bedroom-two',$(this).val());
@@ -430,7 +429,7 @@
                 $('#How-many-bathrooms').removeClass('step-nine')
                 $('#How-many-bedrooms').addClass('step-eight')
 
-                let item=document.getElementById("bedroom-three").value
+                //let item=document.getElementById("bedroom-three").value
                 //arr.push(item)
                 //localStorage.setItem("bedroom-three",JSON.stringify(item))
                 localStorage.setItem('number-of-bedroom-three',$(this).val());
@@ -442,7 +441,7 @@
                 $('#How-many-bathrooms').removeClass('step-nine')
                 $('#How-many-bedrooms').addClass('step-eight')
 
-                let item=document.getElementById("bedroom-four").value
+                //let item=document.getElementById("bedroom-four").value
                 //arr.push(item)
                 //localStorage.setItem("bedroom-four",JSON.stringify(item))
                 localStorage.setItem('number-of-bedroom-four',$(this).val());
@@ -454,7 +453,7 @@
                 $('#How-many-bathrooms').removeClass('step-nine')
                 $('#How-many-bedrooms').addClass('step-eight')
 
-                let item=document.getElementById("bedroom-five-plus").value
+                //let item=document.getElementById("bedroom-five-plus").value
                 //arr.push(item)
                 //localStorage.setItem("bedroom-five-plus",JSON.stringify(item))
                 localStorage.setItem('number-of-bedroom-five-plus',$(this).val());
@@ -468,7 +467,7 @@
                 $('#boiler-list').removeClass('final-step')
                 $('#How-many-bathrooms').addClass('step-nine')
 
-                let item=document.getElementById("bathroom-one").value
+                ///let item=document.getElementById("bathroom-one").value
                 //arr.push(item)
                 //localStorage.setItem("bathroom-one",JSON.stringify(item))
                 localStorage.setItem('bathroom-one',$(this).val());
@@ -484,7 +483,7 @@
                 $('#boiler-list').removeClass('final-step')
                 $('#How-many-bathrooms').addClass('step-nine')
 
-                let item=document.getElementById("bathroom-two").value
+                //let item=document.getElementById("bathroom-two").value
                 //arr.push(item)
                 //localStorage.setItem("bathroom-two",JSON.stringify(item))
                 localStorage.setItem('bathroom-two',$(this).val());
@@ -502,7 +501,7 @@
                 $('#boiler-list').removeClass('final-step')
                 $('#How-many-bathrooms').addClass('step-nine')
 
-                let item=document.getElementById("bathroom-three-plus").value
+                //let item=document.getElementById("bathroom-three-plus").value
                 //arr.push(item)
                 //localStorage.setItem('bathroom-three-plus',$(this).val());
                 localStorage.setItem('bathroom-three-plus',$(this).val());
