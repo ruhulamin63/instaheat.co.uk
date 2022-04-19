@@ -1,6 +1,6 @@
 <div>
 
-    <nav class="nav">
+    {{-- <nav class="nav">
         <div class="container">
             <div class="logo">
                 <div class="sc-bdVaJa cMvXxa">
@@ -20,7 +20,7 @@
                 <i></i>
             </span>
         </div>
-    </nav>
+    </nav> --}}
     
     {{-- <section class="home" class="bm-menu-wrap mobile-navigation" style="position:fixed;right:0;z-index:1100;width:300px;height:100%;-moz-transform:translate3d(100%, 0, 0);-ms-transform:translate3d(100%, 0, 0);-o-transform:translate3d(100%, 0, 0);-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);transition:all 0.5s">
     </section> --}}
@@ -58,16 +58,16 @@
                 </ul>
             </nav> --}}
             
-            {{-- <div class="desktop-navigation"> --}}
-                {{-- <ul>
+            <div class="desktop-navigation">
+                <ul>
                     <li><a class="menu-item" href="{{route('customer.home')}}">Home</a></li>
                     <li><a class="menu-item" href="{{route('customer.services')}}">Services</a></li>
                     <li><a class="menu-item" href="{{route('customer.contact')}}">Contact</a></li>
-                </ul> --}}
+                </ul>
                 
                
 
-            {{-- <div>
+            <div>
                 <div class="bm-overlay" style="position:fixed;z-index:1000;width:100%;height:100%;background:rgba(0, 0, 0, 0.3);opacity:0;-moz-transform:translate3d(100%, 0, 0);-ms-transform:translate3d(100%, 0, 0);-o-transform:translate3d(100%, 0, 0);-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);transition:opacity 0.3s, transform 0s 0.3s"></div>
                 
                 <div id="" class="bm-menu-wrap mobile-navigation" style="position:fixed;right:0;z-index:1100;width:300px;height:100%;-moz-transform:translate3d(100%, 0, 0);-ms-transform:translate3d(100%, 0, 0);-o-transform:translate3d(100%, 0, 0);-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);transition:all 0.5s">
@@ -103,7 +103,7 @@
                         <button class="menu" style="position:absolute;left:0;top:0;width:100%;height:100%;margin:0;padding:0;border:none;opacity:0;font-size:8px;cursor:pointer">Open Menu</button>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </header>
 
