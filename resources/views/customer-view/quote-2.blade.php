@@ -1,4 +1,4 @@
-@extends('Layout.navbar.quoteNavBar')
+@extends('layout.navbar.quoteNavBar')
 <?php 
 	$title= "Get-Quote";
 ?>

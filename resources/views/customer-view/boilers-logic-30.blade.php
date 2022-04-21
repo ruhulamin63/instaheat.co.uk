@@ -1,4 +1,4 @@
-@extends('Layout.navbar.boilerLogic-30-NavBar')
+@extends('layout.navbar.boilerLogic-30-NavBar')
 <?php 
 	$title= "Boiler Logic-30";
 ?>

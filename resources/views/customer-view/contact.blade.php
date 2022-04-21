@@ -1,4 +1,4 @@
-@extends('Layout.navbar.contactNavBar')
+@extends('layout.navbar.contactNavBar')
 <?php 
 	$title= "Contact";
 ?>

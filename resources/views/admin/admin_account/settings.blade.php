@@ -1,4 +1,4 @@
-@extends('Layout.navbar.adminNavbar')
+@extends('layout.navbar.adminNavbar')
 <?php 
 	$title= "Setting";
 ?>

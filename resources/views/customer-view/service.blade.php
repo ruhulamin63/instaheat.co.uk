@@ -1,4 +1,4 @@
-@extends('Layout.navbar.serviceNavBar')
+@extends('layout.navbar.serviceNavBar')
 <?php 
 	$title= "Service";
 ?>

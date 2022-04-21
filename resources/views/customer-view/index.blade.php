@@ -1,4 +1,4 @@
-@extends('Layout.navbar.customerNavBar')
+@extends('layout.navbar.customerNavBar')
 <?php 
 	$title= "Instaheat | Home";
 ?>

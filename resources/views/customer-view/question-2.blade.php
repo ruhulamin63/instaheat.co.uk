@@ -1,4 +1,4 @@
-@extends('Layout.navbar.contactQuestionNavBar')
+@extends('layout.navbar.contactQuestionNavBar')
 <?php 
 	$title= "question-2";
 ?>
