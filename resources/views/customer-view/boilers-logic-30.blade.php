@@ -78,7 +78,7 @@
                         <p>Call us now on<br/><a href="tel:07710246710"><span class="number">07710 246710</span></a></p>
 
                         <p>Or fill in your name and number below and we will endeavour to get back to you as soon as possible. By sending the form we will have your questionnaire results to hand to discuss your quote in further detail.</p>
-                        
+          
                         <div class="modal-body py-10 px-lg-27" class="addBooking" id="adding-booking-button">
       
                             <div class="row col-md-12">

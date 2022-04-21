@@ -89,33 +89,27 @@
               bathroom_one:bathroom_one, bathroom_two:bathroom_two, bathroom_three_plus:bathroom_three_plus,
               _token:'{{csrf_token()}}'}, function(data){
                 
-
-              //data.preventDefault();
               $.ajax({
                 success: function(data){
-                  if(data.code == 0){
-                      $.each(data.error, function(prefix, val){
-                          $(form).find('span.'+prefix+'_error').text(val[0]);
-                      });
-                  }else{
-                      toastr.success(data.msg);
-                      //window.location.reload();
-                      setTimeout(function(){
-                        window.location.reload(1);
-                      }, 5000);
-                  }
+                    toastr.success("Order Successfull");
+                    
+                    setTimeout(function(){
+                      window.location.reload();
+                    }, 5000);
                 }
               });
               
-            },'json');
+            });
 
+          }else{
+            $.ajax({
+              success: function(data){
+                toastr.error("Please fill up all field ?");
+              }
+            });
           }
-          else{
-            alert("Empty submit not allow !");
-          }
-             
+
         });
-
 
       });
 

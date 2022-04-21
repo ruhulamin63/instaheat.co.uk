@@ -56,7 +56,7 @@ class GetQuoteController extends Controller
         ]);
 
         if(!$validator->passes()){
-            return response()->json(['code'=>0 , 'error'=>$validator->errors()->toArray()]);
+            return response()->json(['code'=> 0 , 'error'=>$validator->errors()->toArray()]);
         }else{
 
             $boilers = Boiler::where('id',$booking_id)->first();
@@ -174,24 +174,24 @@ class GetQuoteController extends Controller
                 $data['number_of_bathroom']= $request->bathroom_three_plus;
             }
 
-
             $data['status']= 0;
             $data['activeStatus']= 1;
 
             $query = DB::table('questionnaire_answers')->insert($data);
 
+            //dd("test");
 
-            if($query){
-                return response()->json([
-                    'code' => 1,
-                    'msg' => 'Order created successfully.'
-                ],200);
-            }else{
-                return response()->json([
-                    'code' => 0,
-                    'msg' => 'Something went wrong.'
-                ],412);
-            }
+            // if($query){
+            //     return response()->json([
+            //         'code' => 1,
+            //         'msg' => 'Order created successfully.'
+            //     ],200);
+            // }else{
+            //     return response()->json([
+            //         'code' => 0,
+            //         'msg' => 'Something went wrong.'
+            //     ],416);
+            // }
         }
     }
 
