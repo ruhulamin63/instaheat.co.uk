@@ -1,6 +1,6 @@
 @extends('layout.navbar.boilerLogic-30-NavBar')
 <?php 
-	$title= "Boiler Logic-30";
+	$title= "Boiler Logic";
 ?>
 @section('body')
 

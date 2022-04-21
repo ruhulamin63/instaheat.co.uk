@@ -4,8 +4,9 @@
 	
 	@include('layout.head.adminHead')
 	@include('layout.topBar.adminTopBar')
-	<body>
-		@include('layout.sidebar.adminSideBar')
+	@include('layout.sidebar.adminSideBar')
+	<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed toolbar-tablet-and-mobile-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+	
 		<!-- BEGIN: Body-->
 			@yield('body')
 		<!-- END: Body-->
