@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB; //Import query builser
 use Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 use App\Models\User;
 
@@ -59,6 +60,29 @@ class ProfileController extends Controller{
             $data['image']=$imageData;
         }
 
+        // if ($req->hasFile('avatar')) {
+        //     $image = $req->file('avatar');
+        //     $thumbnail = time() . '.' . $image->getClientOriginalExtension();
+        //     Image::make($image)->resize(400, 400)->save('media/admin/'. $thumbnail);
+        // }else {
+        //     $thumbnail = null;
+        // }
+
+        // if ($req->hasFile('avatar')) {
+        //     $image = $req->file('avatar');
+        //     $data['image'] = time().'.'.$image->getClientOriginalExtension();
+            
+        //     $destinationPath = public_path('/media/admin');
+        //     $imgFile = Image::make($image->getRealPath());
+        //     $imgFile->resize(400, 400)->save($destinationPath.'/'.$data['image']);
+        //     $destinationPath = public_path('/media/admin');
+        //     $image->move($destinationPath, $data['image']);
+
+        //     $data['image'] = $image;
+        // }else {
+        //     $thumbnail = null;
+        // }
+
         $query = DB::table('users')->update($data);
 
 
@@ -83,7 +107,7 @@ class ProfileController extends Controller{
         }else{
             return redirect()->back()->with([
                 'error' => true,
-                'message' => 'Not success'
+                'message' => 'Some wrong information!'
             ]);
         }
     }
