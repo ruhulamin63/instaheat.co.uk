@@ -16,7 +16,7 @@
               <h1>Plumbing and Heating Engineers</h1>
               
               <div class="sc-gZMcBi gJQWhe">
-                <a class="primary-cta" href="{{route('customer.get.quote')}}">Get a Fixed Price Quote Now</a>
+                <a class="primary-cta" href="{{route('customer.get.quote')}}">hello</a>
               </div>
             </div>
           </div>
