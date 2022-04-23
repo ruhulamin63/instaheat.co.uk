@@ -326,42 +326,6 @@
                                                 <div class="form-data">
                                                     <p>** <strong>4</strong> boilers meet your needs. Click on 'Find out more' to get more information about a boiler and to make an enquiry **</p>
                                                 </div>
-                                                
-                                                {{-- <div class="container mt-5 mb-5 d-flex" id="boiler-list"> --}}
-
-                                                    {{-- @foreach ($boilers as $item)
-                                                        <div class="card">
-                                                            <div class="px-2 mt-3"> <a href="/boiler-logic-30/{{$item->id}}" class="btn btn-primary px-3 find-more">Find out more</a> </div>
-                                                            <div class="inner-card"> 
-                                                                @if($item->image)
-                                                                    <?php if (file_exists("../public".$item->image)){ ?>
-                                                                    <img src="{{asset($item->image)}}" class="img-fluid rounded" alt="..." >
-                                                                    <?php } else{ ?>
-                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded" alt="...">
-                                                                    <?php } ?>
-                                                                @else
-                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded" alt="...">
-                                                                @endif
-                                                                <div class="d-flex justify-content-between align-items-center mt-3 px-2">
-                                                                    <h4>{{$item->model_name}} {{$item->type}} Boiler </h4> <span class="heart"><i class="fa fa-heart"></i></span>
-                                                                </div>
-                                                                <div class="mt-2 px-2" style="text-overflow: ellipsis; text-align: justify;"> {{$item->short_desc}} </div>
-                                                                <br>
-                                                                <div class="px-2">
-                                                                    <div class="price-wrapper">
-                                                                        <div class="price">
-                                                                            <span class="price">£{{$item->price_for_5_year}} <span class="warranty-message">(5 year warranty)</span></span>
-                                                                        </div>
-                                                                    
-                                                                        <div class="price">
-                                                                            <span class="price">£{{$item->price_for_10_year}} <span class="warranty-message">(10 year warranty)</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    @endforeach --}}
                                                     
                                                     @foreach ($boilers as $item)
                                                         
@@ -375,7 +339,7 @@
                                                               
                                                                 @if($item->image)
                                                                     <?php if (file_exists("../public".$item->image)){ ?>
-                                                                    <img src="{{asset($item->image)}}" class="card-image" alt="Ideal Logic-30 White" >
+                                                                    <img src="{{asset($item->image)}}" class="card-image" style="margin-left: 10px" alt="Ideal Logic-30 White" >
                                                                     <?php } else{ ?>
                                                                     <img src="{{asset('/media/avatars/blank.png')}}" class="card-image" alt="Ideal Logic-30 White">
                                                                     <?php } ?>

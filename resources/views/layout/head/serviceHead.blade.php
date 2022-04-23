@@ -186,9 +186,9 @@
                  text-transform: capitalize;
                  transition: all linear 0.3s;
              }
-             nav ul a:hover{
+             /* nav ul a:hover{
                  color: rgb(153, 152, 152);
-             }
+             } */
              nav .menu-btn i{
                  color: #111;
                  font-size: 25px;

@@ -9,7 +9,7 @@
             <a class="menu-link @if(route('admin.home') == Request::url()) active @endif" href="{{ route('admin.home') }}">
                 <span class="menu-icon">
                     <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
-                    <img alt="Logo" src="{{asset('/custom/static/logo-c42e4c40119c5d998f78b76fa197c818-2a6d8.png')}}" class="h-50px logo" width="100" height="50"/>
+                    <img alt="Logo" src="{{asset('/custom/static/logo.png')}}" class="h-50px logo" width="100" height="50"/>
                     <!--end::Svg Icon-->
                 </span>
                 <span style="margin-left:40px; color: #181C32"><h3>Insta Heat Boilers</h3></span>

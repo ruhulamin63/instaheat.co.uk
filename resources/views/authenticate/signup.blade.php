@@ -40,7 +40,7 @@
 								<!-- <h1 class="text-dark mb-3" align="right">Create an Account</h1> -->
 
 								<div>
-                                    <img alt="Logo" src="{{asset('/custom/static/logo-c42e4c40119c5d998f78b76fa197c818-2a6d8.png')}}" class="h-50px logo" width="150" height="80"/>
+                                    <img alt="Logo" src="{{asset('/custom/static/logo.png')}}" class="h-50px logo" width="150" height="80"/>
 									<span><h1 class="text-dark mb-3">Sign In To Instaheat</h1></span>
 								</div>
 								<!--end::Title-->

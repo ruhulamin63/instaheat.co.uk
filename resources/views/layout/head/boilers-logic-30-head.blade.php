@@ -4,6 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+        <link href="{{asset('plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+        {{-- <link href="{{asset('css/style.bundle.css')}}" rel="stylesheet" type="text/css" /> --}}
   
     
     <style data-styled-components="dXQyxh cMvXxa fTWKLe dBsrLC bjPEky dbODSx hMtqQg jAZGXd">
@@ -88,23 +94,7 @@
     <!-- <title data-react-helmet="true">Instaheat - Plumbing and Heating Engineers</title> -->
     <title><?=$title?></title>
 
-
     <link data-react-helmet="true" rel="shortcut icon" type="image/png" href="{{asset('custom/static/favicon.45bef44b.png')}}"/>
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Condensed" rel="stylesheet"/>
-
-    <script>
-      
-      if(!(navigator.doNotTrack == "1" || window.doNotTrack == "1")) {
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','{{asset('custom/www.google-analytics.com/analytics.js')}}','ga');
-      }
-      if (typeof ga === "function") {
-        ga('create', 'UA-129439565-1', 'auto', {});
-          
-          }
-    </script>
 
     <style id="gatsby-inlined-css">
         *{box-sizing:border-box}body{margin:0}.material-icons{font-family:Material Icons}.bm-burger-button{position:relative;width:36px;height:30px}.bm-burger-bars
@@ -180,34 +170,6 @@
         {bottom:4px;left:50%;margin-left:-4px;border-width:4px 4px 0;border-top-color:#6c6c6c}
     </style>
 
-    <!-- <style data-styled-components=""></style> -->
-    <!--begin::Fonts-->
-    <link rel="stylesheet" href="{{asset('css/fonts_googleapis_300_400_500_600_700.css')}}"/>
-    <!--end::Fonts-->
-    <!--begin::Global Stylesheets Bundle(used by all pages)-->
-        <link href="{{asset('plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('css/graph.css')}}" rel="stylesheet" type="text/css" />
-    <!--end::Global Stylesheets Bundle-->
-
-    <link href="{{asset('Theme/vendor/fontawesome-free/css/all.min.css')}}">
-    <link href="{{asset('Theme/css/sb-admin-2.min.css" rel="stylesheet')}}">
-    <link href="{{asset('Theme/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet')}}">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
-
-    <!-- Custom fonts for this template-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    <!-- Custom styles for this template-->
-
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"> -->
-
-    <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-
     
     {{-- <link href="{{asset('/css/instaheat-css/menu-bar-style.css')}}"> --}}
     <!--font awesome  -->
@@ -269,9 +231,9 @@
             text-transform: capitalize;
             transition: all linear 0.3s;
         }
-        nav ul a:hover{
+        /* nav ul a:hover{
             color: rgb(153, 152, 152);
-        }
+        } */
         nav .menu-btn i{
             color: #111;
             font-size: 25px;
@@ -536,6 +498,10 @@
           -ms-touch-action: pan-x;
           touch-action: pan-x;
       }
+
+      /* .display-off {
+        display: none
+      } */
     </style>
 
 </head>
