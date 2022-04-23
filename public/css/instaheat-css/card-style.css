@@ -1,0 +1,359 @@
+
+  
+  
+  /* Card Box Stye Start */
+  
+  
+  
+  
+  .card_container{
+    padding: 50px 20px;
+  }
+  
+  .card_box{
+    width: 100%;
+      max-width: 790px;
+      display: flex;
+      flex-flow: column wrap;
+      padding: 16px;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      box-shadow: rgb(0 0 0 / 50%) 0px 0px 30px 0px;
+      margin-bottom: 24px;
+      background-color: rgb(255, 255, 255);
+  }
+  
+  .card_box .card_logo {
+      display: block;
+      height: 40px;
+      width: auto;
+      margin: 0px auto 8px;
+  }
+  .card_box .card-details {
+      color: rgb(0, 0, 0);
+      font-size: 0.85rem;
+      margin: 0px;
+      padding-bottom: 8px;
+  }
+  .card_box .card-image {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 16px;
+      display: none;
+  }
+  .card_box .card_price {
+      font-family: Roboto;
+  }
+  .card_box .card_price {
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      font-family: Roboto;
+      font-size: 2rem;
+      color: rgb(229, 52, 43);
+      text-align: center;
+  }
+  .card_box .card_price .card-message {
+      color: rgb(0, 0, 0);
+      font-size: 0.85rem;
+      padding-left: 8px;
+  }
+  
+  .card_box .card-divider {
+      margin: 8px;
+      font-size: 0.85rem;
+  }
+  .card_box .card-cta {
+      display: block;
+      position: relative;
+      margin-top: 25px;
+      min-width: 200px;
+  }
+  
+  .card_button .card-cta {
+      /* position: absolute; */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgb(244, 237, 237);
+      padding: 16px;
+      border-left: 10px solid rgb(246, 176, 93);
+      /* min-width: 260px; */
+      font-family: "Roboto Condensed";
+      text-decoration: none;
+      color: rgb(51, 51, 51);
+      font-size: 1.2rem;
+  }
+  @media (min-width: 544px){
+    .card_button .card-cta {
+        border-left: 10px solid rgb(51, 51, 51);
+    }
+  }
+  
+  @media (min-width: 725px){
+    .card_box {
+        flex-direction: row;
+    }
+    .card_box .card_logo {
+        margin-left: 0px;
+        margin-bottom: 8px;
+    }
+    .card_box h3{
+        text-align: left;
+        margin: 0px 0px 8px;
+    }
+    .card_box .card-image {
+        display: block;
+    }
+    .card_box .card-wrapper {
+        width: 150px;
+    }
+    .card_box .card_price {
+        flex-wrap: wrap;
+    }
+    .card_box .card_price .card-message {
+        padding-left: 0px;
+    }
+    .card_box .card-divider {
+        display: none;
+    }
+  
+  }
+  /* Card Box Stye end */
+  
+  
+  
+  .modal-wrapper {
+      padding: 50px;
+   }
+  button {
+    background: #fff;
+      color: #000;
+      /* border-radius: 5px; */
+      border: none;
+      padding: 8px 20px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: 25px;
+  }
+  .modal {
+    /* padding: 1em;
+    max-width: 100ch;
+    border-radius: 8px; */
+    border-radius: 4px;
+    outline: none;
+    padding: 1em;
+    position: relative;
+    width: 95%;
+    height: 95%;
+    max-width: 670px;
+    max-height: 670px;
+  }
+  .modal::backdrop {
+    background: rgba(51,51,51,.75);
+    opacity: 0.8;
+    z-index: 9999;
+  }
+  .close-button{
+    cursor: pointer;
+  }
+  
+  .finance_option{
+    font-size: 35px;
+    margin-top: 0;
+    font-family: 'Roboto';
+  }
+  .boiler_price{
+      font-size: 22px;
+      color: #333;
+      margin: 0px;
+      font-family: 'Roboto';
+  }
+  .price{
+    font-size: 30px;
+    color: red;
+    margin: 0px;
+    font-weight: 800;
+    font-family: 'Roboto';
+  
+  }
+  .desposit_amount{
+    font-size: 22px;
+    color: #333;
+    margin: 0px;
+    font-weight: 700;
+    font-family: 'Roboto';
+  }
+  
+  .desposit_waranty{
+    font-size: 22px;
+    color: #333;
+    margin: 15px 0px;
+    font-weight: 700;
+    font-family: 'Roboto';
+  }
+  
+  .term_month{
+    font-size: 22px;
+    color: #333;
+    margin: 0px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+  }
+  .options{
+    font-size: 22px;
+    color: #333;
+    margin: 15px 0px 0px;
+    padding-top: 20px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    font-family: 'Roboto';
+  }
+  .desposit_box{
+    padding-left: 12px;
+      font-size: 1.5rem;
+      color: #7e7575;
+      width: 240px;
+      height: 50px;
+      border-left: 10px solid #333332;
+      margin-bottom: 10px;
+      margin-top: 8px;
+      padding-right: 5px;
+  }
+  
+  .year_radio label{
+    display: block;
+    margin-left: 0px;
+    font-size: 18px;
+  }
+  
+  .year_radio label span{
+    margin-left: 8px;
+  }
+  
+  .table_container{
+      border-radius: 8px;
+      width: 100%;
+      color: #fff;
+      background-color: #333;
+      padding-top: 5px;
+  }
+  
+  .table_head{
+    padding: 10px 10px;
+    text-align: left;
+    font-size: 20px;
+    
+  }
+  
+  .table_content{
+    background-color: #f6b05d;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  table{
+    text-align: center;
+    padding: 10px 0;
+  }
+  .intererst{
+    color: #000;
+    font-size: 15px;
+    font-family: 'Roboto';
+    padding-bottom: 3px;
+  }
+  .amnt{
+    color: #000;
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'Roboto';
+  }
+  
+  @media (max-width: 350px) {
+    .finance_option{
+      margin-top: 22px;
+    }
+  }
+  
+  
+  
+  .slider_rance{
+    position: relative;
+    height: 14px;
+    padding: 5px 0;
+    width: 97%;
+    border-radius: 6px;
+    -ms-touch-action: none;
+    touch-action: none;
+  }
+  
+  .rance_slider{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+  }
+  
+  .rance_slider_number{
+    position: absolute;
+    width: 100%;
+    top: 15px;
+  }
+  .rance_slider_number .rance_slider_nmbr{
+    position: absolute;
+    /* margin-left: -9px; */
+    vertical-align: middle;
+  }
+  .slider_rance .rance_slider_dot{
+    position: absolute;
+    bottom: -2px;
+    /* margin-left: -4px; */
+    width: 8px;
+    height: 8px;
+    border: 2px solid #e9e9e9;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-left: 0;
+  }
+  .slider_rance .rance_slider_dot:hover {
+      border-color: #333;
+  }
+  .slider_rance .rc-slider-rail, .rc-slider-track {
+      position: absolute;
+      height: 4px;
+      border-radius: 6px;
+  }
+  .slider_rance .rc-slider-rail {
+      width: 100%;
+      background-color: #e9e9e9;
+  }
+  .slider_rance .rc-slider-track {
+      background-color: #333;
+  }
+  .slider_rance * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: rgb(228 12 12 / 0%);
+  }
+  
+  
+  .slider_rance .rc-slider-line {
+      position: absolute;
+      /* margin-left: -7px; */
+      margin-top: -5px;
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+      cursor: -webkit-grab;
+      cursor: grab;
+      border-radius: 50%;
+      border: 2px solid #f6b05d;
+      background-color: #fff;
+      -ms-touch-action: pan-x;
+      touch-action: pan-x;
+  }

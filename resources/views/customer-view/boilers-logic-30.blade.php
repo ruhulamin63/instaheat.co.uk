@@ -70,9 +70,9 @@
                         
                         <p class="footnote">**All prices inclusive of VAT &amp; Fitting</p>
                         
-                        {{-- <div>
-                            <a class="submit-btn">View Finance Options</a>
-                        </div> --}}
+                        <div>
+                            <a class="submit-btn" onclick="$('#modal').css({'display':'block'});" href="javascript:void(0)">View Finance Options</a>
+                        </div>
                         
                         <h4 class="contact-heading">What next?</h4>
                         <p>Call us now on<br/><a href="tel:07710246710"><span class="number">07710 246710</span></a></p>
@@ -106,7 +106,7 @@
                             </div>
 
                             <div class="cta-container">
-                                <button type="submit" class="submit-btn" data-id="{{$item->id}}" id="addBookingBtn">Order Now</button>
+                                <p type="submit" class="submit-btn" data-id="{{$item->id}}" id="addBookingBtn">Order Now</p>
                                 <a class="submit-btn" href="{{route('customer.home')}}">No Thanks</a>
                             </div>
                         </div>
@@ -117,4 +117,69 @@
         </div>
     </div>
 
+    
+    <dialog class="modal" id="modal" style="display: none">
+        <h1 class="finance_option">Finance Options</h1>
+        <h3 class="boiler_price">Boiler Price</h3>
+        <p class="price">$ <span id="boiler_price"></span></p>
+        <p class="desposit_amount">Desposit Amount</p>
+        <input type="number" value="100" id="desposit" class="desposit_box">
+        <p class="desposit_waranty">Warranty</p>
+    
+        <p class="year_radio">
+        <label for=""><input type="radio" checked="" value="5" name="year" id="five_year"><span>5 Year</span></label>
+        <label for=""><input type="radio"  value="10" name="year" id="ten_year"><span>10 Year</span></label>
+        </p>
+  
+    
+        <p class="term_month">Term (Months)</p>
+        <div class="slider_rance">
+        <div class="rc-slider-rail"></div>
+        <div class="rc-slider-track"></div>
+        <div class="rance_slider">
+            <input class="rance_slider_dot" type="radio" checked="" value="1" name="month" id="one_month" style="left: 0%;">
+            <input class="rance_slider_dot" type="radio" value="2" name="month" id="two_month" style="left: 25%;">
+            <input class="rance_slider_dot" type="radio" value="3" name="month" id="three_month" style="left: 50%;">
+            <input class="rance_slider_dot" type="radio" value="4" name="month" id="four_month" style="left: 75%;">
+            <input class="rance_slider_dot" type="radio" value="5" name="month" id="five_month" style="left: 100%;">
+        </div>
+        <div class="rc-slider-line"></div>
+        <div class="rance_slider_number">
+            <span class="rance_slider_nmbr" style="left: 0%;">12</span>
+            <span class="rance_slider_nmbr" style="left: 25%;">24</span>
+            <span class="rance_slider_nmbr" style="left: 50%;">36</span>
+            <span class="rance_slider_nmbr" style="left: 75%;">48</span>
+            <span class="rance_slider_nmbr" style="left: 100%;">60</span>
+        </div>
+        
+        </div>
+    
+  
+        <p class="options">Options</p>
+    
+        <div class="table_container">
+        <div class="table_head">
+            <th>$<span id="per_month"></span>/mo for <span id="for_month"></span> months</th>
+        </div>
+        <div class="table_content">
+            <table width="100%">
+            <tr>
+            <td class="intererst">Interest - <span>9.9%</span> APR</td>
+            <td class="intererst">Total</td>
+            </tr>
+            <tr>
+            <td class="amnt">$<span id="percen"></span></td>
+            <td class="amnt">$<span id="total"></span></td>
+            </tr>
+            </table>
+        </div>
+        </div>
+  
+        <button class="close-button">&times;</button>
+    </dialog>
+
+    @include('layout.scripts.customerScripts')
+    
 @endsection
+
+

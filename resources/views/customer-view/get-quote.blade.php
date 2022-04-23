@@ -365,41 +365,37 @@
                                                     
                                                     @foreach ($boilers as $item)
                                                         
-                                                        <div class="card mb-3" style="width: 320px;">
-                                                            <div class="px-2 mt-3"> <a href="/boiler-logic-30/{{$item->id}}" class="btn btn-primary px-3 find-more">Find out more</a> </div>
-                                                            <br>
-                                                            <div class="row g-0">
-                                                                <div class="col-md-4">
-                                                                    {{-- <img src="..." class="img-fluid rounded-start" alt="..."> --}}
-                                                                    @if($item->image)
-                                                                        <?php if (file_exists("../public".$item->image)){ ?>
-                                                                        <img src="{{asset($item->image)}}" class="img-fluid rounded-start" alt="..." >
-                                                                        <?php } else{ ?>
-                                                                        <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded-start" alt="...">
-                                                                        <?php } ?>
-                                                                    @else
-                                                                        <img src="{{asset('/media/avatars/blank.png')}}" class="img-fluid rounded-start" alt="...">
-                                                                    @endif
+                                                        <section class="card_container">
+                                                            <div class="card_box">
+                                                              <div>
+                                                                <img src="https://www.instaheat-solutions.co.uk/img/Ideal.png" alt="" class="card_logo">
+                                                                <h3>{{$item->model_name}} {{$item->type}} Boiler</h3>
+                                                                <p class="card-details">{{$item->short_desc}}</p>
+                                                              </div>
+                                                              
+                                                                @if($item->image)
+                                                                    <?php if (file_exists("../public".$item->image)){ ?>
+                                                                    <img src="{{asset($item->image)}}" class="card-image" alt="Ideal Logic-30 White" >
+                                                                    <?php } else{ ?>
+                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="card-image" alt="Ideal Logic-30 White">
+                                                                    <?php } ?>
+                                                                @else
+                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="card-image" alt="Ideal Logic-30 White">
+                                                                @endif
+                                                          
+                                                              <div class="card-wrapper">
+                                                                <div class="card_price">
+                                                                  <span class="card_price">£{{$item->price_for_5_year}} <span class="card-message">(5 year warranty)</span></span>
                                                                 </div>
-                                                                <div class="col-md-8">
-                                                                    <div class="card-body">
-                                                                        <h5 class="card-title">{{$item->model_name}} {{$item->type}} Boiler </h5>
-                                                                        <p class="card-text" style="text-overflow: ellipsis; text-align: justify;">{{$item->short_desc}}</p>
-                                                                        <div class="px-2">
-                                                                            <div class="price-wrapper">
-                                                                                <div class="price">
-                                                                                    <span class="price" style="color:red">£{{$item->price_for_5_year}}<span class="warranty-message">(5 year warranty)</span></span>
-                                                                                </div>
-                                                                            
-                                                                                <div class="price">
-                                                                                    <span class="price" style="color:red">£{{$item->price_for_10_year}}<span class="warranty-message">(10 year warranty)</span></span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                <p class="card-divider">or</p>
+                                                                <div class="card_price">
+                                                                  <span class="card_price">£{{$item->price_for_10_year}} <span class="card-message">(10 year warranty)</span></span>
                                                                 </div>
+                                                              </div>
+                                                          
+                                                              <div class="card_button"><a class="card-cta" href="/boiler-logic-30/{{$item->id}}">Find out more</a></div>
                                                             </div>
-                                                        </div>
+                                                        </section>
                                                     @endforeach
                                                 {{-- </div> --}}
                                               

@@ -176,411 +176,220 @@
 
         </style>
 
-        <style>
-           /* body {
-                background-color: #a2dfe0
-            } */
+         {{-- <link href="{{asset('/css/instaheat-css/menu-bar-style.css')}}"> --}}
+         <!--font awesome  -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+         <style>
+             /* menu bar css start */
+             @media(max-width:767px){
+                 nav ul{
+                 position: fixed;
+                 top: 0px;
+                 bottom: 0;
+                 right: -100%;
+                 background-color: #333;
+                 height: 100vh;
+                 width: 100%;
+                 z-index: 99999;
+                 display: block;
+                 text-align: center;
+                 transition: all 0.5s ease;
+                 text-align: center;
+                 margin-top: 0;
+                 }
+                 /* #click:checked ~ ul{
+                 right: 0%!important;
+                 } */
+                 nav ul li{
+                 padding: 5px;
+                 }
+                 nav ul li:first-child{
+                 margin-top: 65px;
+                 }
+                 nav ul li a{
+                 display: block;
+                 }
+                 nav .menu-btn i{
+                 display:block !important;
+                 }
+             }
+             /*==hamburgar start==*/
+             #click{
+                 display: none;
+             }
+             nav{
+                 /* height: 80px; */
+                 display: flex;
+                 align-items: center;
+                 justify-content: space-between;
+                 position: relative;
+             }
+             nav ul{
+                 width: 100%;
+             list-style: none;
+             }
+             nav ul a{
+                 text-decoration: none;
+                 font-size: 30px;
+                 font-weight: 500;
+                 color: #fff;
+                 text-transform: capitalize;
+                 transition: all linear 0.3s;
+             }
+             nav ul a:hover{
+                 color: rgb(153, 152, 152);
+             }
+             nav .menu-btn i{
+                 color: #111;
+                 font-size: 25px;
+                 cursor: pointer;
+                 display: none;
+             }
+             /*  #click:checked ~ .menu-btn i::before {
+                 content: "\f00d";
+                 z-index: 99999999;
+                 position: absolute;
+                 top: 5px;
+                 right: -10px;
+                 color: #fff;
+             } */
+             
+             .close{
+                 position: absolute;
+                 top: -30px;
+                 right: 0px;
+                 color: #fff;
+                 z-index: 99999;
+                 font-size: 37px;
+                 font-weight: 800;
+                 cursor: pointer;
+             }
+             
+             /* menu bar close css */
+         </style>
 
-            /* .container {
-                height: 100vh
-            } */
+         <style>
 
-            .card {
-                /* background-color: #c1e8ed; */
-                width: 400px;
-                padding: 10px;
-                margin-left: 10px;
-                border: 1px solid #eee
+            /* Card Box Stye Start */
+
+            .card_container{
+                padding: 50px 20px;
             }
-
-            .inner-card {
-                background: #fff;
-                padding: 10px;
-                border-radius: 5px
-            }
-
-            .heart {
-                cursor: pointer;
-                height: 35px;
-                width: 35px;
-                font-size: 13px;
+            
+            .card_box{
+                width: 100%;
+                max-width: 790px;
                 display: flex;
-                justify-content: center;
+                flex-flow: column wrap;
+                padding: 16px;
+                -webkit-box-align: center;
                 align-items: center;
-                color: #beb4aa;
-                border-radius: 50%;
-                background-color: #eee
+                -webkit-box-pack: center;
+                justify-content: center;
+                box-shadow: rgb(0 0 0 / 50%) 0px 0px 30px 0px;
+                margin-bottom: 24px;
+                background-color: rgb(255, 255, 255);
             }
-
-            .btn:focus {
-                color: #fff;
-                background-color: #025ce2;
-                border-color: #0257d5;
-                box-shadow: none
-            }
-        </style>
-
-        {{-- <style>
-            @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
-            html,
-            body {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: "Quicksand", sans-serif;
-                font-size: 62.5%;
-                font-size: 10px;
-            }
-            /*-- Inspiration taken from abdo steif -->
-            /* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
-
-            /* Navbar section */
-
-            .nav {
-                width: 100%;
-                height: 65px;
-                position: fixed;
-                line-height: 65px;
-                text-align: center;
-            }
-
-            .nav div.logo {
-                float: left;
+            
+            .card_box .card_logo {
+                display: block;
+                height: 40px;
                 width: auto;
-                height: auto;
-                padding-left: 3rem;
+                margin: 0px auto 8px;
             }
-
-            .nav div.logo a {
-                text-decoration: none;
-                color: #fff;
-                font-size: 2.5rem;
+            .card_box .card-details {
+                color: rgb(0, 0, 0);
+                font-size: 0.85rem;
+                margin: 0px;
+                padding-bottom: 8px;
             }
-
-            .nav div.logo a:hover {
-                color: #00E676;
-            }
-
-            .nav div.main_list {
-                height: 65px;
-                float: right;
-            }
-
-            .nav div.main_list ul {
-                width: 100%;
-                height: 65px;
-                display: flex;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .nav div.main_list ul li {
-                width: auto;
-                height: 65px;
-                padding: 0;
-                padding-right: 3rem;
-            }
-
-            .nav div.main_list ul li a {
-                text-decoration: none;
-                color: #fff;
-                line-height: 65px;
-                font-size: 2.4rem;
-            }
-
-            .nav div.main_list ul li a:hover {
-                color: #00E676;
-            }
-
-
-            /* Home section */
-
-            /* .home {
-                width: 100%;
-                height: 100vh;
-                background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
-                background-position: center top;
-                background-size:cover;
-            } */
-
-            .navTrigger {
+            .card_box .card-image {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 16px;
                 display: none;
             }
-
-            .nav {
-                padding-top: 20px;
-                padding-bottom: 20px;
-                -webkit-transition: all 0.4s ease;
-                transition: all 0.4s ease;
+            .card_box .card_price {
+                font-family: Roboto;
             }
-
-
-            /* Media qurey section */
-
-            @media screen and (min-width: 768px) and (max-width: 1024px) {
-                .container {
-                    margin: 0;
+            .card_box .card_price {
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                font-family: Roboto;
+                font-size: 2rem;
+                color: rgb(229, 52, 43);
+                text-align: center;
+            }
+            .card_box .card_price .card-message {
+                color: rgb(0, 0, 0);
+                font-size: 0.85rem;
+                padding-left: 8px;
+            }
+            
+            .card_box .card-divider {
+                margin: 8px;
+                font-size: 0.85rem;
+            }
+            .card_box .card-cta {
+                display: block;
+                position: relative;
+                margin-top: 25px;
+                min-width: 200px;
+            }
+            
+            .card_button .card-cta {
+                /* position: absolute; */
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgb(244, 237, 237);
+                padding: 16px;
+                border-left: 10px solid rgb(246, 176, 93);
+                /* min-width: 260px; */
+                font-family: "Roboto Condensed";
+                text-decoration: none;
+                color: rgb(51, 51, 51);
+                font-size: 1.2rem;
+            }
+            @media (min-width: 544px){
+                .card_button .card-cta {
+                    border-left: 10px solid rgb(51, 51, 51);
                 }
             }
-
-            @media screen and (max-width:768px) {
-                .navTrigger {
+            
+            @media (min-width: 725px){
+                .card_box {
+                    flex-direction: row;
+                }
+                .card_box .card_logo {
+                    margin-left: 0px;
+                    margin-bottom: 8px;
+                }
+                .card_box h3{
+                    text-align: left;
+                    margin: 0px 0px 8px;
+                }
+                .card_box .card-image {
                     display: block;
                 }
-                .nav div.logo {
-                    margin-left: 15px;
+                .card_box .card-wrapper {
+                    width: 150px;
                 }
-                .nav div.main_list {
-                    width: 100%;
-                    height: 0;
-                    overflow: hidden;
+                .card_box .card_price {
+                    flex-wrap: wrap;
                 }
-                .nav div.show_list {
-                    height: auto;
+                .card_box .card_price .card-message {
+                    padding-left: 0px;
+                }
+                .card_box .card-divider {
                     display: none;
                 }
-                .nav div.main_list ul {
-                    flex-direction: column;
-                    width: 100%;
-                    height: 100vh;
-                    right: 0;
-                    left: 0;
-                    bottom: 0;
-                    background-color: #111;
-                    /*same background color of navbar*/
-                    background-position: center top;
-                }
-                .nav div.main_list ul li {
-                    width: 100%;
-                    text-align: right;
-                }
-                .nav div.main_list ul li a {
-                    text-align: center;
-                    width: 100%;
-                    font-size: 3rem;
-                    padding: 20px;
-                }
-                .nav div.media_button {
-                    display: block;
-                }
+            
             }
+            /* Card Box Stye end */
 
-
-            /* Animation */
-            /* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
-
-            .navTrigger {
-                cursor: pointer;
-                width: 30px;
-                height: 25px;
-                margin: auto;
-                position: absolute;
-                right: 30px;
-                top: 0;
-                bottom: 0;
-            }
-
-            .navTrigger i {
-                background-color: #fff;
-                border-radius: 2px;
-                content: '';
-                display: block;
-                width: 100%;
-                height: 4px;
-            }
-
-            .navTrigger i:nth-child(1) {
-                -webkit-animation: outT 0.8s backwards;
-                animation: outT 0.8s backwards;
-                -webkit-animation-direction: reverse;
-                animation-direction: reverse;
-            }
-
-            .navTrigger i:nth-child(2) {
-                margin: 5px 0;
-                -webkit-animation: outM 0.8s backwards;
-                animation: outM 0.8s backwards;
-                -webkit-animation-direction: reverse;
-                animation-direction: reverse;
-            }
-
-            .navTrigger i:nth-child(3) {
-                -webkit-animation: outBtm 0.8s backwards;
-                animation: outBtm 0.8s backwards;
-                -webkit-animation-direction: reverse;
-                animation-direction: reverse;
-            }
-
-            .navTrigger.active i:nth-child(1) {
-                -webkit-animation: inT 0.8s forwards;
-                animation: inT 0.8s forwards;
-            }
-
-            .navTrigger.active i:nth-child(2) {
-                -webkit-animation: inM 0.8s forwards;
-                animation: inM 0.8s forwards;
-            }
-
-            .navTrigger.active i:nth-child(3) {
-                -webkit-animation: inBtm 0.8s forwards;
-                animation: inBtm 0.8s forwards;
-            }
-
-            @-webkit-keyframes inM {
-                50% {
-                    -webkit-transform: rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: rotate(45deg);
-                }
-            }
-
-            @keyframes inM {
-                50% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(45deg);
-                }
-            }
-
-            @-webkit-keyframes outM {
-                50% {
-                    -webkit-transform: rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: rotate(45deg);
-                }
-            }
-
-            @keyframes outM {
-                50% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(45deg);
-                }
-            }
-
-            @-webkit-keyframes inT {
-                0% {
-                    -webkit-transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    -webkit-transform: translateY(9px) rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: translateY(9px) rotate(135deg);
-                }
-            }
-
-            @keyframes inT {
-                0% {
-                    transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    transform: translateY(9px) rotate(0deg);
-                }
-                100% {
-                    transform: translateY(9px) rotate(135deg);
-                }
-            }
-
-            @-webkit-keyframes outT {
-                0% {
-                    -webkit-transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    -webkit-transform: translateY(9px) rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: translateY(9px) rotate(135deg);
-                }
-            }
-
-            @keyframes outT {
-                0% {
-                    transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    transform: translateY(9px) rotate(0deg);
-                }
-                100% {
-                    transform: translateY(9px) rotate(135deg);
-                }
-            }
-
-            @-webkit-keyframes inBtm {
-                0% {
-                    -webkit-transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    -webkit-transform: translateY(-9px) rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: translateY(-9px) rotate(135deg);
-                }
-            }
-
-            @keyframes inBtm {
-                0% {
-                    transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    transform: translateY(-9px) rotate(0deg);
-                }
-                100% {
-                    transform: translateY(-9px) rotate(135deg);
-                }
-            }
-
-            @-webkit-keyframes outBtm {
-                0% {
-                    -webkit-transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    -webkit-transform: translateY(-9px) rotate(0deg);
-                }
-                100% {
-                    -webkit-transform: translateY(-9px) rotate(135deg);
-                }
-            }
-
-            @keyframes outBtm {
-                0% {
-                    transform: translateY(0px) rotate(0deg);
-                }
-                50% {
-                    transform: translateY(-9px) rotate(0deg);
-                }
-                100% {
-                    transform: translateY(-9px) rotate(135deg);
-                }
-            }
-
-            .affix {
-                padding: 0;
-                background-color: #111;
-            }
-
-
-
-            .myH2 {
-                text-align:center;
-                font-size: 4rem;
-            }
-            .myP {
-                text-align: justify;
-                padding-left:15%;
-                padding-right:15%;
-                font-size: 20px;
-            }
-            @media all and (max-width:700px){
-                .myP {
-                    padding:2%;
-                }
-            }
-        </style> --}}
-
+         </style>
+ 
     </head>

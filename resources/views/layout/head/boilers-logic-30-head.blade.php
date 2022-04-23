@@ -206,4 +206,336 @@
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+    
+    {{-- <link href="{{asset('/css/instaheat-css/menu-bar-style.css')}}"> --}}
+    <!--font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        /* menu bar css start */
+        @media(max-width:767px){
+            nav ul{
+            position: fixed;
+            top: 0px;
+            bottom: 0;
+            right: -100%;
+            background-color: #333;
+            height: 100vh;
+            width: 100%;
+            z-index: 99999;
+            display: block;
+            text-align: center;
+            transition: all 0.5s ease;
+            text-align: center;
+            margin-top: 0;
+            }
+            /* #click:checked ~ ul{
+            right: 0%!important;
+            } */
+            nav ul li{
+            padding: 5px;
+            }
+            nav ul li:first-child{
+            margin-top: 65px;
+            }
+            nav ul li a{
+            display: block;
+            }
+            nav .menu-btn i{
+            display:block !important;
+            }
+        }
+        /*==hamburgar start==*/
+        #click{
+            display: none;
+        }
+        nav{
+            /* height: 80px; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        nav ul{
+            width: 100%;
+        list-style: none;
+        }
+        nav ul a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 500;
+            color: #fff;
+            text-transform: capitalize;
+            transition: all linear 0.3s;
+        }
+        nav ul a:hover{
+            color: rgb(153, 152, 152);
+        }
+        nav .menu-btn i{
+            color: #111;
+            font-size: 25px;
+            cursor: pointer;
+            display: none;
+        }
+        /*  #click:checked ~ .menu-btn i::before {
+            content: "\f00d";
+            z-index: 99999999;
+            position: absolute;
+            top: 5px;
+            right: -10px;
+            color: #fff;
+        } */
+        
+        .close{
+            position: absolute;
+            top: -30px;
+            right: 0px;
+            color: #fff;
+            z-index: 99999;
+            font-size: 37px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        
+        /* menu bar close css */
+    </style>
+
+
+    {{-- modal style --}}
+    <style>
+      
+      .modal-wrapper {
+          padding: 50px;
+      }
+      button {
+        background: #fff;
+          color: #000;
+          /* border-radius: 5px; */
+          border: none;
+          padding: 8px 20px;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          font-size: 25px;
+      }
+      .modal {
+        /* padding: 1em;
+        max-width: 100ch;
+        border-radius: 8px; */
+        border-radius: 4px;
+        outline: none;
+        padding: 1em;
+        position: relative;
+        width: 95%;
+        height: 95%;
+        max-width: 670px;
+        max-height: 670px;
+      }
+      .modal::backdrop {
+        background: rgba(51,51,51,.75);
+        opacity: 0.8;
+        z-index: 9999;
+      }
+      .close-button{
+        cursor: pointer;
+      }
+      
+      .finance_option{
+        font-size: 35px;
+        margin-top: 0;
+        font-family: 'Roboto';
+      }
+      .boiler_price{
+          font-size: 22px;
+          color: #333;
+          margin: 0px;
+          font-family: 'Roboto';
+      }
+      .price{
+        font-size: 30px;
+        color: red;
+        margin: 0px;
+        font-weight: 800;
+        font-family: 'Roboto';
+      
+      }
+      .desposit_amount{
+        font-size: 22px;
+        color: #333;
+        margin: 0px;
+        font-weight: 700;
+        font-family: 'Roboto';
+      }
+      
+      .desposit_waranty{
+        font-size: 22px;
+        color: #333;
+        margin: 15px 0px;
+        font-weight: 700;
+        font-family: 'Roboto';
+      }
+      
+      .term_month{
+        font-size: 22px;
+        color: #333;
+        margin: 0px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-family: 'Roboto';
+      }
+      .options{
+        font-size: 22px;
+        color: #333;
+        margin: 15px 0px 0px;
+        padding-top: 20px;
+        font-weight: 700;
+        padding-bottom: 10px;
+        font-family: 'Roboto';
+      }
+      .desposit_box{
+        padding-left: 12px;
+          font-size: 1.5rem;
+          color: #7e7575;
+          width: 240px;
+          height: 50px;
+          border-left: 10px solid #333332;
+          margin-bottom: 10px;
+          margin-top: 8px;
+          padding-right: 5px;
+      }
+      
+      .year_radio label{
+        display: block;
+        margin-left: 0px;
+        font-size: 18px;
+      }
+      
+      .year_radio label span{
+        margin-left: 8px;
+      }
+      
+      .table_container{
+          border-radius: 8px;
+          width: 100%;
+          color: #fff;
+          background-color: #333;
+          padding-top: 5px;
+      }
+      
+      .table_head{
+        padding: 10px 10px;
+        text-align: left;
+        font-size: 20px;
+        
+      }
+      
+      .table_content{
+        background-color: #f6b05d;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+      table{
+        text-align: center;
+        padding: 10px 0;
+      }
+      .intererst{
+        color: #000;
+        font-size: 15px;
+        font-family: 'Roboto';
+        padding-bottom: 3px;
+      }
+      .amnt{
+        color: #000;
+        font-size: 25px;
+        font-weight: 900;
+        font-family: 'Roboto';
+      }
+      
+      @media (max-width: 350px) {
+        .finance_option{
+          margin-top: 22px;
+        }
+      }
+      
+      
+      
+      .slider_rance{
+        position: relative;
+        height: 14px;
+        padding: 5px 0;
+        width: 97%;
+        border-radius: 6px;
+        -ms-touch-action: none;
+        touch-action: none;
+      }
+      
+      .rance_slider{
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: transparent;
+      }
+      
+      .rance_slider_number{
+        position: absolute;
+        width: 100%;
+        top: 15px;
+      }
+      .rance_slider_number .rance_slider_nmbr{
+        position: absolute;
+        /* margin-left: -9px; */
+        vertical-align: middle;
+      }
+      .slider_rance .rance_slider_dot{
+        position: absolute;
+        bottom: -2px;
+        /* margin-left: -4px; */
+        width: 8px;
+        height: 8px;
+        border: 2px solid #e9e9e9;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-left: 0;
+      }
+      .slider_rance .rance_slider_dot:hover {
+          border-color: #333;
+      }
+      .slider_rance .rc-slider-rail, .rc-slider-track {
+          position: absolute;
+          height: 4px;
+          border-radius: 6px;
+      }
+      .slider_rance .rc-slider-rail {
+          width: 100%;
+          background-color: #e9e9e9;
+      }
+      .slider_rance .rc-slider-track {
+          background-color: #333;
+      }
+      .slider_rance * {
+          box-sizing: border-box;
+          -webkit-tap-highlight-color: rgb(228 12 12 / 0%);
+      }
+      
+      
+      .slider_rance .rc-slider-line {
+          position: absolute;
+          /* margin-left: -7px; */
+          margin-top: -5px;
+          width: 14px;
+          height: 14px;
+          cursor: pointer;
+          cursor: -webkit-grab;
+          cursor: grab;
+          border-radius: 50%;
+          border: 2px solid #f6b05d;
+          background-color: #fff;
+          -ms-touch-action: pan-x;
+          touch-action: pan-x;
+      }
+    </style>
+
 </head>
