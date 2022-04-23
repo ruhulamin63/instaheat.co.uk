@@ -125,14 +125,98 @@
             {position:absolute;width:0;height:0;border-color:transparent;border-style:solid}.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow
             {bottom:4px;left:50%;margin-left:-4px;border-width:4px 4px 0;border-top-color:#6c6c6c}
         </style>
-        
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Instaheat - Plumbing and Heating Engineers"/>
-        <meta property="og:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
-        <meta property="og:url" content="https://www.instaheat-solutions.co.uk/"/>
-        <meta property="og:site_name" content="Instaheat"/>
-        <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:description" content="Plumbing and Heating Engineers based in Wigan - Get your quote today"/>
-        <meta name="twitter:title" content="Instaheat - Plumbing and Heating Engineers"/>
+
+        {{-- <link href="{{asset('/css/instaheat-css/menu-bar-style.css')}}"> --}}
+         <!--font awesome  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <style>
+             /* menu bar css start */
+             @media(max-width:767px){
+                 nav ul{
+                 position: fixed;
+                 top: 0px;
+                 bottom: 0;
+                 right: -100%;
+                 background-color: #333;
+                 height: 100vh;
+                 width: 100%;
+                 z-index: 99999;
+                 display: block;
+                 text-align: center;
+                 transition: all 0.5s ease;
+                 text-align: center;
+                 margin-top: 0;
+                 }
+                 /* #click:checked ~ ul{
+                 right: 0%!important;
+                 } */
+                 nav ul li{
+                 padding: 5px;
+                 }
+                 nav ul li:first-child{
+                 margin-top: 65px;
+                 }
+                 nav ul li a{
+                 display: block;
+                 }
+                 nav .menu-btn i{
+                 display:block !important;
+                 }
+             }
+             /*==hamburgar start==*/
+             #click{
+                 display: none;
+             }
+             nav{
+                 /* height: 80px; */
+                 display: flex;
+                 align-items: center;
+                 justify-content: space-between;
+                 position: relative;
+             }
+             nav ul{
+                 width: 100%;
+             list-style: none;
+             }
+             nav ul a{
+                 text-decoration: none;
+                 font-size: 30px;
+                 font-weight: 500;
+                 color: #fff;
+                 text-transform: capitalize;
+                 transition: all linear 0.3s;
+             }
+             nav ul a:hover{
+                 color: rgb(153, 152, 152);
+             }
+             nav .menu-btn i{
+                 color: #111;
+                 font-size: 25px;
+                 cursor: pointer;
+                 display: none;
+             }
+             /*  #click:checked ~ .menu-btn i::before {
+                 content: "\f00d";
+                 z-index: 99999999;
+                 position: absolute;
+                 top: 5px;
+                 right: -10px;
+                 color: #fff;
+             } */
+             
+             .close{
+                 position: absolute;
+                 top: -30px;
+                 right: 0px;
+                 color: #fff;
+                 z-index: 99999;
+                 font-size: 37px;
+                 font-weight: 800;
+                 cursor: pointer;
+             }
+             
+             /* menu bar close css */
+        </style>
+ 
         
     </head>

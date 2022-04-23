@@ -25,7 +25,7 @@
     {{-- <section class="home" class="bm-menu-wrap mobile-navigation" style="position:fixed;right:0;z-index:1100;width:300px;height:100%;-moz-transform:translate3d(100%, 0, 0);-ms-transform:translate3d(100%, 0, 0);-o-transform:translate3d(100%, 0, 0);-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);transition:all 0.5s">
     </section> --}}
 
-    <header class="sc-bwzfXH dXQyxh">
+    {{-- <header class="sc-bwzfXH dXQyxh">
         <div class="sc-bdVaJa cMvXxa">
             <a class="material-icons sc-ifAKCX fTWKLe" href="tel:07710246710">phone</a>
             <a href="{{route('customer.home')}}">
@@ -41,22 +41,6 @@
                 </div>
             </a>
 
-            {{-- <nav>
-                <div class="logo">
-                    Brand
-                </div>
-                <input type="checkbox" id="click">
-                <label for="click" class="menu-btn">
-                <i class="fas fa-bars"></i>
-                </label>
-                <ul>
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Feedback</a></li>
-                </ul>
-            </nav> --}}
             
             <div class="desktop-navigation">
                 <ul>
@@ -104,6 +88,50 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </header> --}}
+
+    <header class="sc-bwzfXH dXQyxh">
+        <div class="sc-bdVaJa cMvXxa">
+            <a class="material-icons sc-ifAKCX fTWKLe" href="tel:07710246710">phone</a>
+            <a href="{{route('customer.home')}}">
+            <div class="sc-htpNat dBsrLC">
+                <div class=" gatsby-image-outer-wrapper" style="position:relative">
+                <div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden">
+                    <div style="width:100%;padding-bottom:26.6%"></div>
+                    <img src="{{asset('custom/static/logo.png')}}" alt="Instaheat" sizes="(max-width: 400px) 100vw, 400px" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/>
+                </div>
+                </div>
+            </div>
+            </a>
+          
+            <div class="desktop-navigation">
+                <ul>
+                <li>
+                    <a class="menu-item" href="{{route('customer.home')}}">Home</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="{{route('customer.services')}}">Services</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="{{route('customer.contact')}}">Contact</a>
+                </li>
+                </ul>
+            </div>
+       
+            
+            <nav>
+                <input type="checkbox" id="click" onclick="return $('ul').css({'right':'0%'});">
+                <label for="click" class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+                </label>
+                <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">service</a></li>
+                <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+            <span class="close" onclick="return $('ul').css({'right':'-100%'})">&times;</span>
         </div>
     </header>
 
