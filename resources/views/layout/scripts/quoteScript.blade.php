@@ -514,7 +514,11 @@
 
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    {{-- show modal --}}
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
     <script>
 
         $(document).ready(function(){
@@ -530,7 +534,6 @@
             closeModal.addEventListener('click', () => {
                 modal.close();
             });
-
             
             var boiler_price_one= 2830;
             var boiler_price_two= 3030;
