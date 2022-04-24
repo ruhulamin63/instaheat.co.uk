@@ -149,21 +149,8 @@ class BoilerController extends Controller
             $data['price_for_5_year']= $request->price_for_5_year;
             $data['price_for_10_year']= $request->price_for_10_year;
 
-            // if($request->avatar !=""){
-            //     $image = $request->file('avatar');
-            //     $image_name=$image->getClientOriginalName();
-            //     $image_ext=$image->getClientOriginalExtension();
-            //     $image_new_name =$request->username.date("YmdHis");
-            //     $image_full_name=$image_new_name.'.'.$image_ext;
-            //     $upload_path='media/boiler/';
-            //     $image_url=$upload_path.$image_full_name;
-            //     $success=$image->move($upload_path,$image_full_name);
-            //     $imageData='/media/boiler/'.$image_full_name;
 
-            //     $data['image']=$imageData;
-            // }
-
-            if ($request->hasFile('avatar')) {
+            if($request->hasFile('avatar')) {
                 $image = $request->file('avatar');
                 //$image_name=$image->getClientOriginalName();
                 $image_ext=$image->getClientOriginalExtension();
