@@ -314,24 +314,27 @@ class OrderController extends Controller
 
     //UPDATE Order DETAILS
     public function update_order_details(Request $request){
-        $order_id = $request->order_id;
+        $order_id = $request->cid;
+
+        //dd($order_id);
         
-        $validator = \Validator::make($request->all(),[
-            'customer_name' => 'required',
-            'customer_contact_number' => 'required',
-            'year_warranty' => 'required',
-        ]);
+        // $validator = \Validator::make($request->all(),[
+        //     'customer_name' => 'required',
+        //     'customer_contact_number' => 'required',
+        //     'year_warranty' => 'required',
+        // ]);
 
-        if(!$validator->passes()){
-            return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
-        }else{
-
+        // if(!$validator->passes()){
+        //     dd('test');
+        //     return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
+        // }else{
+           
             $boiler = Boiler::where('id',1)->first();
             //$question = QuestionnaireAnswer::where('boiler_id',1)->first();
 
            // dd($boiler);
 
-            $data=array();
+            //$data=array();
 
             //$data['boiler_id']= $boiler_id;
 
@@ -347,10 +350,10 @@ class OrderController extends Controller
             
             if($request->year_warranty == 5){
                 //$data['price'] = $boiler->price_for_5_year;
-                $orderDetails->price = $request->price;
+                $orderDetails->price = $boiler->price_for_5_year;
             }else{
                 //$data['price'] = $boiler->price_for_10_year;
-                $orderDetails->price = $request->price;
+                $orderDetails->price = $boiler->price_for_10_year;
             }
 
             // $data['fuel_type']= $request->fuel_type;
@@ -381,10 +384,10 @@ class OrderController extends Controller
 
             $orderDetails->number_of_bedroom = $request->number_of_bedroom;
             $orderDetails->number_of_bathroom = $request->number_of_bathroom;
-            $orderDetails->status = 0;
-            $orderDetails->activeStatus = 1;
+            // $orderDetails->status = 0;
+            // $orderDetails->activeStatus = 1;
 
-
+           // dd('test');
             //$query = DB::table('questionnaire_answers')->update($data);
             $query = $orderDetails->update();
 
@@ -396,7 +399,7 @@ class OrderController extends Controller
             }else{
                 return response()->json(['code'=>0, 'msg'=>'Something went wrong'],412);
             }
-        }
+        //}
     }
 
     // DELETE Order RECORD

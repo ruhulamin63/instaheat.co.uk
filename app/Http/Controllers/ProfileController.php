@@ -48,13 +48,13 @@ class ProfileController extends Controller{
 
         if($request->hasFile('avatar')) {
             $image = $request->file('avatar');
-            //$image_name=$image->getClientOriginalName();
+            $image_name=$image->getClientOriginalName();
             $image_ext=$image->getClientOriginalExtension();
 
             //$image_new_name =$request->contact_number.date("YmdHis");
             //dd($image_ext);
 
-            $image_full_name=$req->phone.'.'.$image_ext;
+            $image_full_name=$image_name.'.'.$image_ext;
             Image::make($image)->resize(400, 400)->save('media/admin/'. $image_full_name);
             $imageData='media/admin/'.$image_full_name;
 

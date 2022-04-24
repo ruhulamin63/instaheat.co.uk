@@ -248,7 +248,7 @@ class BoilerController extends Controller
     
                 $image_full_name=$request->model_name.'.'.$image_ext;
                 Image::make($image)->resize(400, 400)->save('media/boiler/'. $image_full_name);
-                $imageData='media/boiler/'.$image_full_name;
+                $imageData='/media/boiler/'.$image_full_name;
     
                 $boilers->image=$imageData;
             }else {
