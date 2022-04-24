@@ -224,18 +224,35 @@ class BoilerController extends Controller
             $boilers->price_for_5_year = $request->price_for_5_year;
             $boilers->price_for_10_year = $request->price_for_10_year;
 
-            if($request->avatar !=""){
-                $image = $request->file('avatar');
-                $image_name=$image->getClientOriginalName();
-                $image_ext=$image->getClientOriginalExtension();
-                $image_new_name =$request->username.date("YmdHis");
-                $image_full_name=$image_new_name.'.'.$image_ext;
-                $upload_path='media/boiler/';
-                $image_url=$upload_path.$image_full_name;
-                $success=$image->move($upload_path,$image_full_name);
-                $imageData='/media/boiler/'.$image_full_name;
+            // if($request->avatar !=""){
+            //     $image = $request->file('avatar');
+            //     $image_name=$image->getClientOriginalName();
+            //     $image_ext=$image->getClientOriginalExtension();
+            //     $image_new_name =$request->username.date("YmdHis");
+            //     $image_full_name=$image_new_name.'.'.$image_ext;
+            //     $upload_path='media/boiler/';
+            //     $image_url=$upload_path.$image_full_name;
+            //     $success=$image->move($upload_path,$image_full_name);
+            //     $imageData='/media/boiler/'.$image_full_name;
 
+            //     $boilers->image=$imageData;
+            // }
+
+            if($request->hasFile('avatar')) {
+                $image = $request->file('avatar');
+                //$image_name=$image->getClientOriginalName();
+                $image_ext=$image->getClientOriginalExtension();
+    
+                //$image_new_name =$request->contact_number.date("YmdHis");
+                //dd($image_ext);
+    
+                $image_full_name=$request->model_name.'.'.$image_ext;
+                Image::make($image)->resize(400, 400)->save('media/boiler/'. $image_full_name);
+                $imageData='media/boiler/'.$image_full_name;
+    
                 $boilers->image=$imageData;
+            }else {
+                $thumbnail = null;
             }
             
             $query = $boilers->update();
