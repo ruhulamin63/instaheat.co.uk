@@ -338,10 +338,10 @@
                                                               </div>
                                                               
                                                                 @if($item->image)
-                                                                    <?php if (file_exists("../public".$item->image)){ ?>
-                                                                    <img src="{{asset($item->image)}}" class="card-image" style="margin-left: 10px" alt="Ideal Logic-30 White" >
+                                                                    <?php if (file_exists("../public/".$item->image)){ ?>
+                                                                        <img src="{{asset($item->image)}}" class="card-image" style="margin-left: 10px" alt="Ideal Logic-30 White" >
                                                                     <?php } else{ ?>
-                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="card-image" alt="Ideal Logic-30 White">
+                                                                        <img src="{{asset('/media/avatars/blank.png')}}" class="card-image" alt="Ideal Logic-30 White">
                                                                     <?php } ?>
                                                                 @else
                                                                     <img src="{{asset('/media/avatars/blank.png')}}" class="card-image" alt="Ideal Logic-30 White">
