@@ -13,10 +13,10 @@
 
             <div class="modal-body">
 
-                <!-- <input type="hidden" name="cid" /> -->
+                <input type="hidden" name="cid" />
 
                 <div class="modal-body py-10 px-lg-27">
-                    <input type="hidden" name="boiler_id" />
+                    
                     
                     <h6># Customer Information</h6><br>
                     <div class="row col-md-12">

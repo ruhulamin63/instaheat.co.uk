@@ -46,42 +46,22 @@ class ProfileController extends Controller{
         $data['phone']= $req->phone;
         $data['address']= $req->address;
 
-        if($req->avatar !=""){
-            $image = $req->file('avatar');
+        if($request->hasFile('avatar')) {
+            $image = $request->file('avatar');
             $image_name=$image->getClientOriginalName();
             $image_ext=$image->getClientOriginalExtension();
-            $image_new_name =$req->username.date("YmdHis");
-            $image_full_name=$image_new_name.'.'.$image_ext;
-            $upload_path='media/admin/';
-            $image_url=$upload_path.$image_full_name;
-            $success=$image->move($upload_path,$image_full_name);
-            $imageData='/media/admin/'.$image_full_name;
+
+            //$image_new_name =$request->contact_number.date("YmdHis");
+            //dd($image_ext);
+
+            $image_full_name=$image_name.'.'.$image_ext;
+            Image::make($image)->resize(400, 400)->save('media/admin/'. $image_full_name);
+            $imageData='media/admin/'.$image_full_name;
 
             $data['image']=$imageData;
+        }else {
+            $thumbnail = null;
         }
-
-        // if ($req->hasFile('avatar')) {
-        //     $image = $req->file('avatar');
-        //     $thumbnail = time() . '.' . $image->getClientOriginalExtension();
-        //     Image::make($image)->resize(400, 400)->save('media/admin/'. $thumbnail);
-        // }else {
-        //     $thumbnail = null;
-        // }
-
-        // if ($req->hasFile('avatar')) {
-        //     $image = $req->file('avatar');
-        //     $data['image'] = time().'.'.$image->getClientOriginalExtension();
-            
-        //     $destinationPath = public_path('/media/admin');
-        //     $imgFile = Image::make($image->getRealPath());
-        //     $imgFile->resize(400, 400)->save($destinationPath.'/'.$data['image']);
-        //     $destinationPath = public_path('/media/admin');
-        //     $image->move($destinationPath, $data['image']);
-
-        //     $data['image'] = $image;
-        // }else {
-        //     $thumbnail = null;
-        // }
 
         $query = DB::table('users')->update($data);
 

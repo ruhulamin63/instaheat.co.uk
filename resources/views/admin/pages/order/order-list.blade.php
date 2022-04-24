@@ -47,9 +47,9 @@
 											<span class="card-label fw-bolder fs-3 mb-1">Order List Information</span>
 											<span class="text-muted mt-1 fw-bold fs-7">All order list</span>
 										</h3>
-										<div class="card-toolbar">
+										{{-- <div class="card-toolbar">
 											<button class="btn btn-sm btn-light-primary" id="customerOrderBtn"><i class="fas fa-plus"></i>Customer Order</button>
-										</div>
+										</div> --}}
 									</div>
 									<!--end::Card header-->
 
