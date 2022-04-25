@@ -339,15 +339,15 @@
                                                               
                                                                 @if($item->image)
                                                                     <?php if (file_exists("../public/".$item->image)){ ?>
-                                                                        <img src="{{asset($item->image)}}" class="card-image" style="margin-left: 10px" alt="Ideal Logic-30 White" >
+                                                                        <img src="{{asset($item->image)}}" class="card-image" style="margin-left: 15px" alt="Ideal Logic-30 White" >
                                                                     <?php } else{ ?>
-                                                                        <img src="{{asset('/media/avatars/blank.png')}}" class="card-image" alt="Ideal Logic-30 White">
+                                                                        <img src="{{asset('/media/avatars/blank.png')}}" style="margin-left: 15px" class="card-image" alt="Ideal Logic-30 White">
                                                                     <?php } ?>
                                                                 @else
-                                                                    <img src="{{asset('/media/avatars/blank.png')}}" class="card-image" alt="Ideal Logic-30 White">
+                                                                    <img src="{{asset('/media/avatars/blank.png')}}" style="margin-left: 15px" class="card-image" alt="Ideal Logic-30 White">
                                                                 @endif
                                                           
-                                                              <div class="card-wrapper">
+                                                              <div class="card-wrapper" style="margin-left: 15px">
                                                                 <div class="card_price">
                                                                   <span class="card_price">£{{$item->price_for_5_year}} <span class="card-message">(5 year warranty)</span></span>
                                                                 </div>

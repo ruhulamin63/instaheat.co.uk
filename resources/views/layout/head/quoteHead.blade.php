@@ -278,7 +278,7 @@
             
             .card_box{
                 width: 100%;
-                max-width: 790px;
+                max-width: 890px;
                 display: flex;
                 flex-flow: column wrap;
                 padding: 16px;
