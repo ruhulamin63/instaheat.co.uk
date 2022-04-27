@@ -70,8 +70,8 @@
 																	<!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
 																	<th style="text-align: center;" class="min-w-100px">customer_name</th>
 																	<th style="text-align: center;" class="min-w-100px">customer_contact_number</th>
-																	{{-- <th style="text-align: center;" class="min-w-100px">year_warranty</th>
-																	<th style="text-align: center;" class="min-w-100px">price</th> --}}
+																	<th style="text-align: center;" class="min-w-100px">year_warranty</th>
+																	<th style="text-align: center;" class="min-w-100px">price</th>
 																	<th style="text-align: center;" class="min-w-100px">fuel_type</th>
 																	<th style="text-align: center;" class="min-w-100px">boiler_type</th>
 																	<th style="text-align: center;" class="min-w-100px">convert_combi_boiler</th>
@@ -84,7 +84,7 @@
 																	<th style="text-align: center;" class="min-w-100px">number_of_bedroom</th>
 																	<th style="text-align: center;" class="min-w-100px">number_of_bathroom</th>
 																	<th style="text-align: center;" class="min-w-100px">status</th>
-																	<th style="text-align: center;" class="min-w-100px">Actions</th>
+																	<th style="text-align: center;" class="min-w-300px">Actions</th>
 																	<!-- <th style="text-align: center;" class="min-w-100px">Test</th> -->
 																	<!-- <button class="btn btn-sm btn-danger d-none" id="deleteAllBtn">Delete All</button> -->
 																</tr>

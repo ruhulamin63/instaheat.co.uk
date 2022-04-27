@@ -71,6 +71,7 @@ Route::group(['middleware'=>['checkSession']] , function(){
     Route::post('/update-status','OrderController@update_order_status_change')->name('update.order.status.change');
 
     //===========================================
+    Route::get('/order-details-index', 'OrderController@order_details_index')->name('get.order.details.index');
     Route::get('/order-details', 'OrderController@order_details')->name('get.order.details');
 
     //========================BoilerController================

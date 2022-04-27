@@ -35,8 +35,8 @@
               // {data:'DT_RowIndex', name:'DT_RowIndex'},
               {data:'customer_name', name:'customer_name'},
               {data:'customer_contact_number', name:'customer_contact_number'},
-              // {data:'year_warranty', name:'year_warranty'},
-              // {data:'price', name:'price'},
+              {data:'year_warranty', name:'year_warranty'},
+              {data:'price', name:'price'},
               {data:'fuel_type', name:'fuel_type'},
               {data:'boiler_type', name:'boiler_type'},
               {data:'convert_combi_boiler', name:'convert_combi_boiler', orderable:false, searchable:false},
@@ -87,7 +87,10 @@
                     $.each(data.error, function(prefix, val){
                         $(form).find('span.'+prefix+'_error').text(val[0]);
                     });
-                }else{
+                }else if(data.code !){
+
+                }
+                else{
                     $('#today-order-table').DataTable().ajax.reload(null, false);
                     $('.todayChangeStatus').modal('hide');
                     $('.todayChangeStatus').find('form')[0].reset();
@@ -110,8 +113,8 @@
             // {data:'DT_RowIndex', name:'DT_RowIndex'},
             {data:'customer_name', name:'customer_name'},
             {data:'customer_contact_number', name:'customer_contact_number'},
-            // {data:'year_warranty', name:'year_warranty'},
-            // {data:'price', name:'price'},
+            {data:'year_warranty', name:'year_warranty'},
+            {data:'price', name:'price'},
             {data:'fuel_type', name:'fuel_type'},
             {data:'boiler_type', name:'boiler_type'},
             {data:'convert_combi_boiler', name:'convert_combi_boiler', orderable:false, searchable:false},
@@ -191,8 +194,8 @@
               $('.editOrder').find('input[name="cid"]').val(data.details.id);
               $('.editOrder').find('input[name="customer_name"]').val(data.details.customer_name);
               $('.editOrder').find('input[name="customer_contact_number"]').val(data.details.customer_contact_number);
-              // $('.editOrder').find('select[name="year_warranty"]').val(data.details.year_warranty);
-              //$('.editOrder').find('select[name="price"]').val(data.details.year_warranty);
+              $('.editOrder').find('select[name="year_warranty"]').val(data.details.year_warranty);
+              $('.editOrder').find('select[name="price"]').val(data.details.year_warranty);
               
               $('.editOrder').find('select[name="fuel_type"]').val(data.details.fuel_type);
               $('.editOrder').find('select[name="boiler_type"]').val(data.details.boiler_type);
@@ -319,6 +322,31 @@
           });
         });
 
+
+        //=====================================================Get Order by product=============================================
+        $('#all-order-by-product-table').DataTable({
+          processing:false,
+          info:true,
+          ajax:"{{ route('get.order.details')}}",
+          "pageLength":5,
+          "aLengthMenu":[[5,10,25,50,-1],[5,10,25,50,"All"]],
+          columns:[
+            // {data:'id', name:'id'},
+            // {data:'DT_RowIndex', name:'DT_RowIndex'},
+            {data:'customer_name', name:'customer_name'},
+            {data:'customer_contact_number', name:'customer_contact_number'},
+            {data:'year_warranty', name:'year_warranty'},
+            {data:'price', name:'price'},
+            {data:'brand_name', name:'brand_name'},
+            {data:'model_name', name:'model_name'},
+            {data:'type', name:'type'},
+            {data:'central_heating_output', name:'central_heating_output'},
+            {data:'hot_water_flow_rate', name:'hot_water_flow_rate'},
+            // {data:'short_desc', name:'short_desc'},
+            {data:'status', name:'status'},
+            {data:'actions', name:'actions', orderable:false, searchable:false},
+          ]
+        });
 
 
       });

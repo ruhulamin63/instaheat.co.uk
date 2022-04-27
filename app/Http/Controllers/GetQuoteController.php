@@ -66,6 +66,13 @@ class GetQuoteController extends Controller
             $data['boiler_id']= $booking_id;
             $data['customer_name']=$request->customer_name;
             $data['customer_contact_number']=$request->customer_contact_number;
+            $data['year_warranty'] = $request->year_warranty;
+            
+            if($request->year_warranty == 5){
+                $data['price'] = $boilers->price_for_5_year;
+            }else{
+                $data['price'] = $boilers->price_for_10_year;
+            }
            
             //dd($request->roof_pitched);
 

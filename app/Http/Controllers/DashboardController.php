@@ -25,8 +25,8 @@ class DashboardController extends Controller
 
         $monthly_order= QuestionnaireAnswer::where('status',1)->where('created_at', '>', now()->subDays(1)->endOfDay())->orderBy('id','DESC')->get();
 
-        $monthly_income= Orderdetail::where('status', 1)->where('activeStatus',1)->where('created_at', '>', now()->subDays(30)->endOfDay())->sum('price');
-        $total_income= Orderdetail::where('status', 1)->where('activeStatus',1)->sum('price');
+        $monthly_income= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->where('created_at', '>', now()->subDays(30)->endOfDay())->sum('price');
+        $total_income= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->sum('price');
         
         $counts= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->count();
         $new_order= QuestionnaireAnswer::where('status',1)->where('created_at', '>', now()->subDays(30)->endOfDay())->count();
@@ -233,7 +233,7 @@ class DashboardController extends Controller
                     if($orders->status == 0){
                         $incomplete = "Incomplete";
                         return  '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-primary text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="badge badge-dark" style="text-align: center;">
                                         <span>'.$incomplete.'</span>
                                     </button>
                                 </div>'; 
@@ -241,7 +241,7 @@ class DashboardController extends Controller
                     else if($orders->status == 1){
                         $complete = "Complete";
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-success text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="badge badge-success" style="text-align: center;">
                                         <span>'.$complete.'</span>
                                     </button>
                                 </div>'; 
@@ -249,7 +249,7 @@ class DashboardController extends Controller
                     else{
                         $cancel = "Cancel";
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-danger text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="badge badge-danger" style="text-align: center;">
                                         <span >'.$cancel.'</span>
                                     </button>
                                 </div>';

@@ -1,6 +1,6 @@
 @extends('layout.navbar.adminNavBar')
 <?php 
-	$title= "Order Details";
+	$title= "Order by product";
 ?>
 @section('body')
 	<!--begin::Main-->
@@ -62,15 +62,13 @@
 												<!--begin::Table container-->
 												<div class="card-body">
 													<div class="table-responsive">
-														<table class="table table-hover table-condensed" id="all-order-table">
+														<table class="table table-hover table-condensed" id="all-order-by-product-table">
 															<thead>
 																<tr style="background-color: #E74C3C; color:white !important">
 																	<!-- <th><input type="checkbox" name="main_checkbox"><label></label></th> -->
 																	<!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
 																	<th style="text-align: center;" class="min-w-100px">customer_name</th>
 																	<th style="text-align: center;" class="min-w-100px">customer_contact_number</th>
-																	{{-- <th style="text-align: center;" class="min-w-100px">year_warranty</th>
-																	<th style="text-align: center;" class="min-w-100px">price</th> --}}
 																	<th style="text-align: center;" class="min-w-100px">year_warranty</th>
 																	<th style="text-align: center;" class="min-w-100px">price</th>
 																	<th style="text-align: center;" class="min-w-100px">brand_name</th>
@@ -78,7 +76,7 @@
 																	<th style="text-align: center;" class="min-w-100px">type</th>
 																	<th style="text-align: center;" class="min-w-100px">central_heating_output</th>
 																	<th style="text-align: center;" class="min-w-100px">hot_water_flow_rate</th>
-																	<th style="text-align: center;" class="min-w-100px">short_desc</th>
+																	{{-- <th style="text-align: center;" class="min-w-100px">short_desc</th> --}}
 																	<th style="text-align: center;" class="min-w-100px">status</th>
 																	<th style="text-align: center;" class="min-w-100px">activeStatus</th>
 																	<!-- <th style="text-align: center;" class="min-w-100px">Test</th> -->
@@ -86,9 +84,9 @@
 																</tr>
 															</thead>
 
-                                                            @foreach ($order_details as $item)
+                                                            {{-- @foreach ($order_details as $item) --}}
                                                                 <tbody>
-                                                                    <tr>
+                                                                    {{-- <tr>
                                                                         <td>{{$item->customer_name}}</td>
                                                                         <td>{{$item->customer_contact_number}}</td>
                                                                         <td>{{$item->year_warranty}}</td>
@@ -101,10 +99,10 @@
                                                                         <td>{{$item->short_desc}}</td>
                                                                         <td>{{$item->status}}</td>
                                                                         <td>{{$item->activeStatus}}</td>
-                                                                    </tr>
+                                                                    </tr> --}}
                                                                     
                                                                 </tbody>
-                                                            @endforeach
+                                                            {{-- @endforeach --}}
 														
 														</table>
 													</div>
@@ -127,4 +125,5 @@
 	</div>
 	<!--end::Root-->
     
+	@include('admin.pages.order.order-list-scripts')
 @endsection
