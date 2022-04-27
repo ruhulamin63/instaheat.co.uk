@@ -151,7 +151,7 @@
 
                     <div class="row col-md-12">
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <br>
                             <label class="fs-6 fw-bold mb-2">Bedrooms</label>
                             <select name="number_of_bedroom" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -164,7 +164,7 @@
                             </select>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <br>
                             <label class="fs-6 fw-bold mb-2">Bathrooms</label>
                             <select name="number_of_bathroom" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -175,7 +175,7 @@
                             </select>
                         </div>
 
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
                             <br>
                             <label class="fs-6 fw-bold mb-2">Year of warranty</label>
                             <select name="year_warranty" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -183,7 +183,7 @@
                                 <option value="5">Five</option>
                                 <option value="10">Ten</option>
                             </select>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>

@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="menu-item" style="margin-top:0px">
-                    <a class="menu-link @if(route('get.service.index') == Request::url()) active @endif" href="{{ route('get.service.index') }}">
+                    <a class="menu-link @if(route('get.order.details.index') == Request::url()) active @endif" href="{{ route('get.order.details.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -84,7 +84,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Service</span>
+                        <span class="menu-title">Order by Product</span>
                     </a>
                 </div>
 
@@ -119,7 +119,7 @@
                     </a>
                 </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/stockholm/Code/Compiling.svg-->
@@ -162,7 +162,7 @@
                         </div>
 
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!--end::Menu-->
         </div>

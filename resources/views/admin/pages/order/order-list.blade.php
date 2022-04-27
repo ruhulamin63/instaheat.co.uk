@@ -1,6 +1,6 @@
 @extends('layout.navbar.adminNavBar')
 <?php 
-	$title= "Order Details";
+	$title= "Order List";
 ?>
 @section('body')
 	<!--begin::Main-->
@@ -84,7 +84,7 @@
 																	<th style="text-align: center;" class="min-w-100px">number_of_bedroom</th>
 																	<th style="text-align: center;" class="min-w-100px">number_of_bathroom</th>
 																	<th style="text-align: center;" class="min-w-100px">status</th>
-																	<th style="text-align: center;" class="min-w-100px">Actions</th>
+																	<th style="text-align: center;" class="min-w-300px">Actions</th>
 																	<!-- <th style="text-align: center;" class="min-w-100px">Test</th> -->
 																	<!-- <button class="btn btn-sm btn-danger d-none" id="deleteAllBtn">Delete All</button> -->
 																</tr>

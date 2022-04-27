@@ -12,8 +12,8 @@
                 @foreach($boilers as $item)
    
                     @if($item->image)
-                        <?php if (file_exists("../public".$item->image)){ ?>
-                            <img class="boiler-image" style="padding-right: 15px;" src="{{$item->image}}" >
+                        <?php if (file_exists("../public/".$item->image)){ ?>
+                            <img class="boiler-image" style="padding-right: 15px;" src="{{asset($item->image)}}" >
                         <?php } else{ ?>
                             <img class="boiler-image" style="padding-right: 15px;" src="{{asset('/media/avatars/blank.png')}}">
                         <?php } ?>

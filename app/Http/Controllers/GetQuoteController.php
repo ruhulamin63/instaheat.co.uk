@@ -64,7 +64,6 @@ class GetQuoteController extends Controller
             $data=array();
 
             $data['boiler_id']= $booking_id;
-            
             $data['customer_name']=$request->customer_name;
             $data['customer_contact_number']=$request->customer_contact_number;
             $data['year_warranty'] = $request->year_warranty;
@@ -74,7 +73,7 @@ class GetQuoteController extends Controller
             }else{
                 $data['price'] = $boilers->price_for_10_year;
             }
-
+           
             //dd($request->roof_pitched);
 
             if($request->item_gas == 'Gas'){
@@ -178,6 +177,35 @@ class GetQuoteController extends Controller
             $data['activeStatus']= 1;
 
             $query = DB::table('questionnaire_answers')->insert($data);
+
+
+            //=======================================Boiler Details====================================
+
+            $boiler_details=array();
+
+            $boiler_details['boiler_id']= $booking_id;
+
+            $boiler_details['customer_name']=$request->customer_name;
+            $boiler_details['customer_contact_number']=$request->customer_contact_number;
+            $boiler_details['year_warranty'] = $request->year_warranty;
+            
+            if($request->year_warranty == 5){
+                $boiler_details['price'] = $boilers->price_for_5_year;
+            }else{
+                $boiler_details['price'] = $boilers->price_for_10_year;
+            }
+
+            $boiler_details['brand_name'] = $boilers->brand_name;
+            $boiler_details['model_name'] = $boilers->model_name;
+            $boiler_details['type'] = $boilers->type;
+            $boiler_details['central_heating_output'] = $boilers->central_heating_output;
+            $boiler_details['hot_water_flow_rate'] = $boilers->hot_water_flow_rate;
+            $boiler_details['short_desc'] = $boilers->short_desc;
+            
+            $boiler_details['status']= 0;
+            $boiler_details['activeStatus']= 1;
+
+            $boiler_details_query = DB::table('orderdetails')->insert($boiler_details);
 
             //dd("test");
 

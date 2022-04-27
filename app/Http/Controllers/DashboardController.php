@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 
 use App\Models\QuestionnaireAnswer;
 use App\Models\User;
+use App\Models\Orderdetail;
 use Carbon\Carbon;
 use DataTables;
 
@@ -232,7 +233,7 @@ class DashboardController extends Controller
                     if($orders->status == 0){
                         $incomplete = "Incomplete";
                         return  '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-primary text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="badge badge-dark" style="text-align: center;">
                                         <span>'.$incomplete.'</span>
                                     </button>
                                 </div>'; 
@@ -240,7 +241,7 @@ class DashboardController extends Controller
                     else if($orders->status == 1){
                         $complete = "Complete";
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-success text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="badge badge-success" style="text-align: center;">
                                         <span>'.$complete.'</span>
                                     </button>
                                 </div>'; 
@@ -248,7 +249,7 @@ class DashboardController extends Controller
                     else{
                         $cancel = "Cancel";
                         return '<div class="btn-group d-flex flex-column w-100 me-2">
-                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="p-1 mb-2 bg-danger text-white" style="text-align: center;">
+                                    <button data-id="'.$orders['id'].'" id="todayOrderStatusBtn" class="badge badge-danger" style="text-align: center;">
                                         <span >'.$cancel.'</span>
                                     </button>
                                 </div>';
