@@ -22,8 +22,8 @@ class BoilerSeeder extends Seeder
             'hot_water_flow_rate' => '9.9 ltr/min',
             // 'extras' => 0,
             'image' => null,
-            'short_desc' => 'Compact in size and fully modulating down to as low as 4.8kW, the Logic+ combi provides excellent energy savings making it the perfect choice for new boiler or boiler replacement installations.',
-            'price_for_5_year' => 1830,
+            'short_desc' => 'Includes VAT, fitting, filter and flushed & protected.',
+            'price_for_5_year' => 1030,
             'price_for_10_year' => 2030,
             'created_at' => now(),
             'updated_at' => now()

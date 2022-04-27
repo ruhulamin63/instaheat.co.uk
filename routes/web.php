@@ -70,6 +70,9 @@ Route::group(['middleware'=>['checkSession']] , function(){
     Route::post('/edit-status','OrderController@edit_order_status_details')->name('edit.order.status.details');
     Route::post('/update-status','OrderController@update_order_status_change')->name('update.order.status.change');
 
+    //===========================================
+    Route::get('/order-details', 'OrderController@order_details')->name('get.order.details');
+
     //========================BoilerController================
     Route::get('/boiler-index', 'BoilerController@boiler_index')->name('get.boiler.index');
 
@@ -81,6 +84,7 @@ Route::group(['middleware'=>['checkSession']] , function(){
 
     //==================service controller================
     Route::get('/service-index', 'ServiceController@admin_service_index')->name('get.service.index');
+    
 
     Route::get('/get-all-service', 'ServiceController@get_all_service')->name('get.all.service.list');
     Route::post('/service-add', 'ServiceController@new_service_add')->name('admin.new.service.add');

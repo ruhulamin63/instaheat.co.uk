@@ -19,8 +19,8 @@ class CreateQuestionnaireAnswersTable extends Migration
 
             $table->string('customer_name', 255)->nullable();
             $table->string('customer_contact_number', 255)->nullable();
-            $table->integer('year_warranty')->nullable();
-            $table->double('price', 15, 2)->nullable();
+            // $table->integer('year_warranty')->nullable();
+            // $table->double('price', 15, 2)->nullable();
 
             $table->string('fuel_type', 255)->nullable();
             $table->string('boiler_type', 255)->nullable();

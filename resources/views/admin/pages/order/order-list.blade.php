@@ -1,6 +1,6 @@
 @extends('layout.navbar.adminNavBar')
 <?php 
-	$title= "Order Details";
+	$title= "Order List";
 ?>
 @section('body')
 	<!--begin::Main-->
@@ -70,8 +70,8 @@
 																	<!-- <th style="text-align: center;" class="min-w-100px">#</th> -->
 																	<th style="text-align: center;" class="min-w-100px">customer_name</th>
 																	<th style="text-align: center;" class="min-w-100px">customer_contact_number</th>
-																	<th style="text-align: center;" class="min-w-100px">year_warranty</th>
-																	<th style="text-align: center;" class="min-w-100px">price</th>
+																	{{-- <th style="text-align: center;" class="min-w-100px">year_warranty</th>
+																	<th style="text-align: center;" class="min-w-100px">price</th> --}}
 																	<th style="text-align: center;" class="min-w-100px">fuel_type</th>
 																	<th style="text-align: center;" class="min-w-100px">boiler_type</th>
 																	<th style="text-align: center;" class="min-w-100px">convert_combi_boiler</th>

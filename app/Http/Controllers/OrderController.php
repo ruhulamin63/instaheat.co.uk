@@ -31,6 +31,18 @@ class OrderController extends Controller
         return view('admin.pages.order.order-list', compact('users', 'question'));
     }
 
+    public function order_details(){
+        $order_details = DB::table('orderdetails')
+            ->where('activeStatus',1)
+            ->orderBy('id','DESC')
+            ->get();
+
+        $id = Session()->get('admin_id');
+        $users = User::where('id',$id)->first();
+
+        return view('admin.pages.order.order-details', compact('users', 'order_details'));
+    }
+
     //Get Order List
     public function get_all_order(){
 
@@ -262,13 +274,13 @@ class OrderController extends Controller
             
             $data['customer_name']=$request->customer_name;
             $data['customer_contact_number']=$request->customer_contact_number;
-            $data['year_warranty'] = $boiler->year_warranty;
+            //$data['year_warranty'] = $boiler->year_warranty;
             
-            if($request->year_warranty == 5){
-                $data['price'] = $boiler->price_for_5_year;
-            }else{
-                $data['price'] = $boiler->price_for_10_year;
-            }
+            // if($request->year_warranty == 5){
+            //     $data['price'] = $boiler->price_for_5_year;
+            // }else{
+            //     $data['price'] = $boiler->price_for_10_year;
+            // }
 
             $data['fuel_type']= $request->fuel_type;
             $data['boiler_type']= $request->boiler_type;
@@ -329,10 +341,10 @@ class OrderController extends Controller
         //     return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
         // }else{
            
-            $boiler = Boiler::where('id',1)->first();
+            $boiler = Boiler::where('id',$order_id)->first();
             //$question = QuestionnaireAnswer::where('boiler_id',1)->first();
 
-           // dd($boiler);
+           //dd($boiler);
 
             //$data=array();
 
@@ -346,15 +358,15 @@ class OrderController extends Controller
 
             $orderDetails->customer_name = $request->customer_name;
             $orderDetails->customer_contact_number = $request->customer_contact_number;
-            $orderDetails->year_warranty = $request->year_warranty;
+            //$orderDetails->year_warranty = $request->year_warranty;
             
-            if($request->year_warranty == 5){
-                //$data['price'] = $boiler->price_for_5_year;
-                $orderDetails->price = $boiler->price_for_5_year;
-            }else{
-                //$data['price'] = $boiler->price_for_10_year;
-                $orderDetails->price = $boiler->price_for_10_year;
-            }
+            // if($request->year_warranty == 5){
+            //     //$data['price'] = $boiler->price_for_5_year;
+            //     $orderDetails->price = $boiler->price_for_5_year;
+            // }else{
+            //     //$data['price'] = $boiler->price_for_10_year;
+            //     $orderDetails->price = $boiler->price_for_10_year;
+            // }
 
             // $data['fuel_type']= $request->fuel_type;
             // $data['boiler_type']= $request->boiler_type;

@@ -35,8 +35,8 @@
               // {data:'DT_RowIndex', name:'DT_RowIndex'},
               {data:'customer_name', name:'customer_name'},
               {data:'customer_contact_number', name:'customer_contact_number'},
-              {data:'year_warranty', name:'year_warranty'},
-              {data:'price', name:'price'},
+              // {data:'year_warranty', name:'year_warranty'},
+              // {data:'price', name:'price'},
               {data:'fuel_type', name:'fuel_type'},
               {data:'boiler_type', name:'boiler_type'},
               {data:'convert_combi_boiler', name:'convert_combi_boiler', orderable:false, searchable:false},
@@ -110,8 +110,8 @@
             // {data:'DT_RowIndex', name:'DT_RowIndex'},
             {data:'customer_name', name:'customer_name'},
             {data:'customer_contact_number', name:'customer_contact_number'},
-            {data:'year_warranty', name:'year_warranty'},
-            {data:'price', name:'price'},
+            // {data:'year_warranty', name:'year_warranty'},
+            // {data:'price', name:'price'},
             {data:'fuel_type', name:'fuel_type'},
             {data:'boiler_type', name:'boiler_type'},
             {data:'convert_combi_boiler', name:'convert_combi_boiler', orderable:false, searchable:false},
@@ -191,7 +191,7 @@
               $('.editOrder').find('input[name="cid"]').val(data.details.id);
               $('.editOrder').find('input[name="customer_name"]').val(data.details.customer_name);
               $('.editOrder').find('input[name="customer_contact_number"]').val(data.details.customer_contact_number);
-              $('.editOrder').find('select[name="year_warranty"]').val(data.details.year_warranty);
+              // $('.editOrder').find('select[name="year_warranty"]').val(data.details.year_warranty);
               //$('.editOrder').find('select[name="price"]').val(data.details.year_warranty);
               
               $('.editOrder').find('select[name="fuel_type"]').val(data.details.fuel_type);

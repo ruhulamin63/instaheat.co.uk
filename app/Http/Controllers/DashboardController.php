@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 
 use App\Models\QuestionnaireAnswer;
 use App\Models\User;
+use App\Models\Orderdetail;
 use Carbon\Carbon;
 use DataTables;
 
@@ -24,8 +25,8 @@ class DashboardController extends Controller
 
         $monthly_order= QuestionnaireAnswer::where('status',1)->where('created_at', '>', now()->subDays(1)->endOfDay())->orderBy('id','DESC')->get();
 
-        $monthly_income= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->where('created_at', '>', now()->subDays(30)->endOfDay())->sum('price');
-        $total_income= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->sum('price');
+        $monthly_income= Orderdetail::where('status', 1)->where('activeStatus',1)->where('created_at', '>', now()->subDays(30)->endOfDay())->sum('price');
+        $total_income= Orderdetail::where('status', 1)->where('activeStatus',1)->sum('price');
         
         $counts= QuestionnaireAnswer::where('status', 1)->where('activeStatus',1)->count();
         $new_order= QuestionnaireAnswer::where('status',1)->where('created_at', '>', now()->subDays(30)->endOfDay())->count();
