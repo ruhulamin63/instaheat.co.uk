@@ -46,12 +46,12 @@ class ProfileController extends Controller{
         $data['phone']= $req->phone;
         $data['address']= $req->address;
 
-        if($request->hasFile('avatar')) {
-            $image = $request->file('avatar');
+        if($req->hasFile('avatar')) {
+            $image = $req->file('avatar');
             $image_name=$image->getClientOriginalName();
             $image_ext=$image->getClientOriginalExtension();
 
-            //$image_new_name =$request->contact_number.date("YmdHis");
+            //$image_new_name =$req->contact_number.date("YmdHis");
             //dd($image_ext);
 
             $image_full_name=$image_name.'.'.$image_ext;

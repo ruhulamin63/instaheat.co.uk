@@ -61,9 +61,8 @@
                         
                     </div>
 
-                    <br><hr><br>
+                    <hr>
 
-                    <h6>#Price Information</h6><br>
                     <div class="row col-md-12">
                         <div class="col-md-4">
                             <br>
@@ -125,7 +124,6 @@
                                 <!--begin::Hint-->
                                 {{-- <div class="form-text">Allowed file types: png, jpg, jpeg.</div> --}}
                                 <!--end::Hint-->
-                                <br>
                             </div>
                         </div>
                     </div>
@@ -134,7 +132,6 @@
             </div>
 
             <div class="modal-footer">
-                <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-white me-3">Reset</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Update</button>
             </div>

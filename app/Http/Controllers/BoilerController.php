@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
 use App\Models\QuestionnaireAnswer;
+use App\Models\Orderdetail;
 use App\Models\Boiler;
 use App\Models\User;
 use Carbon\Carbon;
@@ -39,43 +40,6 @@ class BoilerController extends Controller
             return DataTables::of($boilers)
                 ->addIndexColumn()
             
-                // ->addColumn('image', function($boilers){
-
-                //     return '<div class="cursor-pointer symbol symbol-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-                   
-                //                 <img src="asset('.$boilers->image.')">
-                //             </div>';
-                // })
-
-                // ->addColumn('brand_name', function($boilers){
-
-                //     return $boilers->brand_name;
-                // })
-
-                // ->addColumn('model_name', function($boilers){
-
-                //     return $boilers->model_name;
-                // })
-
-                // ->addColumn('type', function($boilers){
-
-                //     return $boilers->type;
-                // })
-
-                // ->addColumn('central_heating_output', function($boilers){
-
-                //     return $boilers->central_heating_output;
-                // })
-
-                // ->addColumn('hot_water_flow_rate', function($boilers){
-                //     return $boilers->hot_water_flow_rate;
-                // })
-               
-                // ->addColumn('short_desc', function($boilers){
-
-                //     return $boilers->short_desc;
-                // })
-
                 ->addColumn('price_for_5_year', function($boilers){
 
                     return '<div class="btn-group d-flex flex-column w-100 me-2">
@@ -213,20 +177,6 @@ class BoilerController extends Controller
             $boilers->price_for_5_year = $request->price_for_5_year;
             $boilers->price_for_10_year = $request->price_for_10_year;
 
-            // if($request->avatar !=""){
-            //     $image = $request->file('avatar');
-            //     $image_name=$image->getClientOriginalName();
-            //     $image_ext=$image->getClientOriginalExtension();
-            //     $image_new_name =$request->username.date("YmdHis");
-            //     $image_full_name=$image_new_name.'.'.$image_ext;
-            //     $upload_path='media/boiler/';
-            //     $image_url=$upload_path.$image_full_name;
-            //     $success=$image->move($upload_path,$image_full_name);
-            //     $imageData='/media/boiler/'.$image_full_name;
-
-            //     $boilers->image=$imageData;
-            // }
-
             if($request->hasFile('avatar')) {
                 $image = $request->file('avatar');
                 //$image_name=$image->getClientOriginalName();
@@ -267,5 +217,18 @@ class BoilerController extends Controller
         }else{
             return response()->json(['code'=>0, 'msg'=>'Something went wrong'],412);
         }
+    }
+
+    //================Boiler details========================
+    public function boiler_details($id){
+        $boiler = Boiler::where('id',$id)->get();
+        $boiler_details = Orderdetail::where('boiler_id',$id)->get();
+
+        $id = Session()->get('admin_id');
+        $users = User::where('id',$id)->first();
+
+        //dd($boiler_details);
+
+        return view('admin.pages.order.crud.boiler-details', compact('boiler_details', 'users', 'boiler'));
     }
 }
