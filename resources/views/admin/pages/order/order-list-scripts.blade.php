@@ -87,10 +87,7 @@
                     $.each(data.error, function(prefix, val){
                         $(form).find('span.'+prefix+'_error').text(val[0]);
                     });
-                }else if(data.code !){
-
-                }
-                else{
+                }else{
                     $('#today-order-table').DataTable().ajax.reload(null, false);
                     $('.todayChangeStatus').modal('hide');
                     $('.todayChangeStatus').find('form')[0].reset();

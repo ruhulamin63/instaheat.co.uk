@@ -79,7 +79,7 @@ class OrderController extends Controller
                 })
                
                 ->addColumn('actions', function($orders){
-                    return '<a href="/boiler-logic-30/'.$orders['boiler_id'].'" class="btn btn-primary btn-sm">
+                    return '<a href="/boiler-details/'.$orders['boiler_id'].'" class="btn btn-primary btn-sm">
                                 <i class="fas fa-folder">
                                 </i>
                                 View
@@ -223,7 +223,7 @@ class OrderController extends Controller
                 })
 
                 ->addColumn('actions', function($orders){
-                    return '<a href="/boiler-logic-30/'.$orders['boiler_id'].'" class="btn btn-primary btn-sm">
+                    return '<a href="/boiler-details/'.$orders['boiler_id'].'" class="btn btn-primary btn-sm">
                                 <i class="fas fa-folder">
                                 </i>
                                 View
@@ -356,6 +356,14 @@ class OrderController extends Controller
 
             $orderDetails->customer_name = $request->customer_name;
             $orderDetails->customer_contact_number = $request->customer_contact_number;
+
+            $orderDetails->year_warranty = $request->year_warranty;
+            
+            if($request->year_warranty == 5){
+                $orderDetails->price = $boiler->price_for_5_year;
+            }else{
+                $orderDetails->price = $boiler->price_for_10_year;
+            }
 
             $orderDetails->fuel_type = $request->fuel_type;
             $orderDetails->boiler_type = $request->boiler_type;

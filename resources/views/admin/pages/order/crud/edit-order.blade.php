@@ -110,13 +110,13 @@
 
                     </div>
 
-                    <br><hr><br>
+                    {{-- <br><hr><br> --}}
+                    <hr>
 
-                    <h6># Order Information</h6><br>
+                    {{-- <h6># Order Information</h6><br> --}}
                     <div class="row col-md-12">
 
                         <div class="col-md-4">
-                            <br>
                             <label class="fs-6 fw-bold mb-2">fuel Come Out</label>
                             <select name="fuel_come_out" aria-label="Select a moving" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
                                 <option value="">--Select--</option>
@@ -151,7 +151,7 @@
 
                     <div class="row col-md-12">
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <br>
                             <label class="fs-6 fw-bold mb-2">Bedrooms</label>
                             <select name="number_of_bedroom" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -164,7 +164,7 @@
                             </select>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <br>
                             <label class="fs-6 fw-bold mb-2">Bathrooms</label>
                             <select name="number_of_bathroom" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
@@ -175,14 +175,22 @@
                             </select>
                         </div>
 
-                        {{-- <div class="col-md-4">
+                        <div class="col-md-4">
                             <br>
-                            <label class="fs-6 fw-bold mb-2">Year of warranty</label>
+                            <label class="fs-6 fw-bold mb-2">Year</label>
                             <select name="year_warranty" aria-label="Select a flat" data-control="select2" data-placeholder="Select a Convert" class="form-select form-select-solid fw-bolder">
-                                <option value="">Select</option>
                                 <option value="5">Five</option>
                                 <option value="10">Ten</option>
                             </select>
+                        </div>
+
+                        {{-- <br>
+                        <div class="col-md-3">
+                            <label class="fs-6 fw-bold mb-2">
+                                <span>Amount</span>
+                            </label>
+                            <input type="text" class="form-control form-control-solid prod_price" name="price" id="new_order_amount" readonly/>
+                            <span class="text-danger error-text amount_error"></span>
                         </div> --}}
 
                     </div>
@@ -191,7 +199,6 @@
             </div>
 
             <div class="modal-footer">
-                <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-white me-3">Reset</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Update</button>
             </div>

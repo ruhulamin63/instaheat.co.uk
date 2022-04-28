@@ -83,6 +83,13 @@ Route::group(['middleware'=>['checkSession']] , function(){
     Route::post('/update-boiler','BoilerController@update_boiler_details')->name('update.boiler.details');
     Route::post('/delete-boiler','BoilerController@delete_boiler')->name('delete.boiler');
 
+    //=====================================================================================
+    Route::get('boiler-details/{id}','BoilerController@boiler_details')->name('boiler.details');
+
+    //Route::get('boiler-logic-30/{id}', 'GetQuoteController@boiler_logic_30')->name('boilers.logic.30');
+    //Route::post('boiler-logic-30', 'GetQuoteController@boiler_logic_30_booking')->name('boilers.logic.30.booking');
+
+
     //==================service controller================
     Route::get('/service-index', 'ServiceController@admin_service_index')->name('get.service.index');
     

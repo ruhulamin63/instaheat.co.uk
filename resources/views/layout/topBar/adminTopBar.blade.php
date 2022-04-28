@@ -57,8 +57,8 @@
                         <div class="cursor-pointer symbol symbol-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
                           
                             @if($users->image)
-                                <?php if (file_exists("../public".$users->image)){ ?>
-                                    <img src="{{$users->image}}" >
+                                <?php if (file_exists("../public/".$users->image)){ ?>
+                                    <img src="{{asset($users->image)}}" >
                                 <?php } else{ ?>
                                     <img src="{{asset('/media/avatars/blank.png')}}">
                                 <?php } ?>
@@ -77,8 +77,8 @@
                                     <div class="symbol symbol-50px me-5">
 
                                         @if($users->image)
-                                            <?php if (file_exists("../public".$users->image)){ ?>
-                                                <img src="{{$users->image}}" >
+                                            <?php if (file_exists("../public/".$users->image)){ ?>
+                                                <img src="{{asset($users->image)}}" >
                                             <?php } else{ ?>
                                                 <img src="{{asset('/media/avatars/blank.png')}}">
                                             <?php } ?>

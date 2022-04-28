@@ -77,8 +77,8 @@
 												<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
 													
 													@if($users->image)
-														<?php if (file_exists("../public".$users->image)){ ?>
-															<img src="{{$users->image}}" >
+														<?php if (file_exists("../public/".$users->image)){ ?>
+															<img src="{{asset($users->image)}}" >
 														<?php } else{ ?>
 															<img src="{{asset('/media/avatars/blank.png')}}">
 														<?php } ?>
